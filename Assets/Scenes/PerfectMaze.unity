@@ -169,8 +169,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 77006022}
-  - component: {fileID: 77006021}
   - component: {fileID: 77006020}
+  - component: {fileID: 77006021}
   m_Layer: 0
   m_Name: Hint
   m_TagString: Untagged
@@ -283,10 +283,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 77006019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766b3fefc2143df45826309aa5cef4aa, type: 3}
+  m_Script: {fileID: 11500000, guid: e161dc5ba7c42f846b32268d795d85fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MazeSpawner: {fileID: 1933797886}
+  scaleVector: {x: 1, y: 1}
 --- !u!4 &77006022
 Transform:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77006019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.5}
+  m_LocalPosition: {x: 0.7, y: -49.2, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -454,6 +455,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &167178751
@@ -538,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -750,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -952,6 +956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1141,6 +1146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1445,7 +1451,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 119.99994, y: 0.00012207031}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &773948329
 Animation:
@@ -1556,10 +1562,10 @@ MonoBehaviour:
   HintRenderer: {fileID: 77006021}
   MazeSpawner: {fileID: 1933797886}
   Player2D: {fileID: 427890468691771699, guid: 4f4c8d86f67b7ff4991b338fab9bb7b6, type: 3}
-  ForwardButton: {fileID: 1687460791}
-  LeftButton: {fileID: 1840538933}
-  RightButton: {fileID: 354235066}
-  BackButton: {fileID: 1415420758}
+  _ForwardButton: {fileID: 1687460791}
+  _LeftButton: {fileID: 1840538933}
+  _RightButton: {fileID: 354235066}
+  _BackButton: {fileID: 1415420758}
   HintButton: {fileID: 1835014854}
   MapButton: {fileID: 1214735044}
   ExitButton: {fileID: 197334248}
@@ -1570,7 +1576,6 @@ MonoBehaviour:
   addScore: {fileID: 773948331}
   TotalScore: {fileID: 1031733856}
   cellFloorHeight: 2
-  playerStartPos: {x: 0.7, y: -49.2, z: 3}
 --- !u!114 &779741595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2368,6 +2374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2570,6 +2577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2809,6 +2817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3122,6 +3131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3310,6 +3320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3498,6 +3509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3772,6 +3784,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1551735908
 Canvas:
   m_ObjectHideFlags: 0
@@ -3918,6 +3931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4516,6 +4530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4660,6 +4675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4816,7 +4832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: 100}
+  m_AnchoredPosition: {x: 90, y: 80}
   m_SizeDelta: {x: 140, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859764851
@@ -5151,15 +5167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7948b52d9aa6781468bc3190f9f6b2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cell2D: {fileID: 7840949065394670702, guid: 1b2ec833ef0840b4fbcdef0176087321, type: 3}
   Cell3D: {fileID: 2120647008464326485, guid: 5ce2b610e67821341a26bd41711281bc, type: 3}
+  Cell2D: {fileID: 7840949065394670702, guid: 1b2ec833ef0840b4fbcdef0176087321, type: 3}
   Floor: {fileID: 4516475984453111825, guid: fea2a631a2fede04487f6d64890d464c, type: 3}
-  Finish3D: {fileID: 7463663236930687605, guid: 488a7e3983d4e3549be1aebdafd0b19c, type: 3}
-  cellSize3D: {x: 10, y: 0, z: 10}
-  cellSize2D: {x: 1, y: 1, z: 0}
-  distanceBetweenMazes: 50
-  width: 0
-  height: 0
+  Finish: {fileID: 7463663236930687605, guid: 488a7e3983d4e3549be1aebdafd0b19c, type: 3}
 --- !u!4 &1933797887
 Transform:
   m_ObjectHideFlags: 0
@@ -5337,6 +5348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5649,6 +5661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

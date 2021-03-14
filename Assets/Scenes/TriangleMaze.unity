@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -433,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -629,6 +631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -802,6 +805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1110,6 +1114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1259,14 +1264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae386a0067e91a43b1858186f7a894c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cell2D: {fileID: 5449606053321794689, guid: 2a6e9b60903ecd841ae262032430db90, type: 3}
   Cell3D: {fileID: 6138810705286997738, guid: fe8c6774b3372f145b8423c1952aaecc, type: 3}
+  Cell2D: {fileID: 5449606053321794689, guid: 2a6e9b60903ecd841ae262032430db90, type: 3}
   Floor: {fileID: 4516475984453111825, guid: fea2a631a2fede04487f6d64890d464c, type: 3}
-  cellSize3D: {x: 6, y: 0, z: 10.5}
-  cellSize2D: {x: 0.5, y: 0.87, z: 0}
-  distanceBetweenMazes: 50
-  width: 0
-  height: 0
 --- !u!4 &361151799
 Transform:
   m_ObjectHideFlags: 0
@@ -1350,6 +1350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1617,6 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2566,7 +2568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708035646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: -49.5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2581,10 +2583,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 708035646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a81f0c8e7b15d6f418e5ca73060bf85e, type: 3}
+  m_Script: {fileID: 11500000, guid: e161dc5ba7c42f846b32268d795d85fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MazeSpawner: {fileID: 361151798}
+  scaleVector: {x: 0.5, y: 0.866}
 --- !u!1 &732742896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2725,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &740098835
 Canvas:
   m_ObjectHideFlags: 0
@@ -3080,6 +3084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3253,6 +3258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3441,6 +3447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3637,6 +3644,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1217780152
@@ -3689,7 +3697,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 120, y: 0}
-  m_SizeDelta: {x: 100, y: 40}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271077749
 MonoBehaviour:
@@ -4283,6 +4291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4472,6 +4481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4616,6 +4626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4818,6 +4829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5244,6 +5256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5536,9 +5549,10 @@ MonoBehaviour:
   HintRenderer: {fileID: 708035649}
   MazeSpawner: {fileID: 361151798}
   Player2D: {fileID: 427890468691771699, guid: 4f4c8d86f67b7ff4991b338fab9bb7b6, type: 3}
-  LeftButton: {fileID: 428843272}
-  RightButton: {fileID: 14504104}
-  BackButton: {fileID: 853600198}
+  _ForwardButton: {fileID: 0}
+  _LeftButton: {fileID: 428843272}
+  _RightButton: {fileID: 14504104}
+  _BackButton: {fileID: 853600198}
   HintButton: {fileID: 1676966253}
   MapButton: {fileID: 212529639}
   ExitButton: {fileID: 334004622}
@@ -5549,7 +5563,6 @@ MonoBehaviour:
   addScore: {fileID: 1271077749}
   TotalScore: {fileID: 1387065193}
   cellFloorHeight: 2
-  playerStartPos: {x: 0.5, y: -50, z: 0}
 --- !u!114 &2070072826
 MonoBehaviour:
   m_ObjectHideFlags: 0
