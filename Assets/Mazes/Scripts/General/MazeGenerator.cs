@@ -27,10 +27,10 @@ public abstract class MazeGenerator
         RemoveWallsWithBackracker();
 
         var maze = new Maze();
-        maze.cells = cells;
-        maze.startPosition = cells[0,0];
-        maze.nodes = GetAllNodes(maze);
-        maze.finishPosition = MakeExit();
+        maze.Cells = cells;
+        maze.StartPosition = cells[0,0];
+        maze.Nodes = GetAllNodes(maze);
+        maze.FinishPosition = MakeExit();
 
         return maze;
     }
@@ -101,14 +101,14 @@ public abstract class MazeGenerator
 
     protected abstract MazeGeneratorCell MakeExit();
 
-    //Возвращает узлы(развилки или тупики) лабиринта
+    //Р’РѕР·РІСЂР°С‰Р°РµС‚ СѓР·Р»С‹(СЂР°Р·РІРёР»РєРё РёР»Рё С‚СѓРїРёРєРё) Р»Р°Р±РёСЂРёРЅС‚Р°
     private Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>>
         GetAllNodes(Maze maze)
     {
         var nodes = new Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>>();
         var stackOfNodes = new Stack<MazeGeneratorCell>();
-        maze.startPosition.prevDir = Vector2Int.zero;
-        stackOfNodes.Push(maze.startPosition);
+        maze.StartPosition.PreviousDirection = Vector2Int.zero;
+        stackOfNodes.Push(maze.StartPosition);
         var unvistedDirections = new Stack<MazeGeneratorCell>();
         do
         {
@@ -122,21 +122,21 @@ public abstract class MazeGenerator
             {
                 var currentCell = unvistedDirections.Pop();
                 int count = 0;
-                var path = new List<Vector2Int>() { currentCell.prevDir };
+                var path = new List<Vector2Int>() { currentCell.PreviousDirection };
                 while (!CheckIfNode(currentCell))
                 {
                     currentCell = GetNextCell(currentCell, path);
-                    //Убрать костыль!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    //РЈР±СЂР°С‚СЊ РєРѕСЃС‚С‹Р»СЊ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     count++;
                     if (count > width * height) break;
                 }
                 stackOfNodes.Push(currentCell);
                 nextNodes[currentCell] = path;
-                currentCell.prevNode = currentNode;
+                currentCell.PreviousNode = currentNode;
             }
             nodes[currentNode] = nextNodes;
             if (nextNodes.Count == 0)
-                currentNode.isDeadEnd = true;
+                currentNode.IsDeadEnd = true;
         } while (stackOfNodes.Count > 0);
 
         return nodes;
@@ -163,30 +163,30 @@ public abstract class MazeGenerator
 
         if (!cells[x, y].LeftWall &&
             x > 0 && cells[x - 1, y] != null &&
-            currentNode.prevDir != Vector2Int.right)
+            currentNode.PreviousDirection != Vector2Int.right)
         {
-            cells[x - 1, y].prevDir = Vector2Int.left;
+            cells[x - 1, y].PreviousDirection = Vector2Int.left;
             dirs.Push(cells[x - 1, y]);
         }
         if (!cells[x, y].BottomWall &&
             y > 0 &&
-            currentNode.prevDir != Vector2Int.up)
+            currentNode.PreviousDirection != Vector2Int.up)
         {
-            cells[x, y - 1].prevDir = Vector2Int.down;
+            cells[x, y - 1].PreviousDirection = Vector2Int.down;
             dirs.Push(cells[x, y - 1]);
         }
         if (!cells[x, y].RightWall &&
             x < width - 1 && cells[x + 1, y] != null &&
-            currentNode.prevDir != Vector2Int.left)
+            currentNode.PreviousDirection != Vector2Int.left)
         {
-            cells[x + 1, y].prevDir = Vector2Int.right;
+            cells[x + 1, y].PreviousDirection = Vector2Int.right;
             dirs.Push(cells[x + 1, y]);
         }
         if (!cells[x, y].UpperWall &&
             currentNode.Y < height - 1 && 
-            currentNode.prevDir != Vector2Int.down)
+            currentNode.PreviousDirection != Vector2Int.down)
         {
-            cells[x, y + 1].prevDir = Vector2Int.up;
+            cells[x, y + 1].PreviousDirection = Vector2Int.up;
             dirs.Push(cells[x, y + 1]);
         }
         return dirs;
@@ -201,35 +201,35 @@ public abstract class MazeGenerator
 
         if (!cells[x, y].LeftWall &&
             x > 0 && cells[x - 1, y] != null &&
-            currentCell.prevDir != Vector2Int.right)
+            currentCell.PreviousDirection != Vector2Int.right)
         {
             path.Add(Vector2Int.left);
             currentCell = cells[x - 1, y];
-            currentCell.prevDir = Vector2Int.left;
+            currentCell.PreviousDirection = Vector2Int.left;
         }
         else if (!cells[x, y].BottomWall &&
             y > 0 &&
-            currentCell.prevDir != Vector2Int.up)
+            currentCell.PreviousDirection != Vector2Int.up)
         {
             path.Add(Vector2Int.down);
             currentCell = cells[x, y - 1];
-            currentCell.prevDir = Vector2Int.down;
+            currentCell.PreviousDirection = Vector2Int.down;
         }
         else if (!cells[x, y].RightWall &&
             x < width - 1 && cells[x + 1, y] != null &&
-            currentCell.prevDir != Vector2Int.left)
+            currentCell.PreviousDirection != Vector2Int.left)
         {
             path.Add(Vector2Int.right);
             currentCell = cells[x + 1, y];
-            currentCell.prevDir = Vector2Int.right;
+            currentCell.PreviousDirection = Vector2Int.right;
         }
         else if (!cells[x, y].UpperWall &&
             currentCell.Y < height - 1 &&
-            currentCell.prevDir != Vector2Int.down)
+            currentCell.PreviousDirection != Vector2Int.down)
         {
             path.Add(Vector2Int.up);
             currentCell = cells[x, y + 1];
-            currentCell.prevDir = Vector2Int.up;
+            currentCell.PreviousDirection = Vector2Int.up;
         }
         return currentCell;
     }

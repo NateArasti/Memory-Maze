@@ -10,10 +10,10 @@ public class MazeGeneratorCell
     public bool UpperWall = true;
     public bool RightWall = true;
 
-    public bool Visited = false;
+    public bool Visited;
     public int DistanceFromStart;
 
-    public Vector2Int prevDir = Vector2Int.zero;
-    public MazeGeneratorCell prevNode;
-    public bool isDeadEnd = false;
+    public Vector2Int PreviousDirection = Vector2Int.zero;
+    public MazeGeneratorCell PreviousNode;
+    public bool IsDeadEnd;
 }

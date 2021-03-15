@@ -25,36 +25,36 @@ public abstract class PlayerController : MonoBehaviour
     [SerializeField] protected Text addScore;
     [SerializeField] protected Text TotalScore;
     [SerializeField] protected int cellFloorHeight = 2;
-    protected abstract Vector3 playerStartPos { get; }
-    protected abstract float animationDuration { get; }
+    protected abstract Vector3 PlayerStartPos { get; }
+    protected abstract float AnimationDuration { get; }
 
-    protected new Animation animation;
-    protected Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>> nodes;
-    protected MazeGeneratorCell curNode;
-    protected MazeGeneratorCell startPosition;
-    protected MazeGeneratorCell[,] cells;
-    protected Vector3 cellSize3D;
-    protected bool isMoved = false;
+    private Animation _animation;
+    protected Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>> Nodes;
+    protected MazeGeneratorCell CurrentNode;
+    protected MazeGeneratorCell StartPosition;
+    protected MazeGeneratorCell[,] Cells;
+    protected Vector3 CellSize3D;
+    private bool _isMoved;
     protected Score Score;
-    protected bool repeated = false;
-    protected bool hintShowed = false;
+    private bool _repeated;
+    private bool _hintShowed;
 
     protected void Start()
     {
         var maze = MazeSpawner.Maze;
-        nodes = maze.nodes;
-        cells = maze.cells;
-        startPosition = maze.startPosition;
-        cellSize3D = MazeSpawner.cellSize3D;
+        Nodes = maze.Nodes;
+        Cells = maze.Cells;
+        StartPosition = maze.StartPosition;
+        CellSize3D = MazeSpawner.cellSize3D;
 
-        Player2D = Instantiate(Player2D, playerStartPos + GetPlayer2DPosition(Vector3.zero), Quaternion.identity);
+        Player2D = Instantiate(Player2D, PlayerStartPos + GetPlayer2DPosition(Vector3.zero), Quaternion.identity);
 
-        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + nodes.Count)).ToString();
+        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count)).ToString();
         Score = GetComponent<Score>();
 
-        animation = Camera3D.GetComponent<Animation>();
+        _animation = Camera3D.GetComponent<Animation>();
 
-        curNode = maze.startPosition;
+        CurrentNode = maze.StartPosition;
 
         PrepareForFirstMove();
     }
@@ -65,23 +65,23 @@ public abstract class PlayerController : MonoBehaviour
 
     protected void MoveToNextNode(MazeGeneratorCell nextNode)
     {
-        isMoved = true;
-        StartCoroutine(MovementTowards(nodes[curNode][nextNode]));
-        Vector2 destination = new Vector2(nextNode.X, nextNode.Y);
-        if (!nextNode.isDeadEnd)
-            destination -= nextNode.prevDir;
+        _isMoved = true;
+        StartCoroutine(MovementTowards(Nodes[CurrentNode][nextNode]));
+        var destination = new Vector2(nextNode.X, nextNode.Y);
+        if (!nextNode.IsDeadEnd)
+            destination -= nextNode.PreviousDirection;
 
-        Player2D.transform.position = playerStartPos + GetPlayer2DPosition(destination);
+        Player2D.transform.position = PlayerStartPos + GetPlayer2DPosition(destination);
 
-        curNode = nextNode;
+        CurrentNode = nextNode;
     }
 
     public void Repeat()
     {
-        if (repeated) return;
-        repeated = true;
+        if (_repeated) return;
+        _repeated = true;
 
-        animation.Stop();
+        _animation.Stop();
         StopAllCoroutines();
         LoseEndGame.SetActive(false);
 
@@ -91,51 +91,49 @@ public abstract class PlayerController : MonoBehaviour
         OffOrOnMoveButtons(false);
         OffOrOnSideButtons(true);
 
-        Player2D.transform.position = playerStartPos;
+        Player2D.transform.position = PlayerStartPos;
 
-        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + nodes.Count)).ToString();
+        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count)).ToString();
 
-        curNode = MazeSpawner.Maze.startPosition;
+        CurrentNode = MazeSpawner.Maze.StartPosition;
 
         PrepareForFirstMove();
     }
 
-    protected IEnumerator ChangeScore(int add)
+    private IEnumerator ChangeScore(int add)
     {
         addScore.text = "-" + add;
         addAnim.Play();
         yield return new WaitForSeconds(0.5f);
         TotalScore.text = (int.Parse(TotalScore.text) - add).ToString();
-        if (int.Parse(TotalScore.text) <= 0)
+        if (int.Parse(TotalScore.text) > 0) yield break;
+        LoseEndGame.SetActive(true);
+        if (_repeated)
         {
-            LoseEndGame.SetActive(true);
-            if (repeated)
-            {
-                LoseEndGame.transform.GetChild(2).transform.localPosition = new Vector3(0, -50, 0);
-                LoseEndGame.transform.GetChild(3).gameObject.SetActive(false);
-            }
-            HintButton.SetActive(false);
-            OffOrOnMoveButtons(false);
-            OffOrOnSideButtons(false);
-            yield return new WaitForSeconds(5f);
-            SceneManager.LoadScene("Menu");
+            LoseEndGame.transform.GetChild(2).transform.localPosition = new Vector3(0, -50, 0);
+            LoseEndGame.transform.GetChild(3).gameObject.SetActive(false);
         }
+        HintButton.SetActive(false);
+        OffOrOnMoveButtons(false);
+        OffOrOnSideButtons(false);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Menu");
     }
 
     protected abstract IEnumerator MovementTowards(List<Vector2Int> path);
 
     protected abstract IEnumerator MovementBackwards(List<Vector2Int> path);
 
-    protected IEnumerator Move(string animname)
+    protected IEnumerator Move(string animationName)
     {
-        animation.PlayQueued(animname);
-        yield return new WaitForSeconds(animationDuration);
+        _animation.PlayQueued(animationName);
+        yield return new WaitForSeconds(AnimationDuration);
         ChangeTransforms();
     }
 
     protected abstract IEnumerator Finish(MazeGeneratorCell cell);
 
-    protected void ChangeTransforms()
+    private void ChangeTransforms()
     {
         var sin = Mathf.Sin(Mathf.Deg2Rad * transform.eulerAngles.y);
         var cos = Mathf.Cos(Mathf.Deg2Rad * transform.eulerAngles.y);
@@ -153,15 +151,15 @@ public abstract class PlayerController : MonoBehaviour
     public void MoveBack()
     {
         StartCoroutine(ChangeScore(30));
-        var previousNode = curNode.prevNode;
-        StartCoroutine(MovementBackwards(nodes[previousNode][curNode]));
+        var previousNode = CurrentNode.PreviousNode;
+        StartCoroutine(MovementBackwards(Nodes[previousNode][CurrentNode]));
 
-        Vector2 destination = new Vector2(previousNode.X, previousNode.Y);
-        if (previousNode != startPosition)
-            destination -= previousNode.prevDir;
-        Player2D.transform.position = playerStartPos + GetPlayer2DPosition(destination);
+        var destination = new Vector2(previousNode.X, previousNode.Y);
+        if (previousNode != StartPosition)
+            destination -= previousNode.PreviousDirection;
+        Player2D.transform.position = PlayerStartPos + GetPlayer2DPosition(destination);
 
-        curNode = previousNode;
+        CurrentNode = previousNode;
     }
 
     public abstract void MoveRight();
@@ -172,8 +170,8 @@ public abstract class PlayerController : MonoBehaviour
 
     public void ShowPath()
     {
-        if (hintShowed) return;
-        hintShowed = true;
+        if (_hintShowed) return;
+        _hintShowed = true;
         HintRenderer.DrawPath();
         StartCoroutine(ChangeScore(int.Parse(TotalScore.text) / 2));
         HintButton.SetActive(false);
@@ -183,16 +181,16 @@ public abstract class PlayerController : MonoBehaviour
     {
         if (Camera3D.enabled == true)
         {
-            if (isMoved)
+            if (_isMoved)
             {
                 StartCoroutine(ChangeScore(50));
-                isMoved = false;
+                _isMoved = false;
             }
             Camera3D.enabled = false;
             Camera2D.enabled = true;
 
             OffOrOnMoveButtons(false);
-            if (!hintShowed)
+            if (!_hintShowed)
                 HintButton.SetActive(true);
         }
         else

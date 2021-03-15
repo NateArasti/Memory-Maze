@@ -7,8 +7,8 @@ public class MazeCell : MonoBehaviour
     [SerializeField] private GameObject upperWall;
     [SerializeField] private GameObject rightWall;
 
-    public GameObject BottomWall { get => bottomWall; }
-    public GameObject LeftWall { get => leftWall;}
-    public GameObject UpperWall { get => upperWall; }
-    public GameObject RightWall { get => rightWall; }
+    public GameObject BottomWall => bottomWall;
+    public GameObject LeftWall => leftWall;
+    public GameObject UpperWall => upperWall;
+    public GameObject RightWall => rightWall;
 }

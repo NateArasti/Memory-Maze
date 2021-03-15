@@ -4,28 +4,28 @@ using UnityEngine;
 public class PerfectMazeGenerator : MazeGenerator
 {
     public PerfectMazeGenerator() :
-        base(width: PlayerPrefs.HasKey("Width") ? PlayerPrefs.GetInt("Width") : 5,
-        height: PlayerPrefs.HasKey("Height") ? PlayerPrefs.GetInt("Height") : 5)
+        base(PlayerPrefs.HasKey("Width") ? PlayerPrefs.GetInt("Width") : 5,
+        PlayerPrefs.HasKey("Height") ? PlayerPrefs.GetInt("Height") : 5)
     {
     }
 
     protected override void FillTheMaze()
     {
         for (var x = 0; x < width; ++x)
-        {
             for (var y = 0; y < height; ++y)
-            {
-                cells[x, y] = new MazeGeneratorCell { X = x, Y = y };
-            }
-        }
+                cells[x, y] = new MazeGeneratorCell
+                {
+                    X = x,
+                    Y = y
+                };
     }
 
     protected override void FillNeighboursList(
         List<MazeGeneratorCell> unvisitedNeighbours, 
         MazeGeneratorCell currentCell)
     {
-        int x = currentCell.X;
-        int y = currentCell.Y;
+        var x = currentCell.X;
+        var y = currentCell.Y;
 
         if (x > 0 && !cells[x - 1, y].Visited)
             unvisitedNeighbours.Add(cells[x - 1, y]);
@@ -39,19 +39,19 @@ public class PerfectMazeGenerator : MazeGenerator
 
     protected override MazeGeneratorCell MakeExit()
     {
-        MazeGeneratorCell furthest = cells[0, 0];
+        var furthest = cells[0, 0];
         for (var x = 0; x < width; ++x)
         {
-            if (cells[x, height - 1].DistanceFromStart > furthest.DistanceFromStart && cells[x, height - 1].isDeadEnd) 
+            if (cells[x, height - 1].DistanceFromStart > furthest.DistanceFromStart && cells[x, height - 1].IsDeadEnd) 
                 furthest = cells[x, height - 1];
-            if (cells[x, 0].DistanceFromStart > furthest.DistanceFromStart && cells[x, 0].isDeadEnd)
+            if (cells[x, 0].DistanceFromStart > furthest.DistanceFromStart && cells[x, 0].IsDeadEnd)
                 furthest = cells[x, 0];
         }
         for (var y = 0; y < height; ++y)
         {
-            if (cells[width - 1, y].DistanceFromStart > furthest.DistanceFromStart && cells[width - 1, y].isDeadEnd)
+            if (cells[width - 1, y].DistanceFromStart > furthest.DistanceFromStart && cells[width - 1, y].IsDeadEnd)
                 furthest = cells[width - 1, y];
-            if (cells[0, y].DistanceFromStart > furthest.DistanceFromStart && cells[0, y].isDeadEnd)
+            if (cells[0, y].DistanceFromStart > furthest.DistanceFromStart && cells[0, y].IsDeadEnd)
                 furthest = cells[0, y];
         }
 

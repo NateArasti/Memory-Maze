@@ -21,7 +21,7 @@ public abstract class MazeSpawner : MonoBehaviour
         SetCamera();
 
         Maze = generator.Maze;
-        var cells = Maze.cells;
+        var cells = Maze.Cells;
         for (var x = 0; x < width; ++x)
         {
             for (var y = 0; y < height; ++y)
@@ -33,7 +33,7 @@ public abstract class MazeSpawner : MonoBehaviour
             new Vector3(cellSize3D.x * (width / 2), 0, cellSize3D.z * (height / 2) + distanceBetweenMazes),
             Quaternion.identity);
         floor.transform.localScale = new Vector3(cellSize3D.x * (5 + width), 0.1f, cellSize3D.z * (5 + height));
-        CreateFinish(Maze.finishPosition);
+        CreateFinish(Maze.FinishPosition);
     }
 
     protected abstract void SetCamera();

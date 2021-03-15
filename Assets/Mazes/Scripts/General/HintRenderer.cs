@@ -6,57 +6,57 @@ public class HintRenderer : MonoBehaviour
     [SerializeField] private MazeSpawner MazeSpawner;
     [SerializeField] private Vector2 scaleVector;
 
-    private LineRenderer LineRenderer;
+    private LineRenderer _lineRenderer;
 
     private void Start()
     {
-        LineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer = GetComponent<LineRenderer>();
     }
 
     public void DrawPath()
     {
-        var cells = MazeSpawner.Maze.cells;
-        var currentPosition = new Vector2Int(MazeSpawner.Maze.finishPosition.X, MazeSpawner.Maze.finishPosition.Y);
-        var startPosition = new Vector2Int(MazeSpawner.Maze.startPosition.X, MazeSpawner.Maze.startPosition.Y);
+        var cells = MazeSpawner.Maze.Cells;
+        var currentPosition = new Vector2Int(MazeSpawner.Maze.FinishPosition.X, MazeSpawner.Maze.FinishPosition.Y);
+        var startPosition = new Vector2Int(MazeSpawner.Maze.StartPosition.X, MazeSpawner.Maze.StartPosition.Y);
         var positions = new List<Vector3>();
 
         while (currentPosition != startPosition)
         {
-            var X = currentPosition.x;
-            var Y = currentPosition.y;
+            var x = currentPosition.x;
+            var y = currentPosition.y;
 
-            positions.Add(new Vector2(X, Y) * scaleVector);
+            positions.Add(new Vector2(x, y) * scaleVector);
 
             var currentCell = cells[currentPosition.x, currentPosition.y];
 
-            if (X > 0 &&
-                !currentCell.LeftWall && cells[X - 1, Y] != null &&
-                cells[X - 1, Y].DistanceFromStart == currentCell.DistanceFromStart - 1)
+            if (x > 0 &&
+                !currentCell.LeftWall && cells[x - 1, y] != null &&
+                cells[x - 1, y].DistanceFromStart == currentCell.DistanceFromStart - 1)
             {
                 currentPosition.x -= 1;
             }
-            else if (Y > 0 &&
+            else if (y > 0 &&
                 !currentCell.BottomWall &&
-                cells[X, Y - 1].DistanceFromStart == currentCell.DistanceFromStart - 1)
+                cells[x, y - 1].DistanceFromStart == currentCell.DistanceFromStart - 1)
             {
                 currentPosition.y -= 1;
             }
-            else if (X < MazeSpawner.width - 1 &&
-                !cells[X, Y].RightWall && cells[X + 1, Y] != null &&
-                cells[X + 1, Y].DistanceFromStart == currentCell.DistanceFromStart - 1)
+            else if (x < MazeSpawner.width - 1 &&
+                !cells[x, y].RightWall && cells[x + 1, y] != null &&
+                cells[x + 1, y].DistanceFromStart == currentCell.DistanceFromStart - 1)
             {
                 currentPosition.x += 1;
             }
-            else if (Y < MazeSpawner.height - 1 &&
-                !cells[X, Y].UpperWall && 
-                cells[X, Y + 1].DistanceFromStart == currentCell.DistanceFromStart - 1)
+            else if (y < MazeSpawner.height - 1 &&
+                !cells[x, y].UpperWall && 
+                cells[x, y + 1].DistanceFromStart == currentCell.DistanceFromStart - 1)
             {
                 currentPosition.y += 1;
             }
         }
 
         positions.Add((Vector2)startPosition);
-        LineRenderer.positionCount = positions.Count;
-        LineRenderer.SetPositions(positions.ToArray());
+        _lineRenderer.positionCount = positions.Count;
+        _lineRenderer.SetPositions(positions.ToArray());
     }
 }

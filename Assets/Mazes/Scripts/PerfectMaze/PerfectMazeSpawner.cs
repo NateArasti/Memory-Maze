@@ -13,31 +13,23 @@ public class PerfectMazeSpawner : MazeSpawner
     {
         var x = finishCell.X;
         var y = finishCell.Y;
-        var delta = 2;
+        const int delta = 2;
         if (x == 0)
-        {
             Instantiate(Finish,
                 new Vector3((x - delta) * cellSize3D.x, y * cellSize3D.y, y * cellSize3D.z + distanceBetweenMazes),
                 Quaternion.identity);
-        }
         else if (y == 0)
-        {
             Instantiate(Finish,
                 new Vector3(x * cellSize3D.x, y * cellSize3D.y, (y - delta) * cellSize3D.z + distanceBetweenMazes),
                 Quaternion.Euler(0, -90, 0));
-        }
         else if (x == width - 1)
-        {
             Instantiate(Finish,
                 new Vector3((x + delta) * cellSize3D.x, y * cellSize3D.y, y * cellSize3D.z + distanceBetweenMazes),
                 Quaternion.Euler(0, 180, 0));
-        }
         else
-        {
             Instantiate(Finish,
                 new Vector3(x * cellSize3D.x, y * cellSize3D.y, (y + delta) * cellSize3D.z + distanceBetweenMazes),
                 Quaternion.Euler(0, 90, 0));
-        }
     }
 
     protected override void SetCamera()

@@ -9,29 +9,29 @@ public class TriangleMazeSpawner : MazeSpawner
 
     protected override void CreateFinish(MazeGeneratorCell finishCell)
     {
-        var finishX = Maze.finishPosition.X;
-        var finishY = Maze.finishPosition.Y;
+        var finishX = Maze.FinishPosition.X;
+        var finishY = Maze.FinishPosition.Y;
         if (finishY == 0)
         {
             var finish = Instantiate(Cell3D,
-                new Vector3(Maze.finishPosition.X * cellSize3D.x, 2f, 
-                (Maze.finishPosition.Y - 1) * cellSize3D.z + distanceBetweenMazes + 0.5f),
+                new Vector3(Maze.FinishPosition.X * cellSize3D.x, 2f, 
+                (Maze.FinishPosition.Y - 1) * cellSize3D.z + distanceBetweenMazes + 0.5f),
                 Quaternion.Euler(0, 180, 0)).GetComponent<MazeCell>();
             finish.BottomWall.SetActive(false);
         }
         else if (finishX == finishY)
         {
             var finish = Instantiate(Cell3D,
-                new Vector3((Maze.finishPosition.X - 1) * cellSize3D.x, 2f, 
-                Maze.finishPosition.Y * cellSize3D.z + distanceBetweenMazes + 0.5f),
+                new Vector3((Maze.FinishPosition.X - 1) * cellSize3D.x, 2f, 
+                Maze.FinishPosition.Y * cellSize3D.z + distanceBetweenMazes + 0.5f),
                 Quaternion.Euler(0, 180, 0)).GetComponent<MazeCell>();
             finish.LeftWall.SetActive(false);
         }
         else
         {
             var finish = Instantiate(Cell3D,
-                new Vector3((Maze.finishPosition.X + 1) * cellSize3D.x, 2f, 
-                Maze.finishPosition.Y * cellSize3D.z + distanceBetweenMazes + 0.5f),
+                new Vector3((Maze.FinishPosition.X + 1) * cellSize3D.x, 2f, 
+                Maze.FinishPosition.Y * cellSize3D.z + distanceBetweenMazes + 0.5f),
                 Quaternion.Euler(0, 180, 0)).GetComponent<MazeCell>();
             finish.RightWall.SetActive(false);
         }
@@ -45,17 +45,13 @@ public class TriangleMazeSpawner : MazeSpawner
 
     protected override void SpawnMazeCells(MazeGeneratorCell cell)
     {
-        if (cell != null)
-        {
-            if ((cell.X + cell.Y) % 2 == 0)
-            {
-                CreateCell(Cell2D,
-                    cell,
-                    new Vector3(cell.X * cellSize2D.x, cell.Y * cellSize2D.y - distanceBetweenMazes, cell.Y * cellSize2D.z));
-                CreateCell(Cell3D,
-                    cell,
-                    new Vector3(cell.X * cellSize3D.x, 2 + cell.Y * cellSize3D.y, cell.Y * cellSize3D.z + distanceBetweenMazes));
-            }
-        }
+        if (cell == null) return;
+        if ((cell.X + cell.Y) % 2 != 0) return;
+        CreateCell(Cell2D,
+            cell,
+            new Vector3(cell.X * cellSize2D.x, cell.Y * cellSize2D.y - distanceBetweenMazes, cell.Y * cellSize2D.z));
+        CreateCell(Cell3D,
+            cell,
+            new Vector3(cell.X * cellSize3D.x, 2 + cell.Y * cellSize3D.y, cell.Y * cellSize3D.z + distanceBetweenMazes));
     }
 }

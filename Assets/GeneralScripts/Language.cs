@@ -8,16 +8,15 @@ public class Language : MonoBehaviour
     [SerializeField]
     private string Russian = "null";
 
-    private Text text;
-    void Awake()
+    private Text _text;
+
+    private void Awake()
     {
-        text = GetComponent<Text>();
-        if (PlayerPrefs.HasKey("Language"))
-        {
-            if (PlayerPrefs.GetString("Language") == "English")
-                text.text = English;
-            else if (PlayerPrefs.GetString("Language") == "Russian")
-                text.text = Russian;
-        }
+        _text = GetComponent<Text>();
+        if (!PlayerPrefs.HasKey("Language")) return;
+        if (PlayerPrefs.GetString("Language") == "English")
+            _text.text = English;
+        else if (PlayerPrefs.GetString("Language") == "Russian")
+            _text.text = Russian;
     }
 }
