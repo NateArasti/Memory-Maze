@@ -45,11 +45,11 @@ public abstract class PlayerController : MonoBehaviour
         Nodes = maze.Nodes;
         Cells = maze.Cells;
         StartPosition = maze.StartPosition;
-        CellSize3D = MazeSpawner.cellSize3D;
+        CellSize3D = MazeSpawner.CellSize3D;
 
         Player2D = Instantiate(Player2D, PlayerStartPos + GetPlayer2DPosition(Vector3.zero), Quaternion.identity);
 
-        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count)).ToString();
+        TotalScore.text = (10 * (MazeSpawner.Width + MazeSpawner.Height + Nodes.Count)).ToString();
         Score = GetComponent<Score>();
 
         _animation = Camera3D.GetComponent<Animation>();
@@ -93,7 +93,7 @@ public abstract class PlayerController : MonoBehaviour
 
         Player2D.transform.position = PlayerStartPos;
 
-        TotalScore.text = (10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count)).ToString();
+        TotalScore.text = (10 * (MazeSpawner.Width + MazeSpawner.Height + Nodes.Count)).ToString();
 
         CurrentNode = MazeSpawner.Maze.StartPosition;
 
@@ -113,6 +113,7 @@ public abstract class PlayerController : MonoBehaviour
             LoseEndGame.transform.GetChild(2).transform.localPosition = new Vector3(0, -50, 0);
             LoseEndGame.transform.GetChild(3).gameObject.SetActive(false);
         }
+
         HintButton.SetActive(false);
         OffOrOnMoveButtons(false);
         OffOrOnSideButtons(false);
@@ -179,13 +180,14 @@ public abstract class PlayerController : MonoBehaviour
 
     public void SwapCams()
     {
-        if (Camera3D.enabled == true)
+        if (Camera3D.enabled)
         {
             if (_isMoved)
             {
                 StartCoroutine(ChangeScore(50));
                 _isMoved = false;
             }
+
             Camera3D.enabled = false;
             Camera2D.enabled = true;
 

@@ -3,30 +3,29 @@ using UnityEngine.UI;
 
 public class SoundSettings : MonoBehaviour
 {
-    [Header("Set in Inspector")]
-    public Sprite onSprite;
+    [Header("Set in Inspector")] public Sprite onSprite;
     public Sprite offSprite;
     public AudioSource audioSource;
 
-    private Image image;
+    private Image _image;
 
     private void Start()
     {
         if (name == "Music")
             audioSource = GameObject.Find("Background Music").GetComponent<AudioSource>();
-        image = GetComponent<Image>();
+        _image = GetComponent<Image>();
     }
 
     public void ChangeSettings()
     {
-        if(audioSource.volume == 0)
+        if (audioSource.volume == 0)
         {
-            image.sprite = onSprite;
+            _image.sprite = onSprite;
             audioSource.volume = 100;
         }
         else
         {
-            image.sprite = offSprite;
+            _image.sprite = offSprite;
             audioSource.volume = 0;
         }
     }

@@ -46,7 +46,7 @@ public class PerfectMazePlayerController : PlayerController
         if (MazeSpawner.Maze.FinishPosition.X == x && MazeSpawner.Maze.FinishPosition.Y == y)
         {
             yield return StartCoroutine(Finish(Cells[x, y]));
-            Score.EndGame(10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count), int.Parse(TotalScore.text),
+            Score.EndGame(10 * (MazeSpawner.Width + MazeSpawner.Height + Nodes.Count), int.Parse(TotalScore.text),
                 "PerfectMaze");
             WinEndGame.SetActive(true);
             yield break;
@@ -95,7 +95,7 @@ public class PerfectMazePlayerController : PlayerController
             finishDirection = Vector2Int.left;
         else if (y == 0)
             finishDirection = Vector2Int.down;
-        else if (x == MazeSpawner.width - 1)
+        else if (x == MazeSpawner.Width - 1)
             finishDirection = Vector2Int.right;
         else
             finishDirection = Vector2Int.up;

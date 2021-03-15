@@ -3,10 +3,8 @@ using UnityEngine.UI;
 
 public class Language : MonoBehaviour
 {
-    [SerializeField]
-    private string English = "null";
-    [SerializeField]
-    private string Russian = "null";
+    [SerializeField] private string English = "null";
+    [SerializeField] private string Russian = "null";
 
     private Text _text;
 

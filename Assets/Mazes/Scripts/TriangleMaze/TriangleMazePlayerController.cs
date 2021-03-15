@@ -115,7 +115,7 @@ public class TriangleMazePlayerController : PlayerController
                 yield return StartCoroutine(Move("Go60Left"));
         }
         WinEndGame.SetActive(true);
-        Score.EndGame(10 * (MazeSpawner.width + MazeSpawner.height + Nodes.Count), int.Parse(TotalScore.text), "TriangleMaze");
+        Score.EndGame(10 * (MazeSpawner.Width + MazeSpawner.Height + Nodes.Count), int.Parse(TotalScore.text), "TriangleMaze");
     }
 
     protected override IEnumerator MovementBackwards(List<Vector2Int> path)

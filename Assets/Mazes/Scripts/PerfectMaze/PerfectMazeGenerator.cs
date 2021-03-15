@@ -5,23 +5,23 @@ public class PerfectMazeGenerator : MazeGenerator
 {
     public PerfectMazeGenerator() :
         base(PlayerPrefs.HasKey("Width") ? PlayerPrefs.GetInt("Width") : 5,
-        PlayerPrefs.HasKey("Height") ? PlayerPrefs.GetInt("Height") : 5)
+            PlayerPrefs.HasKey("Height") ? PlayerPrefs.GetInt("Height") : 5)
     {
     }
 
     protected override void FillTheMaze()
     {
         for (var x = 0; x < width; ++x)
-            for (var y = 0; y < height; ++y)
-                cells[x, y] = new MazeGeneratorCell
-                {
-                    X = x,
-                    Y = y
-                };
+        for (var y = 0; y < height; ++y)
+            cells[x, y] = new MazeGeneratorCell
+            {
+                X = x,
+                Y = y
+            };
     }
 
     protected override void FillNeighboursList(
-        List<MazeGeneratorCell> unvisitedNeighbours, 
+        List<MazeGeneratorCell> unvisitedNeighbours,
         MazeGeneratorCell currentCell)
     {
         var x = currentCell.X;
@@ -42,11 +42,12 @@ public class PerfectMazeGenerator : MazeGenerator
         var furthest = cells[0, 0];
         for (var x = 0; x < width; ++x)
         {
-            if (cells[x, height - 1].DistanceFromStart > furthest.DistanceFromStart && cells[x, height - 1].IsDeadEnd) 
+            if (cells[x, height - 1].DistanceFromStart > furthest.DistanceFromStart && cells[x, height - 1].IsDeadEnd)
                 furthest = cells[x, height - 1];
             if (cells[x, 0].DistanceFromStart > furthest.DistanceFromStart && cells[x, 0].IsDeadEnd)
                 furthest = cells[x, 0];
         }
+
         for (var y = 0; y < height; ++y)
         {
             if (cells[width - 1, y].DistanceFromStart > furthest.DistanceFromStart && cells[width - 1, y].IsDeadEnd)
@@ -60,6 +61,6 @@ public class PerfectMazeGenerator : MazeGenerator
         else if (furthest.X == width - 1) cells[furthest.X, furthest.Y].RightWall = false;
         else cells[furthest.X, furthest.Y].UpperWall = false;
 
-        return new MazeGeneratorCell { X = furthest.X, Y = furthest.Y };
+        return new MazeGeneratorCell {X = furthest.X, Y = furthest.Y};
     }
 }
