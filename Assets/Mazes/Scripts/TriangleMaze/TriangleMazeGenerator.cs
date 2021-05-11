@@ -1,65 +1,48 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+// ReSharper disable once CheckNamespace
 public class TriangleMazeGenerator : MazeGenerator
 {
+    private const int StandardSideLength = 5;
+
     public TriangleMazeGenerator() :
-        base(width: (PlayerPrefs.HasKey("Side") ? PlayerPrefs.GetInt("Side") : 5) * 2 - 1,
-        height: PlayerPrefs.HasKey("Side") ? PlayerPrefs.GetInt("Side") : 5)
+        base((PlayerPrefs.HasKey("Side") ? PlayerPrefs.GetInt("Side") : StandardSideLength) * 2 - 1,
+            PlayerPrefs.HasKey("Side") ? PlayerPrefs.GetInt("Side") : StandardSideLength)
     {
     }
 
-    protected override void FillTheMaze()
+    protected override MazeCell FillTheMaze()
     {
-        for (var x = 0; x < width; ++x)
+        var bottom = (int)TriangleMazeCell.PossibleWalls.BottomWall;
+        var left = (int)TriangleMazeCell.PossibleWalls.LeftWall;
+        var right = (int)TriangleMazeCell.PossibleWalls.RightWall;
+
+        var cells = new TriangleMazeCell[Height][];
+        for (var y = 0; y < Height; y++)
         {
-            for (var y = 0; y < height; ++y)
+            cells[Height - 1 - y] = new TriangleMazeCell[2 * y + 1];
+            for (var x = 0; x < cells[Height - 1 - y].Length; x++)
             {
-                if (y <= x && x < width - y)
-                    cells[x, y] = new MazeGeneratorCell { X = x, Y = y };
-                else
-                    cells[x, y] = null;
+                cells[Height - 1 - y][x] = new TriangleMazeCell();
             }
         }
-    }
-
-    protected override void FillNeighboursList(
-        List<MazeGeneratorCell> unvisitedNeighbours,
-        MazeGeneratorCell currentCell)
-    {
-        int x = currentCell.X;
-        int y = currentCell.Y;
-
-        if (x > 0 && cells[x - 1, y] != null && !cells[x - 1, y].Visited)
-            unvisitedNeighbours.Add(cells[x - 1, y]);
-        if (x < width - 1 && cells[x + 1, y] != null && !cells[x + 1, y].Visited)
-            unvisitedNeighbours.Add(cells[x + 1, y]);
-        if ((x + y) % 2 == 0 && y > 0 && cells[x, y - 1] != null && !cells[x, y - 1].Visited)
-            unvisitedNeighbours.Add(cells[x, y - 1]);
-        if ((x + y) % 2 == 1 && y < height - 1 && cells[x, y + 1] != null && !cells[x, y + 1].Visited)
-            unvisitedNeighbours.Add(cells[x, y + 1]);
-    }
-
-    protected override MazeGeneratorCell MakeExit()
-    {
-        MazeGeneratorCell furthest = cells[0, 0];
-        for (var y = 0; y < height; ++y)
+        for (var y = 0; y < Height; y++)
         {
-            if (cells[y, y].DistanceFromStart > furthest.DistanceFromStart && cells[y, y].isDeadEnd)
-                furthest = cells[y, y];
-            if (cells[width - y - 1, y].DistanceFromStart > furthest.DistanceFromStart && cells[width - y - 1, y].isDeadEnd)
-                furthest = cells[width - y - 1, y];
-        }
-        for (var x = 0; x < width; x += 2) 
-        {
-            if (cells[x, 0].DistanceFromStart > furthest.DistanceFromStart && cells[x, 0].isDeadEnd)
-                furthest = cells[x, 0];
+            for (var x = 0; x < cells[y].Length; x++)
+            {
+                if (x % 2 == 1) cells[y][x].IsUpsideDown = true;
+                if (x > 0)
+                    cells[y][x].Neighbors[left] = cells[y][x - 1];
+                if (y > 0 && !cells[y][x].IsUpsideDown)
+                    cells[y][x].Neighbors[bottom] = cells[y - 1][x + 1];
+                if (y < Height - 1 && cells[y][x].IsUpsideDown)
+                    cells[y][x].Neighbors[bottom] = cells[y + 1][x - 1];
+                if (x < cells[y].Length - 1)
+                    cells[y][x].Neighbors[right] = cells[y][x + 1];
+                if(!cells[y][x].IsUpsideDown) cells[y][x].SetPositions(x + y, y);
+            }
         }
 
-        if (furthest.X == furthest.Y) furthest.LeftWall = false;
-        else if (furthest.Y == 0) furthest.BottomWall = false;
-        else cells[furthest.X, furthest.Y].RightWall = false;
-
-        return new MazeGeneratorCell { X = furthest.X, Y = furthest.Y };
+        return cells[0][0];
     }
 }

@@ -2,27 +2,23 @@
 
 public class BackgroundMusic : MonoBehaviour
 {
-    [Header("Set in Inspector")]
-    public AudioClip[] audioClips;
+    [Header("Set in Inspector")] public AudioClip[] audioClips;
 
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
     private static BackgroundMusic _instance;
 
-    void Awake()
+    private void Awake()
     {
         if (!_instance)
             _instance = this;
         else
-            Destroy(this.gameObject);
-        audioSource = GetComponent<AudioSource>();
-        DontDestroyOnLoad(this.gameObject);
+            Destroy(gameObject);
+        _audioSource = GetComponent<AudioSource>();
+        DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
+    private void Update()
     {
-        if (!audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
-        }
+        if (!_audioSource.isPlaying) _audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
     }
 }

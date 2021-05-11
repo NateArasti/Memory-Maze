@@ -1,10 +1,12 @@
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Maze
+public readonly struct Maze
 {
-    public MazeGeneratorCell[,] cells;
-    public MazeGeneratorCell finishPosition;
-    public MazeGeneratorCell startPosition;
-    public Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>> nodes;
+    public readonly MazeCell StartCell;
+    public readonly MazeCell FinishCell;
+    //public readonly Dictionary<MazeCell, Dictionary<MazeCell, List<Vector2>>> Nodes;
+
+    public Maze(MazeCell startCell, MazeCell finishCell)
+    {
+        StartCell = startCell;
+        FinishCell = finishCell;
+    }
 }

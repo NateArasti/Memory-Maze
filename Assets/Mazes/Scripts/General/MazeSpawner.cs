@@ -1,52 +1,90 @@
+using System.Collections.Generic;
 using UnityEngine;
 
+// ReSharper disable once IdentifierTypo
 public abstract class MazeSpawner : MonoBehaviour
 {
-    [SerializeField] protected GameObject Cell3D;
-    [SerializeField] protected GameObject Cell2D;
-    [SerializeField] protected GameObject Floor;
-    public abstract Vector3 cellSize3D { get; }
-    public abstract Vector3 cellSize2D { get; }
-    public int width { get; protected set; }
-    public int height { get; protected set; }
+#pragma warning disable 649
+    [Header("Finish")]
+    [SerializeField] protected GameObject Finish;
+    [SerializeField] protected float FinishPositionDelta;
+    [SerializeField] protected Vector3 FinishScale;
+    [Header("Player")]
+    [SerializeField] private GameObject player2D;
+    [SerializeField] private Vector3 player2DPositionDelta;
+    [SerializeField] private Vector3 player2DScale;
+    [Header("Floor")]
+    [SerializeField] private GameObject floor;
+    [SerializeField] private float floorDelta;
+    [Header("Cells")]
+    [SerializeField] private GameObject cell2DPrefab;
+    [SerializeField] private GameObject cell3DPrefab;
 
-    public int distanceBetweenMazes { get => 50; } 
-    public Maze Maze { get; protected set; }
-    protected abstract MazeGenerator generator { get; }
+    public int Width { get; private set; }
+    public int Height { get; private set; }
+
+    protected int DistanceBetweenMazes => 50;
+    public Maze Maze { get; private set; }
+    protected abstract MazeGenerator Generator { get; }
 
     private void Awake()
     {
-        width = generator.width;
-        height = generator.height;
+        Width = Generator.Width;
+        Height = Generator.Height;
         SetCamera();
 
-        Maze = generator.Maze;
-        var cells = Maze.cells;
-        for (var x = 0; x < width; ++x)
-        {
-            for (var y = 0; y < height; ++y)
-            {
-                SpawnMazeCells(cells[x, y]);
-            }
-        }
-        var floor = Instantiate(Floor,
-            new Vector3(cellSize3D.x * (width / 2), 0, cellSize3D.z * (height / 2) + distanceBetweenMazes),
+        Maze = Generator.Maze;
+
+        SpawnMaze(Maze.StartCell);
+
+        var floorCopy = Instantiate(
+            floor,
+            new Vector3(5 * Width, DistanceBetweenMazes - floorDelta, 5 * Height),
             Quaternion.identity);
-        floor.transform.localScale = new Vector3(cellSize3D.x * (5 + width), 0.1f, cellSize3D.z * (5 + height));
-        CreateFinish(Maze.finishPosition);
+        floorCopy.transform.localScale = new Vector3(30 * Width, 0.1f, 30 * Height);
+
+        Instantiate(player2D, Maze.StartCell.Cell2DPosition + player2DPositionDelta, Quaternion.identity)
+            .transform.localScale = player2DScale;
+
+        CreateFinish(Maze.FinishCell);
+    }
+
+    private void SpawnMaze(MazeCell startPosition)
+    {
+        var currentCell = startPosition;
+        var check = currentCell.Visited;
+        currentCell.Visited = !check;
+
+        var cellStack = new Stack<MazeCell>();
+        do
+        {
+            SpawnCell(currentCell);
+
+            var unvisitedNeighbors = MazeCell.GetNeighborsList(currentCell, check);
+            if (unvisitedNeighbors.Count > 0)
+            {
+                var chosenCell = unvisitedNeighbors[Random.Range(0, unvisitedNeighbors.Count)];
+                chosenCell.Visited = !check;
+                cellStack.Push(chosenCell);
+                currentCell = chosenCell;
+            }
+            else
+            {
+                currentCell = cellStack.Pop();
+            }
+        } while (cellStack.Count > 0);
+    }
+
+    private void SpawnCell(MazeCell cell)
+    {
+        Instantiate(cell2DPrefab, cell.Cell2DPosition, Quaternion.identity)
+            .GetComponent<Cell>()
+            .SetWalls(cell.Walls);
+        Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity)
+            .GetComponent<Cell>()
+            .SetWalls(cell.Walls);
     }
 
     protected abstract void SetCamera();
-    protected abstract void CreateFinish(MazeGeneratorCell finishCell);
-    protected abstract void SpawnMazeCells(MazeGeneratorCell cell);
-
-    protected void CreateCell(GameObject cellPrefab, MazeGeneratorCell currentCell, Vector3 coordinates)
-    {
-        MazeCell c = Instantiate(cellPrefab, coordinates,
-                    Quaternion.identity).GetComponent<MazeCell>();
-        if(c.BottomWall != null) c.BottomWall.SetActive(currentCell.BottomWall);
-        if(c.LeftWall != null) c.LeftWall.SetActive(currentCell.LeftWall);
-        if(c.RightWall != null) c.RightWall.SetActive(currentCell.RightWall);
-        if(c.UpperWall != null) c.UpperWall.SetActive(currentCell.UpperWall);
-    }
+    protected abstract void CreateFinish(MazeCell finishCell);
 }

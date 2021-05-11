@@ -1,236 +1,214 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+// ReSharper disable once CheckNamespace
 public abstract class MazeGenerator
 {
     public readonly Maze Maze;
 
-    public int width { get; protected set; }
-    public int height { get; protected set; }
+    public int Width { get; protected set; }
+    public int Height { get; protected set; }
 
-    protected MazeGeneratorCell[,] cells;
-
-    public MazeGenerator(int width, int height)
+    protected MazeGenerator(int width, int height)
     {
-        this.width = width;
-        this.height = height;
-        cells = new MazeGeneratorCell[width, height];
+        Width = width;
+        Height = height;
         Maze = GenerateMaze();
     }
 
-    protected abstract void FillTheMaze();
+    protected abstract MazeCell FillTheMaze();
 
-    public Maze GenerateMaze()
+    private Maze GenerateMaze()
     {
-        FillTheMaze();
+        var startCell = FillTheMaze();
 
-        RemoveWallsWithBackracker();
+        var finishCell = RemoveWallsWithBacktracker(startCell);
 
-        var maze = new Maze();
-        maze.cells = cells;
-        maze.startPosition = cells[0,0];
-        maze.nodes = GetAllNodes(maze);
-        maze.finishPosition = MakeExit();
-
-        return maze;
+        return new Maze(startCell, finishCell);
     }
 
-    protected abstract void FillNeighboursList(
-        List<MazeGeneratorCell> unvisitedNeighbours, 
-        MazeGeneratorCell currentCell);
-
-    private void RemoveWallsWithBackracker()
+    private MazeCell RemoveWallsWithBacktracker(MazeCell startCell)
     {
-        MazeGeneratorCell currentCell = cells[0, 0];
+        var check = startCell.Visited;
+        var furthest = startCell;
+        var currentCell = startCell;
         currentCell.Visited = true;
-        currentCell.DistanceFromStart = 0;
 
-        var cellStack = new Stack<MazeGeneratorCell>();
+        var cellStack = new Stack<MazeCell>();
 
         do
         {
-            var unvisitedNeighbours = new List<MazeGeneratorCell>();
+            var unvisitedNeighbors = MazeCell.GetNeighborsList(currentCell, check);
 
-            FillNeighboursList(unvisitedNeighbours, currentCell);
-
-            if (unvisitedNeighbours.Count > 0)
+            if (unvisitedNeighbors.Count > 0)
             {
-                MazeGeneratorCell chosenCell = unvisitedNeighbours[Random.Range(0, unvisitedNeighbours.Count)];
+                var chosenCell = unvisitedNeighbors[Random.Range(0, unvisitedNeighbors.Count)];
                 RemoveWall(currentCell, chosenCell);
 
-                chosenCell.Visited = true;
+                chosenCell.Visited = !check;
                 cellStack.Push(chosenCell);
-                chosenCell.DistanceFromStart = currentCell.DistanceFromStart + 1;
+                chosenCell.SetDistance(currentCell);
+                if (chosenCell.DistanceFromStart > furthest.DistanceFromStart && chosenCell.Neighbors.Values.Contains(null))
+                    furthest = chosenCell;
                 currentCell = chosenCell;
             }
             else
+            {
                 currentCell = cellStack.Pop();
-
+            }
         } while (cellStack.Count > 0);
+
+        foreach (var neighbor in furthest.Neighbors)
+        {
+            if (neighbor.Value != null) continue;
+            furthest.Walls[neighbor.Key] = false;
+            break;
+        }
+
+        return furthest;
     }
 
-    protected void RemoveWall(MazeGeneratorCell cellA, MazeGeneratorCell cellB)
+    private void RemoveWall(MazeCell cellA, MazeCell cellB)
     {
-        if (cellA.X == cellB.X)
-        {
-            if (cellA.Y > cellB.Y)
+        foreach (var cell in cellA.Neighbors)
+            if (cellB == cell.Value)
             {
-                cellA.BottomWall = false;
-                cellB.UpperWall = false;
+                cellA.Walls[cell.Key] = false;
+                break;
             }
-            else
+        foreach (var cell in cellB.Neighbors)
+            if (cellA == cell.Value)
             {
-                cellA.UpperWall = false;
-                cellB.BottomWall = false;
+                cellB.Walls[cell.Key] = false;
+                break;
             }
-        }
-        else
-        {
-            if (cellA.X > cellB.X)
-            {
-                cellA.LeftWall = false;
-                cellB.RightWall = false;
-            }
-            else
-            {
-                cellA.RightWall = false;
-                cellB.LeftWall = false;
-            }
-        }
     }
 
-    protected abstract MazeGeneratorCell MakeExit();
+    //private Dictionary<MazeCell, Dictionary<MazeCell, List<Vector2>>> GetAllNodes(MazeCell startCell)
+    //{
+    //    var nodes = new Dictionary<MazeCell, Dictionary<MazeCell, List<Vector2>>>();
+    //    var stackOfNodes = new Stack<MazeCell>();
+    //    maze.StartCell.PreviousDirection = Vector2Int.zero;
+    //    stackOfNodes.Push(maze.StartCell);
+    //    var unvisitedDirections = new Stack<MazeGeneratorCell>();
+    //    do
+    //    {
+    //        var currentNode = stackOfNodes.Pop();
+    //        unvisitedDirections.Clear();
+    //        var nextNodes = new Dictionary<MazeGeneratorCell, List<Vector2Int>>();
+    //        unvisitedDirections = FindPossibleDirections(currentNode);
+    //        while (unvisitedDirections.Count > 0)
+    //        {
+    //            var currentCell = unvisitedDirections.Pop();
+    //            var count = 0;
+    //            var path = new List<Vector2Int> { currentCell.PreviousDirection };
+    //            while (!CheckIfNode(currentCell))
+    //            {
+    //                currentCell = GetNextCell(currentCell, path);
+    //            todo: РЈР±СЂР°С‚СЊ РєРѕСЃС‚С‹Р»СЊ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //            count++;
+    //                if (count > Width * Height) break;
+    //            }
 
-    //Возвращает узлы(развилки или тупики) лабиринта
-    private Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>>
-        GetAllNodes(Maze maze)
-    {
-        var nodes = new Dictionary<MazeGeneratorCell, Dictionary<MazeGeneratorCell, List<Vector2Int>>>();
-        var stackOfNodes = new Stack<MazeGeneratorCell>();
-        maze.startPosition.prevDir = Vector2Int.zero;
-        stackOfNodes.Push(maze.startPosition);
-        var unvistedDirections = new Stack<MazeGeneratorCell>();
-        do
-        {
-            var currentNode = stackOfNodes.Pop();
-            unvistedDirections.Clear();
-            var nextNodes = new Dictionary<MazeGeneratorCell, List<Vector2Int>>();
+    //            stackOfNodes.Push(currentCell);
+    //            nextNodes[currentCell] = path;
+    //            currentCell.PreviousNode = currentNode;
+    //        }
 
-            unvistedDirections = FindPossibleDirections(currentNode);
+    //        nodes[currentNode] = nextNodes;
+    //        if (nextNodes.Count == 0)
+    //            currentNode.IsDeadEnd = true;
+    //    } while (stackOfNodes.Count > 0);
 
-            while (unvistedDirections.Count > 0)
-            {
-                var currentCell = unvistedDirections.Pop();
-                int count = 0;
-                var path = new List<Vector2Int>() { currentCell.prevDir };
-                while (!CheckIfNode(currentCell))
-                {
-                    currentCell = GetNextCell(currentCell, path);
-                    //Убрать костыль!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    count++;
-                    if (count > width * height) break;
-                }
-                stackOfNodes.Push(currentCell);
-                nextNodes[currentCell] = path;
-                currentCell.prevNode = currentNode;
-            }
-            nodes[currentNode] = nextNodes;
-            if (nextNodes.Count == 0)
-                currentNode.isDeadEnd = true;
-        } while (stackOfNodes.Count > 0);
+    //    return nodes;
+    //}
 
-        return nodes;
-    }
+    //private bool CheckIfNode(MazeCell currentCell)
+    //{
+    //    var count = 0;
 
-    private bool CheckIfNode(MazeGeneratorCell currentCell)
-    {
-        var count = 0;
+    //    if (!currentCell.LeftWall) count++;
+    //    if (!currentCell.BottomWall) count++;
+    //    if (!currentCell.RightWall) count++;
+    //    if (!currentCell.UpperWall) count++;
 
-        if (!currentCell.LeftWall) count++;
-        if (!currentCell.BottomWall) count++;
-        if (!currentCell.RightWall) count++;
-        if (!currentCell.UpperWall) count++;
+    //    return count != 2;
+    //}
 
-        return count != 2 ? true : false;
-    }
+    //private Stack<MazeCell> FindPossibleDirections(MazeCell currentNode)
+    //{
+    //    var dirs = new Stack<MazeCell>();
+    //    var x = currentNode.X;
+    //    var y = currentNode.Y;
 
-    private Stack<MazeGeneratorCell> FindPossibleDirections(
-        MazeGeneratorCell currentNode)
-    {
-        var dirs = new Stack<MazeGeneratorCell>();
-        int x = currentNode.X;
-        int y = currentNode.Y;
+    //    if (!cells[x, y].LeftWall && x > 0 && cells[x - 1, y] != null &&
+    //        currentNode.PreviousDirection != Vector2Int.right)
+    //    {
+    //        cells[x - 1, y].PreviousDirection = Vector2Int.left;
+    //        dirs.Push(cells[x - 1, y]);
+    //    }
 
-        if (!cells[x, y].LeftWall &&
-            x > 0 && cells[x - 1, y] != null &&
-            currentNode.prevDir != Vector2Int.right)
-        {
-            cells[x - 1, y].prevDir = Vector2Int.left;
-            dirs.Push(cells[x - 1, y]);
-        }
-        if (!cells[x, y].BottomWall &&
-            y > 0 &&
-            currentNode.prevDir != Vector2Int.up)
-        {
-            cells[x, y - 1].prevDir = Vector2Int.down;
-            dirs.Push(cells[x, y - 1]);
-        }
-        if (!cells[x, y].RightWall &&
-            x < width - 1 && cells[x + 1, y] != null &&
-            currentNode.prevDir != Vector2Int.left)
-        {
-            cells[x + 1, y].prevDir = Vector2Int.right;
-            dirs.Push(cells[x + 1, y]);
-        }
-        if (!cells[x, y].UpperWall &&
-            currentNode.Y < height - 1 && 
-            currentNode.prevDir != Vector2Int.down)
-        {
-            cells[x, y + 1].prevDir = Vector2Int.up;
-            dirs.Push(cells[x, y + 1]);
-        }
-        return dirs;
-    }
+    //    if (!cells[x, y].BottomWall && y > 0 && currentNode.PreviousDirection != Vector2Int.up)
+    //    {
+    //        cells[x, y - 1].PreviousDirection = Vector2Int.down;
+    //        dirs.Push(cells[x, y - 1]);
+    //    }
 
-    private MazeGeneratorCell GetNextCell(
-        MazeGeneratorCell currentCell, 
-        List<Vector2Int> path)
-    {
-        int x = currentCell.X;
-        int y = currentCell.Y;
+    //    if (!cells[x, y].RightWall && x < Width - 1 && cells[x + 1, y] != null &&
+    //        currentNode.PreviousDirection != Vector2Int.left)
+    //    {
+    //        cells[x + 1, y].PreviousDirection = Vector2Int.right;
+    //        dirs.Push(cells[x + 1, y]);
+    //    }
 
-        if (!cells[x, y].LeftWall &&
-            x > 0 && cells[x - 1, y] != null &&
-            currentCell.prevDir != Vector2Int.right)
-        {
-            path.Add(Vector2Int.left);
-            currentCell = cells[x - 1, y];
-            currentCell.prevDir = Vector2Int.left;
-        }
-        else if (!cells[x, y].BottomWall &&
-            y > 0 &&
-            currentCell.prevDir != Vector2Int.up)
-        {
-            path.Add(Vector2Int.down);
-            currentCell = cells[x, y - 1];
-            currentCell.prevDir = Vector2Int.down;
-        }
-        else if (!cells[x, y].RightWall &&
-            x < width - 1 && cells[x + 1, y] != null &&
-            currentCell.prevDir != Vector2Int.left)
-        {
-            path.Add(Vector2Int.right);
-            currentCell = cells[x + 1, y];
-            currentCell.prevDir = Vector2Int.right;
-        }
-        else if (!cells[x, y].UpperWall &&
-            currentCell.Y < height - 1 &&
-            currentCell.prevDir != Vector2Int.down)
-        {
-            path.Add(Vector2Int.up);
-            currentCell = cells[x, y + 1];
-            currentCell.prevDir = Vector2Int.up;
-        }
-        return currentCell;
-    }
+    //    if (!cells[x, y].UpperWall && currentNode.Y < Height - 1 && currentNode.PreviousDirection != Vector2Int.down)
+    //    {
+    //        cells[x, y + 1].PreviousDirection = Vector2Int.up;
+    //        dirs.Push(cells[x, y + 1]);
+    //    }
+
+    //    return dirs;
+    //}
+
+    //private MazeCell GetNextCell(MazeCell currentCell, List<Vector2Int> path)
+    //{
+    //    var x = currentCell.X;
+    //    var y = currentCell.Y;
+
+    //    if (!cells[x, y].LeftWall &&
+    //        x > 0 && cells[x - 1, y] != null &&
+    //        currentCell.PreviousDirection != Vector2Int.right)
+    //    {
+    //        path.Add(Vector2Int.left);
+    //        currentCell = cells[x - 1, y];
+    //        currentCell.PreviousDirection = Vector2Int.left;
+    //    }
+    //    else if (!cells[x, y].BottomWall &&
+    //             y > 0 &&
+    //             currentCell.PreviousDirection != Vector2Int.up)
+    //    {
+    //        path.Add(Vector2Int.down);
+    //        currentCell = cells[x, y - 1];
+    //        currentCell.PreviousDirection = Vector2Int.down;
+    //    }
+    //    else if (!cells[x, y].RightWall &&
+    //             x < Width - 1 && cells[x + 1, y] != null &&
+    //             currentCell.PreviousDirection != Vector2Int.left)
+    //    {
+    //        path.Add(Vector2Int.right);
+    //        currentCell = cells[x + 1, y];
+    //        currentCell.PreviousDirection = Vector2Int.right;
+    //    }
+    //    else if (!cells[x, y].UpperWall &&
+    //             currentCell.Y < Height - 1 &&
+    //             currentCell.PreviousDirection != Vector2Int.down)
+    //    {
+    //        path.Add(Vector2Int.up);
+    //        currentCell = cells[x, y + 1];
+    //        currentCell.PreviousDirection = Vector2Int.up;
+    //    }
+
+    //    return currentCell;
+    //}
 }

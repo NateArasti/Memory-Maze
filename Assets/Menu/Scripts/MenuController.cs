@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-    [Header("Set in Inspector")]
-    public GameObject MainMenu;
+    [Header("Set in Inspector")] public GameObject MainMenu;
     public GameObject ChooseLanguagePanel;
 
     public void Awake()
@@ -23,10 +22,10 @@ public class MenuController : MonoBehaviour
         GenerateScene("Menu");
     }
 
-    public void GenerateScene(string name)
+    public void GenerateScene(string sceneName)
     {
         PlayerPrefs.Save();
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ExitGame()
