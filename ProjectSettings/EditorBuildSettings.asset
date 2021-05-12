@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Triangle Maze.unity
     guid: ad64691f8e9e24445baa9ba0bc3392ba
+  - enabled: 1
+    path: Assets/Scenes/Sigma Maze.unity
+    guid: c9c4fa7a6c5aea943bd5e84e8d018425
   m_configObjects: {}

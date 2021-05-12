@@ -52,14 +52,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Menu\Scripts\SubpageController.cs" />
      <Compile Include="Assets\Player\Scripts\Player.cs" />
-     <Compile Include="Assets\Sounds\Scripts\SoundSettings.cs" />
      <Compile Include="Assets\Menu\Scripts\MenuController.cs" />
      <Compile Include="Assets\Menu\Scripts\MazeCharacteristics.cs" />
      <Compile Include="Assets\Mazes\Scripts\TriangleMaze\TriangleMazeGenerator.cs" />
      <Compile Include="Assets\Mazes\Scripts\PerfectMaze\PerfectMazeCell.cs" />
      <Compile Include="Assets\Mazes\Scripts\PerfectMaze\PerfectMazeSpawner.cs" />
      <Compile Include="Assets\Mazes\Scripts\SigmaMaze\SigmaCell.cs" />
+     <Compile Include="Assets\Menu\Scripts\LanguageHandler.cs" />
      <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Mazes\Scripts\General\Maze.cs" />
      <Compile Include="Assets\Mazes\Scripts\TriangleMaze\TriangleCell.cs" />
@@ -67,7 +68,7 @@
      <Compile Include="Assets\Mazes\Scripts\PerfectMaze\PerfectCell.cs" />
      <Compile Include="Assets\Mazes\Scripts\SigmaMaze\SigmaMazeCell.cs" />
      <Compile Include="Assets\GeneralScripts\PagesController.cs" />
-     <Compile Include="Assets\GeneralScripts\Language.cs" />
+     <Compile Include="Assets\GeneralScripts\Translator.cs" />
      <Compile Include="Assets\Mazes\Scripts\TriangleMaze\TriangleMazeSpawner.cs" />
      <Compile Include="Assets\Menu\Scripts\Background.cs" />
      <Compile Include="Assets\Mazes\Scripts\General\Cell.cs" />
@@ -79,6 +80,8 @@
      <Compile Include="Assets\Mazes\Scripts\PerfectMaze\PerfectMazeGenerator.cs" />
      <Compile Include="Assets\Mazes\Scripts\General\MazeGenerator.cs" />
      <Compile Include="Assets\Mazes\Scripts\General\MazeCell.cs" />
+     <Compile Include="Assets\Menu\Scripts\OverlayController.cs" />
+     <Compile Include="Assets\Sounds\Scripts\SoundHandler.cs" />
  <Reference Include="UnityEngine">
  <HintPath>F:/Program Files/Unity/Unity/2020.3.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

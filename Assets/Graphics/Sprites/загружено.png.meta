@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 72cdd1b1bb49d5f47bd5d2b3ecd3e851
+guid: f406526c50011c8498ad3097834427af
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -55,11 +55,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -115,7 +117,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 81602dd0df42c0f46afc1af97eec516c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
