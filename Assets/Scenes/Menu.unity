@@ -1469,11 +1469,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - {fileID: 8300000, guid: 43e41e66b485d9a42bfe78371a0d8246, type: 3}
-  - {fileID: 8300000, guid: 8cce613935f1e9e448e6071b7ad29088, type: 3}
-  - {fileID: 8300000, guid: 17e40487cec58014392f55f1255a9d13, type: 3}
-  - {fileID: 8300000, guid: 3b459fe502c20e542a191dfc6df8a0be, type: 3}
-  - {fileID: 8300000, guid: 9d8ce7db0f00ec64c975f6619c1307a1, type: 3}
+  - {fileID: 8300000, guid: b8de8071cf94357429cd945c9b3047cf, type: 3}
+  - {fileID: 8300000, guid: b3de26ab86ca9ab479e4f16acc38f0d5, type: 3}
+  - {fileID: 8300000, guid: a803d163fa5f14c4597100ec5b977ac9, type: 3}
+  - {fileID: 8300000, guid: 3ebec38611516bb4ebadfb27b54a0592, type: 3}
+  - {fileID: 8300000, guid: e410c89bdad8fdd48819cec44c5471a6, type: 3}
+  - {fileID: 8300000, guid: 20337b3da8efda146be5f48adfb05343, type: 3}
+  - {fileID: 8300000, guid: 8202ca700bf1f5a4ebffe891651ed9a7, type: 3}
+  - {fileID: 8300000, guid: afbd8487e76192c49b0504661b6b3f43, type: 3}
+  - {fileID: 8300000, guid: f2ae2bfc24bdf3b48924a66a37484cc6, type: 3}
+  - {fileID: 8300000, guid: 7eace287407cc78448378913200c1466, type: 3}
 --- !u!82 &251856302
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6093,7 +6098,6 @@ GameObject:
   - component: {fileID: 1045805177}
   - component: {fileID: 1045805176}
   - component: {fileID: 1045805179}
-  - component: {fileID: 1045805180}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6181,21 +6185,6 @@ MonoBehaviour:
   translation: {x: 1, y: 0, z: 0}
   speed: 0.5
   background: {fileID: 7035550876949314600, guid: acdf47e19e9b5d04392eb4053f09362c, type: 3}
---- !u!114 &1045805180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045805175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b494bf6526f534591e0cfb7722e441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenu: {fileID: 1354855633}
-  chooseLanguagePanel: {fileID: 734378457}
-  langSettingsSubpage: {fileID: 588003352}
 --- !u!1 &1046440373
 GameObject:
   m_ObjectHideFlags: 0
@@ -7783,7 +7772,6 @@ RectTransform:
   m_Children:
   - {fileID: 152746745}
   - {fileID: 1837936994}
-  - {fileID: 1600731232}
   m_Father: {fileID: 326406534}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9352,85 +9340,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584791484}
-  m_CullTransparentMesh: 0
---- !u!1 &1600731231
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1600731232}
-  - component: {fileID: 1600731234}
-  - component: {fileID: 1600731233}
-  m_Layer: 5
-  m_Name: SoundLicense
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1600731232
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600731231}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1354855634}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -279.43213}
-  m_SizeDelta: {x: 500, y: 41.547}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1600731233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600731231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 5540a3a17675d984d8574b28960895c8, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Royalty Free Music from Bensound
---- !u!222 &1600731234
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600731231}
   m_CullTransparentMesh: 0
 --- !u!1 &1607076632
 GameObject:
@@ -11618,7 +11527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045805180}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: GenerateScene
         m_Mode: 5
