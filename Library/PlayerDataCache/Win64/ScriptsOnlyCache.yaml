@@ -1,22 +1,23 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - Background
-    - BackgroundMusic
-    - Language
+    - CardAnimationCleaner
+    - ExitGame
     - LanguageHandler
-    - MazeCharacteristics
-    - MenuController
+    - MazeCharacteristicsInputHandler
+    - MazeStarter
     - MouseLook
-    - PagesController
+    - MusicHandler
     - PerfectCell
     - PerfectMazeSpawner
-    - Player
+    - PlayerMovement
+    - PlayerUI
     - SigmaCell
     - SigmaMazeSpawner
-    - SoundSettings
-    - SubpageController
+    - SoundHandler
+    - SoundsToggleScript
     - Timer
+    - Translator
     - TriangleCell
     - TriangleMazeSpawner
     Unity.2D.Animation.Editor.dll:
@@ -34,11 +35,17 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.CollabProxy.Editor.dll:
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -54,97 +61,13 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
-    Assets/Scenes/Menu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1476}
-    - Class: 114
-      Script: {instanceID: 1494}
-    - Class: 114
-      Script: {instanceID: 1606}
-    - Class: 114
-      Script: {instanceID: 1792}
-    - Class: 114
-      Script: {instanceID: 2084}
-    - Class: 114
-      Script: {instanceID: 2096}
-    - Class: 114
-      Script: {instanceID: 2150}
-    - Class: 114
-      Script: {instanceID: 2464}
-    - Class: 114
-      Script: {instanceID: 2610}
-    - Class: 114
-      Script: {instanceID: 2724}
-    - Class: 114
-      Script: {instanceID: 2784}
-    - Class: 114
-      Script: {instanceID: 2834}
-    - Class: 114
-      Script: {instanceID: 2996}
-    - Class: 114
-      Script: {instanceID: 3004}
-    - Class: 114
-      Script: {instanceID: 3102}
-    - Class: 114
-      Script: {instanceID: 3238}
-    - Class: 114
-      Script: {instanceID: 3470}
-    - Class: 114
-      Script: {instanceID: 3542}
-    - Class: 114
-      Script: {instanceID: 3724}
-    - Class: 114
-      Script: {instanceID: 3758}
-    - Class: 114
-      Script: {instanceID: 3806}
-    - Class: 114
-      Script: {instanceID: 3976}
-    - Class: 114
-      Script: {instanceID: 4156}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Perfect Maze.unity:
+    Assets/Scenes/Maze.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -171,6 +94,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
     - Class: 95
@@ -180,9 +107,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1496}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 1646}
     - Class: 114
       Script: {instanceID: 2084}
     - Class: 114
@@ -192,177 +121,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2610}
     - Class: 114
+      Script: {instanceID: 2680}
+    - Class: 114
+      Script: {instanceID: 2724}
+    - Class: 114
       Script: {instanceID: 2784}
     - Class: 114
       Script: {instanceID: 2880}
     - Class: 114
       Script: {instanceID: 2996}
+    - Class: 114
+      Script: {instanceID: 3004}
+    - Class: 114
+      Script: {instanceID: 3044}
+    - Class: 114
+      Script: {instanceID: 3102}
     - Class: 114
       Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 4436}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 120
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 137
-      Script: {instanceID: 0}
-    - Class: 143
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Sigma Maze.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 90
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
+      Script: {instanceID: 3540}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 3560}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 3756}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 3804}
     - Class: 114
-      Script: {instanceID: 2464}
+      Script: {instanceID: 3976}
     - Class: 114
-      Script: {instanceID: 2610}
-    - Class: 114
-      Script: {instanceID: 2680}
-    - Class: 114
-      Script: {instanceID: 2784}
-    - Class: 114
-      Script: {instanceID: 2880}
-    - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 4156}
     - Class: 114
       Script: {instanceID: 4436}
     - Class: 114
       Script: {instanceID: 4486}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 120
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 137
-      Script: {instanceID: 0}
-    - Class: 143
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/Triangle Maze.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 90
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 17770}
     - Class: 114
-      Script: {instanceID: 1644}
+      Script: {instanceID: 17774}
     - Class: 114
-      Script: {instanceID: 2084}
-    - Class: 114
-      Script: {instanceID: 2464}
-    - Class: 114
-      Script: {instanceID: 2610}
-    - Class: 114
-      Script: {instanceID: 2784}
-    - Class: 114
-      Script: {instanceID: 2880}
-    - Class: 114
-      Script: {instanceID: 2996}
-    - Class: 114
-      Script: {instanceID: 3044}
-    - Class: 114
-      Script: {instanceID: 3562}
-    - Class: 114
-      Script: {instanceID: 4436}
+      Script: {instanceID: 64270}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -389,13 +186,96 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    Assets/Scenes/Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1496}
+    - Class: 114
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 2084}
+    - Class: 114
+      Script: {instanceID: 2148}
+    - Class: 114
+      Script: {instanceID: 2312}
+    - Class: 114
+      Script: {instanceID: 2464}
+    - Class: 114
+      Script: {instanceID: 2610}
+    - Class: 114
+      Script: {instanceID: 2724}
+    - Class: 114
+      Script: {instanceID: 2784}
+    - Class: 114
+      Script: {instanceID: 2834}
+    - Class: 114
+      Script: {instanceID: 2996}
+    - Class: 114
+      Script: {instanceID: 3004}
+    - Class: 114
+      Script: {instanceID: 3102}
+    - Class: 114
+      Script: {instanceID: 3238}
+    - Class: 114
+      Script: {instanceID: 3540}
+    - Class: 114
+      Script: {instanceID: 3756}
+    - Class: 114
+      Script: {instanceID: 3804}
+    - Class: 114
+      Script: {instanceID: 3816}
+    - Class: 114
+      Script: {instanceID: 3976}
+    - Class: 114
+      Script: {instanceID: 4156}
+    - Class: 114
+      Script: {instanceID: 4232}
+    - Class: 114
+      Script: {instanceID: 64270}
+    - Class: 114
+      Script: {instanceID: 140806}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: d2b8df59f804e157c8024a8d864b3be7
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SubpageController
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -458,10 +338,10 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: a2a685a8e98fd4b80bc52d00c0fdec99
+      Hash: 03eadb23a0a00e92880b9482e6b548eb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Player
+    className: PlayerMovement
   - hash:
       serializedVersion: 2
       Hash: 21a9c6dbf300fc1f6dc15ca7e2c39a37
@@ -488,12 +368,6 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 052c7d74954619734784cc34c2152a7a
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SoundSettings
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -512,22 +386,16 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 36895d2f92895ca6712673e33ffc3ce3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuController
-  - hash:
-      serializedVersion: 2
       Hash: f1d735cc1a21c3704ab52568f4fbfcf8
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: ffa4574f936dc4ccd4fbf12dd7d58e81
+      Hash: e1918e69912bbe31c69d4af16eab6412
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MazeCharacteristics
+    className: MazeCharacteristicsInputHandler
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -546,6 +414,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: IKManager2D
+  - hash:
+      serializedVersion: 2
+      Hash: 3126286fb6fee2d3262bb6d067cc7df7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CardAnimationCleaner
   - hash:
       serializedVersion: 2
       Hash: 5f170942ee57c7a568f5bcfc7521adea
@@ -725,7 +599,7 @@ ScriptsOnlyBuild:
       Hash: 9766d8f1f45976b8bbc8e8efabd365b8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BackgroundMusic
+    className: MusicHandler
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -764,22 +638,16 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: 45a61e2b323cef6e10d82c1ff8b1fc4c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PagesController
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 59b74f60a714e8ddec1bbae8ac940a8f
+      Hash: 673b2094016a574c882c161022932d1c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Language
+    className: Translator
   - hash:
       serializedVersion: 2
       Hash: 115806776fd247e4e77e311623f279ad
@@ -824,12 +692,6 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: beea7acfa40a3cbf63c19e7093c7556e
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Background
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
@@ -852,6 +714,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundHandler
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -1020,10 +888,38 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 223af297bffc9c086188472b27588e11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MazeStarter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MazeCharacteristics
+  - hash:
+      serializedVersion: 2
+      Hash: 72a3bc6827039ac944b20e14ca494d58
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerUI
+  - hash:
+      serializedVersion: 2
+      Hash: 08df47eff95b5e9071ed7b5d8ef14b08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundsToggleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ExitGame
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
-  - Assets/Scenes/Perfect Maze.unity
-  - Assets/Scenes/Triangle Maze.unity
-  - Assets/Scenes/Sigma Maze.unity
+  - Assets/Scenes/Maze.unity
   playerPath: "D:/User Data/\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B/temp/MemoryMaze.exe"

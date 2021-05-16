@@ -11,7 +11,7 @@ public enum MazeType
 
 public class MazeCharacteristics : MonoBehaviour
 {
-    public static MazeType CurrentMazeType { get; private set; } = MazeType.TriangleMaze;
+    public static MazeType CurrentMazeType { get; private set; } = MazeType.PerfectMaze;
 
     public static IReadOnlyDictionary<MazeType, (string[] paramNames, int[] paramValues)> Characteristics =
         new Dictionary<MazeType, (string[] paramNames, int[] paramValues)>
