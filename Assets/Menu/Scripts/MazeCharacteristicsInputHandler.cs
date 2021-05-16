@@ -4,37 +4,31 @@ using UnityEngine.UI;
 public class MazeCharacteristicsInputHandler : MonoBehaviour
 {
     public int valueDelta = 1;
-    public InputField ValueToChange;
+    public InputField valueToChange;
 
     public void Awake()
     {
-        if (name != "Width" && name != "Height" && name!= "Side")
+        if (name != "Width" && name != "Height" && name != "Side Size")
             return;
         if (!PlayerPrefs.HasKey(name))
            PlayerPrefs.SetInt(name, 5);
-        ValueToChange.text = PlayerPrefs.GetInt(name).ToString();
+        valueToChange.text = PlayerPrefs.GetInt(name).ToString();
     }
 
     public void ChangeValue()
     {
-        ValueToChange.text = (int.Parse(ValueToChange.text) + valueDelta).ToString();
+        valueToChange.text = (int.Parse(valueToChange.text) + valueDelta).ToString();
         CheckValue();
     }
+    
     public void CheckValue()
     {
-        int value;
-        try
-        {
-            value = int.Parse(ValueToChange.text);
-        }
-        catch
-        {
-            value = 0;
-        }
+        var result = int.TryParse(valueToChange.text, out var value);
+        value = result ? value : 0;
         if (value < 5)
-            ValueToChange.text = "5";
+            valueToChange.text = "5";
         else if (value > 40)
-            ValueToChange.text = "40";
-        PlayerPrefs.SetInt(ValueToChange.name, int.Parse(ValueToChange.text));
+            valueToChange.text = "40";
+        PlayerPrefs.SetInt(valueToChange.name, int.Parse(valueToChange.text));
     }
 }
