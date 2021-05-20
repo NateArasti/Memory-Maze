@@ -61,6 +61,7 @@
     <Compile Include="Assets\Menu\Scripts\CardAnimationCleaner.cs" />
     <Compile Include="Assets\Mazes\Scripts\0_PerfectMaze\PerfectMazeCell.cs" />
     <Compile Include="Assets\Mazes\Scripts\0_PerfectMaze\PerfectMazeSpawner.cs" />
+    <Compile Include="Assets\Mazes\Scripts\Arcade\FinishArcadeUI.cs" />
     <Compile Include="Assets\Mazes\Scripts\2_SigmaMaze\SigmaCell.cs" />
     <Compile Include="Assets\Menu\Scripts\LanguageHandler.cs" />
     <Compile Include="Assets\Player\Scripts\MouseLook.cs" />
@@ -74,11 +75,10 @@
     <Compile Include="Assets\Menu\Scripts\Translator.cs" />
     <Compile Include="Assets\Mazes\Scripts\1_TriangleMaze\TriangleMazeSpawner.cs" />
     <Compile Include="Assets\Mazes\Scripts\General\MazeStarter.cs" />
-    <Compile Include="Assets\Sounds\Scripts\SoundHandler.cs" />
     <Compile Include="Assets\Mazes\Scripts\General\Cell.cs" />
     <Compile Include="Assets\Mazes\Scripts\1_TriangleMaze\TriangleMazeCell.cs" />
     <Compile Include="Assets\Menu\Scripts\MazeCharacteristicsHandler.cs" />
-    <Compile Include="Assets\Mazes\Scripts\ArcadeProgression.cs" />
+    <Compile Include="Assets\Mazes\Scripts\Arcade\ArcadeProgression.cs" />
     <Compile Include="Assets\Mazes\Scripts\2_SigmaMaze\SigmaMazeGenerator.cs" />
     <Compile Include="Assets\Mazes\Scripts\General\Finish.cs" />
     <Compile Include="Assets\Player\Scripts\PlayerUI.cs" />
@@ -90,7 +90,6 @@
     <Compile Include="Assets\GeneralScripts\MazeCharacteristics.cs" />
     <Compile Include="Assets\Mazes\Scripts\General\MazeGenerator.cs" />
     <Compile Include="Assets\Mazes\Scripts\General\MazeCell.cs" />
-    <Compile Include="Assets\Mazes\Scripts\ArcadeFinish.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

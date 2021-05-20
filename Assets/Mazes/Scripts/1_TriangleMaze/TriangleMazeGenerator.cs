@@ -1,10 +1,8 @@
 ﻿public class TriangleMazeGenerator : MazeGenerator
 {
-    private const int StandardSideLength = 5;
-
     public TriangleMazeGenerator() :
         base(MazeCharacteristics.Characteristics[MazeType.TriangleMaze].paramValues[0] * 2 - 1,
-            MazeCharacteristics.Characteristics[MazeType.PerfectMaze].paramValues[0])
+            MazeCharacteristics.Characteristics[MazeType.TriangleMaze].paramValues[0])
     {
     }
 

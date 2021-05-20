@@ -8,12 +8,14 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private Camera camera3D;
     [SerializeField] private Camera camera2D;
 
-    [Header("UI Panels")] 
+    [Header("Pause")] 
     [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject losePanelClassic;
-    [SerializeField] private GameObject losePanelArcade;
-    [SerializeField] private GameObject winPanelClassic;
-    [SerializeField] private GameObject winPanelArcade;
+    [SerializeField] private Button settingsPanelExitButton;
+    [Header("Finish")]
+    [SerializeField] private GameObject finishClassic;
+    [SerializeField] private GameObject[] classicFinishHeaders;
+    [SerializeField] private GameObject finishArcade;
+    [SerializeField] private GameObject[] arcadeFinishHeaders;
 
     private LineRenderer lineRenderer;
     private readonly Vector3 delta = new Vector3(0, 0, 2);
@@ -26,15 +28,15 @@ public class PlayerUI : MonoBehaviour
     private void Update()
     {
         if (Input.GetMouseButton(0) && camera2D.enabled) Draw();
-        if (Input.GetKeyDown(KeyCode.M)) SwapCams();
         if (Input.GetKeyDown(KeyCode.Escape)) SwitchPause();
     }
 
     public void SwitchPause()
     {
+        if(camera2D.enabled) return;
         Time.timeScale = 1 - Time.timeScale;
-        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? 
-            CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
+        settingsPanelExitButton.onClick.Invoke();
         pausePanel.SetActive(Time.timeScale == 0);
     }
 
@@ -45,20 +47,11 @@ public class PlayerUI : MonoBehaviour
             camera2D.ScreenToWorldPoint(Input.mousePosition) + delta);
     }
 
-    private void SwapCams()
+    public void SwapCams()
     {
-        if (camera2D.enabled)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            camera2D.enabled = false;
-            camera3D.enabled = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.None;
-            camera2D.enabled = true;
-            camera3D.enabled = false;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        camera2D.enabled = false;
+        camera3D.enabled = true;
     }
 
     public void Win()
@@ -67,10 +60,14 @@ public class PlayerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)
         {
-            winPanelArcade.SetActive(true);
+            arcadeFinishHeaders[0].SetActive(true);
+            finishArcade.SetActive(true);
         }
-        else 
-            winPanelClassic.SetActive(true);
+        else
+        {
+            classicFinishHeaders[0].SetActive(true);
+            finishClassic.SetActive(true);
+        }
     }
 
     public void Lose()
@@ -79,12 +76,13 @@ public class PlayerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)
         {
-            var mazeNumber = losePanelArcade.transform.GetChild(2).GetComponent<Text>();
-            var words = mazeNumber.text.Split(' ');
-            mazeNumber.text = $"{int.Parse(words[0]) + 1}" + words[1];
-            losePanelArcade.SetActive(true);
+            arcadeFinishHeaders[1].SetActive(true);
+            finishArcade.SetActive(true);
         }
         else
-            losePanelClassic.SetActive(true);
+        {
+            classicFinishHeaders[1].SetActive(true);
+            finishClassic.SetActive(true);
+        }
     }
 }

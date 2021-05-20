@@ -10,7 +10,7 @@ public class MazeCharacteristicsHandler : MonoBehaviour
     [SerializeField] private InputField[] characteristics;
     private int valueDelta = 1;
 
-    public void Awake()
+    public void Start()
     {
         for(var i = 0; i < characteristics.Length; ++i)
             characteristics[i].text = MazeCharacteristics.Characteristics[mazeType].paramValues[i].ToString();
@@ -40,5 +40,6 @@ public class MazeCharacteristicsHandler : MonoBehaviour
     {
         MazeCharacteristics.SetMazeCharacteristics(new MazeData(mazeType,
             characteristics.Select(input => int.Parse(input.text)).ToArray()));
+        MazeCharacteristics.SaveMazesCharacteristics();
     }
 }

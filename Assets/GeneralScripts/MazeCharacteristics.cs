@@ -35,9 +35,11 @@ public class MazeCharacteristics : MonoBehaviour
     {
         foreach (var mazeType in Characteristics)
             for (var i = 0; i < Characteristics[mazeType.Key].paramNames.Length; i++)
+            {
                 Characteristics[mazeType.Key].paramValues[i] =
                     PlayerPrefs.GetInt(Characteristics[mazeType.Key].paramNames[i],
                         Characteristics[mazeType.Key].paramValues[i]);
+            }
     }
 
     public static void SetMazeCharacteristics(MazeData data)
@@ -47,9 +49,18 @@ public class MazeCharacteristics : MonoBehaviour
         CurrentMazeType = data.MazeType;
         for (var i = 0; i < Characteristics[CurrentMazeType].paramNames.Length; i++)
         {
-            PlayerPrefs.SetInt(Characteristics[CurrentMazeType].paramNames[i], data.Params[i]);
             Characteristics[CurrentMazeType].paramValues[i] = data.Params[i];
         }
+    }
+
+    public static void SaveMazesCharacteristics()
+    {
+        foreach (var mazeType in Characteristics)
+            for (var i = 0; i < Characteristics[mazeType.Key].paramNames.Length; i++)
+            {
+                PlayerPrefs.SetInt(Characteristics[mazeType.Key].paramNames[i], 
+                    Characteristics[mazeType.Key].paramValues[i]);
+            }
         PlayerPrefs.Save();
     }
 }
