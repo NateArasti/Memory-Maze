@@ -3,13 +3,15 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private float mouseSensitivity = 100f;
     [SerializeField] private Transform playerBody;
+
+    public static float mouseSensitivity;
 
     private float xRotation;
 
     private void Start()
     {
+        mouseSensitivity = PlayerPrefs.HasKey("MouseSensitivity") ? PlayerPrefs.GetInt("MouseSensitivity") : 500;
         transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 

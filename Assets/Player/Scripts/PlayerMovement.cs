@@ -20,11 +20,10 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity = Vector3.zero;
     private bool isGrounded;
-    private Maze maze;
 
     private void Start()
     {
-        maze = mazeStarter.CurrentMaze;
+        var maze = mazeStarter.CurrentMaze;
         controller = GetComponent<CharacterController>();
         controller.enabled = false;
         transform.position = maze.StartCell.Cell3DPosition + new Vector3(0, 5, 0);

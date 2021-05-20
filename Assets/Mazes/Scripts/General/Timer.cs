@@ -6,7 +6,8 @@ public class Timer : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private Text time;
-    [SerializeField] private float pathLengthScale = 1;
+    [SerializeField] [Range(0,1)] private float pathLengthScale = 1;
+    [SerializeField] private PlayerUI player;
 
     public bool TimerStarted;
     private float timerCount;
@@ -20,7 +21,12 @@ public class Timer : MonoBehaviour
             if (milliseconds <= 0)
             {
                 timerCount -= 1;
-                if (timerCount < 0) TimerStarted = false;
+                if (timerCount < 0)
+                {
+                    TimerStarted = false;
+                    time.text = "00:00";
+                    player.Lose();
+                }
                 milliseconds = 100;
             }
             if(!TimerStarted) return;

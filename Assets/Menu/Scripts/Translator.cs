@@ -3,21 +3,22 @@ using UnityEngine.UI;
 
 public class Translator : MonoBehaviour
 {
-    [SerializeField] private string english;
-    [SerializeField] private string russian;
+#pragma warning disable 649
+    [SerializeField] [TextArea] private string english;
+    [SerializeField] [TextArea] private string russian;
 
-    private Text _text;
+    private Text text;
 
     private void Awake()
     {
-        _text = GetComponent<Text>();
+        text = GetComponent<Text>();
         if (!PlayerPrefs.HasKey("Language")) return;
-        var lang = PlayerPrefs.GetString("Language");
-        _text.text = lang switch
+        var language = PlayerPrefs.GetString("Language");
+        text.text = language switch
         {
             "English" => english,
             "Russian" => russian,
-            _ => _text.text
+            _ => text.text
         };
     }
 }

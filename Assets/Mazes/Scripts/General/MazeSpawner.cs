@@ -41,7 +41,8 @@ public abstract class MazeSpawner : MonoBehaviour
             floor,
             new Vector3(5 * Width, DistanceBetweenMazes - floorDelta, 5 * Height),
             Quaternion.identity);
-        floorCopy.transform.localScale = new Vector3(30 * Width, 0.1f, 30 * Width);
+        var maxLength = Mathf.Max(Width, Height);
+        floorCopy.transform.localScale = new Vector3(50 * maxLength, 0.1f, 50 * maxLength);
 
         Instantiate(player2D, Maze.StartCell.Cell2DPosition + player2DPositionDelta, Quaternion.identity)
             .transform.localScale = player2DScale;

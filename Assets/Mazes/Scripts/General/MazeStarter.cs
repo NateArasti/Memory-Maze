@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MazeStarter : MonoBehaviour
 {
@@ -13,5 +12,10 @@ public class MazeStarter : MonoBehaviour
     {
         CurrentMaze = Instantiate(mazeSpawners[(int)MazeCharacteristics.CurrentMazeType])
             .GetComponent<MazeSpawner>().Maze;
+    }
+
+    public void QuitMaze()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

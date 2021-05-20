@@ -1,24 +1,24 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class MusicHandler : MonoBehaviour
 {
     public AudioClip[] audioClips;
 
-    private AudioSource _audioSource;
-    private static MusicHandler _instance;
+    private AudioSource audioSource;
+    public static MusicHandler Instance;
 
     private void Awake()
     {
-        if (!_instance)
-            _instance = this;
+        if (!Instance)
+            Instance = this;
         else
             Destroy(gameObject);
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        if (!_audioSource.isPlaying) _audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+        if (!audioSource.isPlaying) audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
     }
 }

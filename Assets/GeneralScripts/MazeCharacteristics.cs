@@ -13,37 +13,42 @@ public class MazeCharacteristics : MonoBehaviour
 {
     public static MazeType CurrentMazeType { get; private set; } = MazeType.PerfectMaze;
 
-    public static IReadOnlyDictionary<MazeType, (string[] paramNames, int[] paramValues)> Characteristics =
-        new Dictionary<MazeType, (string[] paramNames, int[] paramValues)>
-        {
-            [MazeType.PerfectMaze] = (
-                paramNames: new[] { "PerfectMazeWidth", "PerfectMazeHeight" },
-                paramValues: new[] { 5, 5 }),
-            [MazeType.TriangleMaze] = (
-                paramNames: new[] { "TriangleMazeSide" },
-                paramValues: new[] { 5 }),
-            [MazeType.SigmaMaze] = (
-                paramNames: new[] { "SigmaMazeSide" },
-                paramValues: new[] { 5 }),
-        };
+    public static IReadOnlyDictionary<MazeType, (string[] paramNames, int[] paramValues, Vector2 valueRange)>
+        Characteristics =
+            new Dictionary<MazeType, (string[] paramNames, int[] paramValues, Vector2 valueRange)>
+            {
+                [MazeType.PerfectMaze] = (
+                    paramNames: new[] {"PerfectMazeWidth", "PerfectMazeHeight"},
+                    paramValues: new[] {5, 5},
+                    new Vector2(5, 40)),
+                [MazeType.TriangleMaze] = (
+                    paramNames: new[] {"TriangleMazeSide"},
+                    paramValues: new[] {5},
+                    new Vector2(5, 40)),
+                [MazeType.SigmaMaze] = (
+                    paramNames: new[] {"SigmaMazeSide"},
+                    paramValues: new[] {3},
+                    new Vector2(3, 20)),
+            };
 
     private void Awake()
     {
         foreach (var mazeType in Characteristics)
             for (var i = 0; i < Characteristics[mazeType.Key].paramNames.Length; i++)
                 Characteristics[mazeType.Key].paramValues[i] =
-                    PlayerPrefs.GetInt(Characteristics[mazeType.Key].paramNames[i]);
+                    PlayerPrefs.GetInt(Characteristics[mazeType.Key].paramNames[i],
+                        Characteristics[mazeType.Key].paramValues[i]);
     }
 
-    public void SetMazeCharacteristics(MazeType newMazeType, params int[] paramValues)
+    public static void SetMazeCharacteristics(MazeData data)
     {
-        if (paramValues.Length != Characteristics[CurrentMazeType].paramValues.Length)
+        if (data.Params.Length != Characteristics[data.MazeType].paramValues.Length)
             throw new ArgumentException("ParamValues are unsuitable for this maze type");
-        CurrentMazeType = newMazeType;
+        CurrentMazeType = data.MazeType;
         for (var i = 0; i < Characteristics[CurrentMazeType].paramNames.Length; i++)
         {
-            PlayerPrefs.SetInt(Characteristics[CurrentMazeType].paramNames[i], paramValues[i]);
-            Characteristics[CurrentMazeType].paramValues[i] = paramValues[i];
+            PlayerPrefs.SetInt(Characteristics[CurrentMazeType].paramNames[i], data.Params[i]);
+            Characteristics[CurrentMazeType].paramValues[i] = data.Params[i];
         }
         PlayerPrefs.Save();
     }
