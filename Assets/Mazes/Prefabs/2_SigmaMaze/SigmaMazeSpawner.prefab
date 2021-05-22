@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Finish: {fileID: 7805320437399589355, guid: 1848383abd0f25442908dda5ada5fdf4, type: 3}
   FinishPositionDelta: 5
-  FinishScale: {x: 8, y: 3, z: 1}
+  FinishScale: {x: 1.5, y: 0.6, z: 1}
   player2D: {fileID: 427890468691771699, guid: 4f4c8d86f67b7ff4991b338fab9bb7b6, type: 3}
   player2DPositionDelta: {x: 0, y: 0, z: -1}
   player2DScale: {x: 0.5, y: 0.5, z: 0.5}

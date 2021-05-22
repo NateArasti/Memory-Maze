@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 // ReSharper disable once IdentifierTypo
@@ -26,6 +27,7 @@ public abstract class MazeSpawner : MonoBehaviour
     protected int DistanceBetweenMazes => 50;
     public Maze Maze { get; private set; }
     protected abstract MazeGenerator Generator { get; }
+    private GameObject finishCell;
 
     private void Awake()
     {
@@ -47,7 +49,7 @@ public abstract class MazeSpawner : MonoBehaviour
         Instantiate(player2D, Maze.StartCell.Cell2DPosition + player2DPositionDelta, Quaternion.identity)
             .transform.localScale = player2DScale;
 
-        CreateFinish(Maze.FinishCell);
+        CreateFinish(finishCell);
     }
 
     private void SpawnMaze(MazeCell startPosition)
@@ -81,11 +83,30 @@ public abstract class MazeSpawner : MonoBehaviour
         Instantiate(cell2DPrefab, cell.Cell2DPosition, Quaternion.identity)
             .GetComponent<Cell>()
             .SetWalls(cell.Walls);
+        if (cell == Maze.FinishCell)
+        {
+            finishCell = Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity);
+            finishCell.GetComponent<Cell>().SetWalls(cell.Walls);
+        }
         Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity)
             .GetComponent<Cell>()
             .SetWalls(cell.Walls);
     }
 
     protected abstract void SetCamera();
-    protected abstract void CreateFinish(MazeCell finishCell);
+
+    private void CreateFinish(GameObject finishCellGameObject)
+    {
+        foreach (var neighbor in Maze.FinishCell.Neighbors.Where(neighbor => neighbor.Value == null))
+        {
+            var trans = finishCellGameObject.GetComponent<Cell>().GetWallTransform(neighbor.Key);
+            var finish = Instantiate(Finish, trans.position,
+                Quaternion.Euler(0, trans.eulerAngles.y, 0));
+            finish.transform.GetChild(0).localScale = new Vector3(trans.localScale.x / Finish.transform.localScale.x,
+                trans.localScale.y / Finish.transform.localScale.y, 0.01f);
+            var finishScale = finish.transform.GetChild(0).localScale;
+            finish.GetComponent<BoxCollider>().size = new Vector3(finishScale.x, finishScale.y, 1);
+            return;
+        }
+    }
 }

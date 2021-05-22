@@ -36,7 +36,8 @@ public class PlayerUI : MonoBehaviour
         if(camera2D.enabled) return;
         Time.timeScale = 1 - Time.timeScale;
         Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
-        settingsPanelExitButton.onClick.Invoke();
+        if((int)Time.timeScale == 1)
+            settingsPanelExitButton.onClick.Invoke();
         pausePanel.SetActive(Time.timeScale == 0);
     }
 
