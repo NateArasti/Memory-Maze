@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 73b4fe709c04da34092613222b9f5165
+guid: 907afc0d3739d4d4b9f77b9f893a6c6a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8894201953851282084
-    second: BackButtonSprite
+      213: -5074204316161107556
+    second: BackArrow
   - first:
-      213: 7664807735657788756
-    second: DropdownArrowSprite
+      213: 915768003812156625
+    second: DownArrow
   - first:
-      213: -5402412272178277761
-    second: ButtonBackground
+      213: -83225335990861157
+    second: Cross
   - first:
-      213: 2013261503205373015
-    second: CrossSprite
+      213: -2315737742614237131
+    second: Checkmark
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -103,55 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackButtonSprite
+      name: BackArrow
       rect:
         serializedVersion: 2
         x: 0
-        y: 1695
-        width: 739
-        height: 588
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a214e3bd8d8e6b70800000000000000
-      internalID: 8894201953851282084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ButtonBackground
-      rect:
-        serializedVersion: 2
-        x: 10165
         y: 0
-        width: 6050
-        height: 6041
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 825, y: 816, z: 816, w: 824}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f725a9269a6c605b0800000000000000
-      internalID: -5402412272178277761
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DropdownArrowSprite
-      rect:
-        serializedVersion: 2
-        x: 780
-        y: 1906
-        width: 279
-        height: 148
+        width: 835
+        height: 557
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +117,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4557c83960ede5a60800000000000000
-      internalID: 7664807735657788756
+      spriteID: c9996790f0ec499b0800000000000000
+      internalID: -5074204316161107556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CrossSprite
+      name: DownArrow
       rect:
         serializedVersion: 2
-        x: 1114
-        y: 1897
-        width: 200
-        height: 200
+        x: 885
+        y: 123
+        width: 574
+        height: 310
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +138,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7547682abaa80fb10800000000000000
-      internalID: 2013261503205373015
+      spriteID: 1d464e3c52675bc00800000000000000
+      internalID: 915768003812156625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cross
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 118
+        width: 322
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92c3f37ff258def0800000000000000
+      internalID: -83225335990861157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Checkmark
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 123
+        width: 428
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530738adac8dcdfd0800000000000000
+      internalID: -2315737742614237131
       vertices: []
       indices: 
       edges: []
