@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Finish: {fileID: 7805320437399589355, guid: 1848383abd0f25442908dda5ada5fdf4, type: 3}
-  FinishPositionDelta: 5
-  FinishScale: {x: 1.5, y: 0.6, z: 1}
   player2D: {fileID: 427890468691771699, guid: 4f4c8d86f67b7ff4991b338fab9bb7b6, type: 3}
   player2DPositionDelta: {x: 0, y: 0, z: -1}
   player2DScale: {x: 0.5, y: 0.5, z: 0.5}
@@ -53,3 +51,4 @@ MonoBehaviour:
   floorDelta: 1.5
   cell2DPrefab: {fileID: 8232325831947469014, guid: facd29a7be5e40a4581faf90780ea3e5, type: 3}
   cell3DPrefab: {fileID: 1642661397190202929, guid: d4174ceb66b5d94419dd940fcb29a411, type: 3}
+  scrollPrefab: {fileID: 5425912233635729197, guid: c1e18100ef93bd941b2e8b3a48cafe19, type: 3}

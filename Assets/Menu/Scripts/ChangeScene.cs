@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour
 {
     public Image loadingProgressBar;
-    [SerializeField] private GameObject screen; 
     
     private static ChangeScene _instance;
     private static bool _shouldPlayOpeningAnimation; 
@@ -15,6 +14,7 @@ public class ChangeScene : MonoBehaviour
 
     public static void SwitchToScene(string sceneName)
     {
+        _instance.gameObject.SetActive(true);
         _instance.animator.SetTrigger("NewSceneOpened");
         _instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
         _instance.loadingSceneOperation.allowSceneActivation = false;
@@ -27,7 +27,11 @@ public class ChangeScene : MonoBehaviour
         
         animator = GetComponent<Animator>();
 
-        if (!_shouldPlayOpeningAnimation) return;
+        if (!_shouldPlayOpeningAnimation)
+        {
+            OffScreen();
+            return;
+        }
         animator.SetTrigger("NewSceneLoaded");
         _instance.loadingProgressBar.fillAmount = 1;
         _shouldPlayOpeningAnimation = false;
@@ -43,12 +47,11 @@ public class ChangeScene : MonoBehaviour
     public void OnAnimationOver()
     {
         _shouldPlayOpeningAnimation = true;
-        
         loadingSceneOperation.allowSceneActivation = true;
     }
     
     public void OffScreen()
     {
-        screen.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

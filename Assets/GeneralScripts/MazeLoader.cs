@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -17,30 +16,35 @@ public enum Difficulty
 
 public class MazeLoader : MonoBehaviour
 {
-    private static void LoadMazeScene() => ChangeScene.SwitchToScene("Maze");
-    private static void LoadMenuScene() => ChangeScene.SwitchToScene("Menu");
+#pragma warning disable 649
+    [SerializeField] private GameObject loadingScreen;
+#pragma warning restore 649
 
-    private GameMode mode;
-    private Difficulty difficulty;
+    private void LoadMazeScene() => ChangeScene.SwitchToScene("Maze");
+
+    private void LoadMenuScene() => ChangeScene.SwitchToScene("Menu");
+
+    private static GameMode _mode;
+    private static Difficulty _difficulty;
     
     public void Awake() => Time.timeScale = 1;
     
     public void SetGameMode(int newMode)
     {
-        mode = (GameMode)newMode;
+        _mode = (GameMode)newMode;
     }
     
     public void SetDifficulty(int newDifficulty)
     {
-        difficulty = (Difficulty)newDifficulty;
+        _difficulty = (Difficulty)newDifficulty;
     }
 
     public void LoadMaze()
     {
-        switch (mode)
+        switch (_mode)
         {
-            case GameMode.Arcade: 
-                RestartArcadeMode(difficulty);
+            case GameMode.Arcade:
+                RestartArcadeMode(_difficulty);
                 break;
             case GameMode.Classic:
                 LoadMazeScene();
@@ -48,12 +52,11 @@ public class MazeLoader : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException();
         }
-        
     }
 
-    public void EndArcadeMode()
+    public void ExitMaze()
     {
-        ArcadeProgression.Dispose();
+        if(ArcadeProgression.ProgressionOn) ArcadeProgression.Dispose();
         LoadMenuScene();
     }
 

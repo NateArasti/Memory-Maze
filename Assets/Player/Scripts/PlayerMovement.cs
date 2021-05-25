@@ -52,8 +52,13 @@ public class PlayerMovement : MonoBehaviour
         var z = Input.GetAxis("Vertical");
 
         timer.TimerStarted = x != 0 || z != 0;
-
-        var newSpeed = Input.GetKey(KeyCode.LeftShift) ? speed * 2f : speed;
+        var newSpeed = speed;
+        timer.IsSpeedUp = false;
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            newSpeed *= 2;
+            timer.IsSpeedUp = true;
+        }
 
         var movement = transform.right * x + transform.forward * z;
         controller.Move(movement * newSpeed * Time.fixedDeltaTime);

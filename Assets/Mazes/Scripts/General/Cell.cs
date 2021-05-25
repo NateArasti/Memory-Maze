@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
@@ -12,4 +13,6 @@ public class Cell : MonoBehaviour
     }
 
     public Transform GetWallTransform(int key) => GameWalls[key].transform;
+
+    public IEnumerable<Transform> GetWallsTransforms() => GameWalls.Select(go => go.Value.transform);
 }

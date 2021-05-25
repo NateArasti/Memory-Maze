@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Translator : MonoBehaviour
 {
+#pragma warning disable 649
     [SerializeField] [TextArea] private string english;
     [SerializeField] [TextArea] private string russian;
 

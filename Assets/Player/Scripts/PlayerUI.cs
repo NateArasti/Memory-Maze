@@ -11,12 +11,20 @@ public class PlayerUI : MonoBehaviour
     [Header("Pause")] 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button settingsPanelExitButton;
+
     [Header("Finish")]
     [SerializeField] private GameObject finishClassic;
     [SerializeField] private GameObject[] classicFinishHeaders;
     [SerializeField] private GameObject finishArcade;
     [SerializeField] private GameObject[] arcadeFinishHeaders;
 
+    [Header("Stories")] 
+    [SerializeField] private GameObject storyPanel;
+    [SerializeField] private Story story;
+    [SerializeField] private Timer timer;
+
+    private int addTimerValue;
+    
     private LineRenderer lineRenderer;
     private readonly Vector3 delta = new Vector3(0, 0, 2);
 
@@ -34,6 +42,7 @@ public class PlayerUI : MonoBehaviour
     public void SwitchPause()
     {
         if(camera2D.enabled) return;
+        if(storyPanel.activeInHierarchy) return;
         Time.timeScale = 1 - Time.timeScale;
         Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
         if((int)Time.timeScale == 1)
@@ -54,6 +63,19 @@ public class PlayerUI : MonoBehaviour
         camera2D.enabled = false;
         camera3D.enabled = true;
     }
+
+    public void CollectStory(int distance)
+    {
+        var storyIndex = StoriesStorage.GetNotCollectedStory;
+        StoriesStorage.CollectStory(storyIndex);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        storyPanel.SetActive(true);
+        story.ShowStory(storyIndex);
+        addTimerValue = distance;
+    }
+
+    public void AddToTimer() => StartCoroutine(timer.AddTime(addTimerValue));
 
     public void Win()
     {

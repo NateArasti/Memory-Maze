@@ -8,8 +8,6 @@ public abstract class MazeSpawner : MonoBehaviour
 #pragma warning disable 649
     [Header("Finish")]
     [SerializeField] protected GameObject Finish;
-    [SerializeField] protected float FinishPositionDelta;
-    [SerializeField] protected Vector3 FinishScale;
     [Header("PlayerMovement")]
     [SerializeField] private GameObject player2D;
     [SerializeField] private Vector3 player2DPositionDelta;
@@ -20,17 +18,21 @@ public abstract class MazeSpawner : MonoBehaviour
     [Header("Cells")]
     [SerializeField] private GameObject cell2DPrefab;
     [SerializeField] private GameObject cell3DPrefab;
+    [Header("StoryScroll")]
+    [SerializeField] private GameObject scrollPrefab;
 
     public int Width { get; private set; }
     public int Height { get; private set; }
-
     protected int DistanceBetweenMazes => 50;
     public Maze Maze { get; private set; }
     protected abstract MazeGenerator Generator { get; }
+
     private GameObject finishCell;
+    private bool storyIsNeededToBePlaced = true;
 
     private void Awake()
     {
+        storyIsNeededToBePlaced = !StoriesStorage.AllStoriesCollected;
         Width = Generator.Width;
         Height = Generator.Height;
         SetCamera();
@@ -54,6 +56,8 @@ public abstract class MazeSpawner : MonoBehaviour
 
     private void SpawnMaze(MazeCell startPosition)
     {
+        var spawnedWalls = new HashSet<Vector3>();
+
         var currentCell = startPosition;
         var check = currentCell.Visited;
         currentCell.Visited = !check;
@@ -61,7 +65,7 @@ public abstract class MazeSpawner : MonoBehaviour
         var cellStack = new Stack<MazeCell>();
         do
         {
-            SpawnCell(currentCell);
+            SpawnCell(currentCell, spawnedWalls);
 
             var unvisitedNeighbors = MazeCell.GetNeighborsList(currentCell, check);
             if (unvisitedNeighbors.Count > 0)
@@ -78,19 +82,31 @@ public abstract class MazeSpawner : MonoBehaviour
         } while (cellStack.Count > 0);
     }
 
-    private void SpawnCell(MazeCell cell)
+    private void SpawnCell(MazeCell cell, HashSet<Vector3> spawnedWalls)
     {
         Instantiate(cell2DPrefab, cell.Cell2DPosition, Quaternion.identity)
             .GetComponent<Cell>()
             .SetWalls(cell.Walls);
+        var cell3d = Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity);
+        foreach (var wallTransform in cell3d.GetComponent<Cell>().GetWallsTransforms())
+        {
+            if (spawnedWalls.Contains(wallTransform.position)) Destroy(wallTransform.gameObject);
+            else spawnedWalls.Add(wallTransform.position);
+        }
+        cell3d.GetComponent<Cell>().SetWalls(cell.Walls);
         if (cell == Maze.FinishCell)
         {
-            finishCell = Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity);
-            finishCell.GetComponent<Cell>().SetWalls(cell.Walls);
+            finishCell = cell3d;
+            return;
         }
-        Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity)
-            .GetComponent<Cell>()
-            .SetWalls(cell.Walls);
+        if (cell != Maze.StartCell && 
+            cell.Walls.Count(wall => !wall.Value) == 1 && 
+            storyIsNeededToBePlaced && Random.value > 0.8f)
+        {
+            Instantiate(scrollPrefab, cell.Cell3DPosition, Quaternion.identity)
+                    .GetComponent<ScrollCollectable>().Length = cell.DistanceFromStart;
+            storyIsNeededToBePlaced = false;
+        }
     }
 
     protected abstract void SetCamera();
