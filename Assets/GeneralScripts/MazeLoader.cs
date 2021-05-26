@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -20,9 +21,9 @@ public class MazeLoader : MonoBehaviour
     [SerializeField] private GameObject loadingScreen;
 #pragma warning restore 649
 
-    private void LoadMazeScene() => ChangeScene.SwitchToScene("Maze");
+    private void LoadMazeScene() => SceneManager.LoadScene("Maze"); //ChangeScene.SwitchToScene("Maze");
 
-    private void LoadMenuScene() => ChangeScene.SwitchToScene("Menu");
+    private void LoadMenuScene() => SceneManager.LoadScene("Menu"); //ChangeScene.SwitchToScene("Menu");
 
     private static GameMode _mode;
     private static Difficulty _difficulty;
