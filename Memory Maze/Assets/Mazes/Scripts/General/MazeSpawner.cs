@@ -100,14 +100,12 @@ public abstract class MazeSpawner : MonoBehaviour
             finishCell = cell3d;
             return;
         }
-        if (cell != Maze.StartCell && 
-            cell.Walls.Count(wall => !wall.Value) == 1 && 
-            storyIsNeededToBePlaced && Random.value > 0.9f)
-        {
-            Instantiate(scrollPrefab, cell.Cell3DPosition, Quaternion.identity)
-                    .GetComponent<ScrollCollectable>().Length = cell.DistanceFromStart;
-            storyIsNeededToBePlaced = false;
-        }
+
+        if (cell == Maze.StartCell || cell.Walls.Count(wall => !wall.Value) != 1 || !storyIsNeededToBePlaced ||
+            !(Random.value > 0.95f)) return;
+        Instantiate(scrollPrefab, cell.Cell3DPosition, Quaternion.identity)
+            .GetComponent<ScrollCollectable>().Length = cell.DistanceFromStart;
+        storyIsNeededToBePlaced = false;
     }
 
     protected abstract void SetCamera();

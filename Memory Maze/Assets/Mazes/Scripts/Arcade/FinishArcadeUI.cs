@@ -10,7 +10,7 @@ public class FinishArcadeUI : MonoBehaviour
 
     private void Awake()
     {
-        if (ArcadeProgression.CurrentIndex == ArcadeProgression.ProgressData.Count)
+        if (ArcadeProgression.CurrentIndex == ArcadeProgression.ProgressLevelsCount)
         {
             continueButton.SetActive(false);
             arcadeEndText.SetActive(true);

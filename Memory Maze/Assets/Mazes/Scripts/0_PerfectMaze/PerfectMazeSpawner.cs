@@ -7,6 +7,6 @@ public class PerfectMazeSpawner : MazeSpawner
     protected override void SetCamera()
     {
         Camera.main.transform.position = new Vector3(Width / 2f, Height / 2f - DistanceBetweenMazes);
-        Camera.main.orthographicSize = Mathf.Max(Height, Width);
+        Camera.main.orthographicSize = 2f * Height / 3;
     }
 }

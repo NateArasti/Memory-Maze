@@ -1,18 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private Text time;
-    [SerializeField] [Range(0, 4)] private float pathLengthScale = 1;
-    [SerializeField] private PlayerUI player;
+    [SerializeField] private UnityEvent timerEnds;
+
+    [Header("MazeModifiers")]
+    [SerializeField] private float pathLengthScale = 1;
+    [SerializeField] private float[] mazeTypeScales;
+    [SerializeField] private float[] mazeDifficultyScales;
+    [Header("TimerModifiers")]
+    [SerializeField] private float maxAmountOfTimeToSetTimer = 5;
+    [SerializeField] private float standardIntervalOfAdding = 0.05f;
 
     public bool TimerStarted { get; set; }
+    public bool TimerSetted { get; private set; }
     public bool IsSpeedUp { get; set; }
-    private float timerCount;
-    private float milliseconds;
+
+    private int timerCount;
+    private int milliseconds;
     
     private void FixedUpdate()
     {
@@ -25,7 +35,7 @@ public class Timer : MonoBehaviour
             {
                 TimerStarted = false;
                 time.text = "00:00";
-                player.Lose();
+                timerEnds.Invoke();
             }
             milliseconds = 99;
         }
@@ -34,26 +44,31 @@ public class Timer : MonoBehaviour
         time.text = timerCount < 10 ? $"0{timerCount}:{ms}" : $"{timerCount}:{ms}";
     }
 
-    public IEnumerator SetTimer(int pathLength)
+    public void SetTimer(int pathLength, Maze maze)
     {
-        timerCount = (int) (pathLength * pathLengthScale);
-        for (var i = 0; i <= timerCount; i++)
-        {
-            yield return new WaitForSeconds(0.05f);
-            time.text = i < 10 ? $"0{i}:00" : $"{i}:00";
-        }
+        var newTimerCount = pathLength * pathLengthScale;
+
+        newTimerCount *= mazeTypeScales[(int) MazeCharacteristics.CurrentMazeType];
+        if (ArcadeProgression.ProgressionOn)
+            newTimerCount *= mazeDifficultyScales[(int) ArcadeProgression.CurrentDifficulty];
+        StartCoroutine(AddTime((int)newTimerCount));
     }
 
     public IEnumerator AddTime(int addTime)
     {
+        TimerSetted = false;
+        var interval = standardIntervalOfAdding;
+        if (addTime * standardIntervalOfAdding > maxAmountOfTimeToSetTimer)
+            interval = maxAmountOfTimeToSetTimer / addTime;
         var ms = milliseconds < 10 ? $"0{milliseconds}" : $"{milliseconds}";
-        for (var i = 0; i <= (int)(addTime * pathLengthScale); i++)
+        for (var i = 0; i <= addTime; i++)
         {
             TimerStarted = false;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(interval);
             time.text = timerCount + i < 10 ? $"0{timerCount + i}:{ms}" : $"{timerCount + i}:{ms}";
         }
-        timerCount += (int) (addTime * pathLengthScale);
+        timerCount += addTime;
+        TimerSetted = true;
         TimerStarted = true;
     }
 }

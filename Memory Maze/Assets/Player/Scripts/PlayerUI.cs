@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
@@ -12,16 +13,17 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private Button settingsPanelExitButton;
 
-    [Header("Finish")]
-    [SerializeField] private GameObject finishClassic;
-    [SerializeField] private GameObject[] classicFinishHeaders;
-    [SerializeField] private GameObject finishArcade;
-    [SerializeField] private GameObject[] arcadeFinishHeaders;
-
     [Header("Stories")] 
     [SerializeField] private GameObject storyPanel;
     [SerializeField] private Story story;
     [SerializeField] private Timer timer;
+
+    [Header("Finish")] 
+    [SerializeField] private UnityEvent arcadeLose;
+    [SerializeField] private UnityEvent arcadeWin;
+    [SerializeField] private UnityEvent classicLose;
+    [SerializeField] private UnityEvent classicWin;
+
 
     private int addTimerValue;
     
@@ -82,15 +84,9 @@ public class PlayerUI : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)
-        {
-            arcadeFinishHeaders[0].SetActive(true);
-            finishArcade.SetActive(true);
-        }
+            arcadeWin.Invoke();
         else
-        {
-            classicFinishHeaders[0].SetActive(true);
-            finishClassic.SetActive(true);
-        }
+            classicWin.Invoke();
     }
 
     public void Lose()
@@ -98,14 +94,8 @@ public class PlayerUI : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)
-        {
-            arcadeFinishHeaders[1].SetActive(true);
-            finishArcade.SetActive(true);
-        }
+            arcadeLose.Invoke();
         else
-        {
-            classicFinishHeaders[1].SetActive(true);
-            finishClassic.SetActive(true);
-        }
+            classicLose.Invoke();
     }
 }

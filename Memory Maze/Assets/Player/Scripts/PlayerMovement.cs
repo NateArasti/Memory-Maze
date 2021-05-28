@@ -26,14 +26,15 @@ public class PlayerMovement : MonoBehaviour
         var maze = mazeStarter.CurrentMaze;
         controller = GetComponent<CharacterController>();
         controller.enabled = false;
-        transform.position = maze.StartCell.Cell3DPosition + new Vector3(0, 5, 0);
+        transform.position = maze.StartCell.Cell3DPosition + new Vector3(0, 2, 0);
         controller.enabled = true;
-        StartCoroutine(timer.SetTimer(maze.FinishCell.DistanceFromStart));
+        timer.SetTimer(maze.FinishCell.DistanceFromStart, maze);
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (timer.TimerSetted)
+            Move();
     }
 
     private void Move()

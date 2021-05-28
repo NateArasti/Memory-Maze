@@ -32,7 +32,7 @@ public class MazeLoader : MonoBehaviour
     private void LoadMenuScene() => SceneManager.LoadScene("Menu");
 
     private static GameMode _mode;
-    private static Difficulty _difficulty;
+    private static Difficulty Difficulty => ArcadeProgression.CurrentDifficulty;
     
     public void Awake() => Time.timeScale = 1;
     
@@ -43,7 +43,7 @@ public class MazeLoader : MonoBehaviour
     
     public void SetDifficulty(int newDifficulty)
     {
-        _difficulty = (Difficulty)newDifficulty;
+        ArcadeProgression.CurrentDifficulty = (Difficulty)newDifficulty;
     }
 
     public void LoadMaze()
@@ -51,7 +51,8 @@ public class MazeLoader : MonoBehaviour
         switch (_mode)
         {
             case GameMode.Arcade:
-                RestartArcadeMode(_difficulty);
+                ArcadeProgression.MoveToNextProgressionLevel();
+                LoadMazeScene();
                 break;
             case GameMode.Classic:
                 LoadMazeScene();
@@ -69,7 +70,7 @@ public class MazeLoader : MonoBehaviour
 
     private void RestartArcadeMode(Difficulty difficulty)
     {
-        //TODO ADD DIFFICULTY!
+        SetDifficulty((int)difficulty);
         ArcadeProgression.Dispose();
         ArcadeProgression.MoveToNextProgressionLevel();
         LoadMazeScene();

@@ -20,7 +20,7 @@ public class MazeCharacteristics : MonoBehaviour
                 [MazeType.PerfectMaze] = (
                     paramNames: new[] {"PerfectMazeWidth", "PerfectMazeHeight"},
                     paramValues: new[] {5, 5},
-                    new Vector2(5, 40)),
+                    new Vector2(5, 35)),
                 [MazeType.TriangleMaze] = (
                     paramNames: new[] {"TriangleMazeSide"},
                     paramValues: new[] {5},
@@ -28,7 +28,7 @@ public class MazeCharacteristics : MonoBehaviour
                 [MazeType.SigmaMaze] = (
                     paramNames: new[] {"SigmaMazeSide"},
                     paramValues: new[] {3},
-                    new Vector2(3, 20)),
+                    new Vector2(3, 15)),
             };
 
     private void Awake()

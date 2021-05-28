@@ -11,7 +11,7 @@ public class MazeStarter : MonoBehaviour
 
     private void Awake()
     {
-        RenderSettings.skybox = Random.value > 0.95f ? redSkyBox : simpleSkyBox;
+        RenderSettings.skybox = Random.value > 0.98f ? redSkyBox : simpleSkyBox;
         CurrentMaze = Instantiate(mazeSpawners[(int)MazeCharacteristics.CurrentMazeType])
             .GetComponent<MazeSpawner>().Maze;
     }
