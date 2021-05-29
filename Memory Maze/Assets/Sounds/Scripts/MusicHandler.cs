@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class MusicHandler : MonoBehaviour
 {
-    public AudioClip[] audioClips;
+#pragma warning disable 649
+    [SerializeField] private AudioClip[] audioClips;
 
     private AudioSource audioSource;
-    public static MusicHandler Instance;
+    public static MusicHandler Instance { get; private set; }
 
     private void Awake()
     {
