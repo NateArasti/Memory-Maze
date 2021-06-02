@@ -1914,8 +1914,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Difficulty to get acquainted with the game: easy labyrinths of small sizes,
-    a lot of time.'
+  m_Text: 'Difficulty for beginners in the game: light labyrinths of small sizes,
+    a large amount of handicap in time.'
 --- !u!114 &111191530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,14 +1928,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty to get acquainted with the game: easy labyrinths of small
-    sizes, a lot of time.'
+  english: 'Difficulty for beginners in the game: light labyrinths of small sizes,
+    a large amount of handicap in time.'
   russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
-    \u043E\u0437\u043D\u0430\u043A\u043E\u043C\u043B\u0435\u043D\u0438\u044F \u0441
-    \u0438\u0433\u0440\u043E\u0439: \u043B\u0435\u0433\u043A\u0438\u0435 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B
+    \u043D\u043E\u0432\u0438\u0447\u043A\u043E\u0432 \u0432 \u0438\u0433\u0440\u0435:
+    \u043B\u0435\u0433\u043A\u0438\u0435 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B
     \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0445 \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432,
     \u0431\u043E\u043B\u044C\u0448\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
-    \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
+    \u0444\u043E\u0440\u044B \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!222 &111191531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3481,16 +3481,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty for those who like to get on their nerves: labyrinths of large
-    and colossal sizes, a minimum amount of time and no room for error.'
+  english: 'Difficulty for those who like to pull their nerves: labyrinths of large
+    and colossal sizes, the minimum amount of handicap in time.'
   russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
     \u043B\u044E\u0431\u0438\u0442\u0435\u043B\u0435\u0439 \u043F\u043E\u0442\u0440\u0435\u043F\u0430\u0442\u044C
     \u0441\u0435\u0431\u0435 \u043D\u0435\u0440\u0432\u044B: \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B
     \u0431\u043E\u043B\u044C\u0448\u0438\u0445 \u0438 \u043A\u043E\u043B\u043E\u0441\u0441\u0430\u043B\u044C\u043D\u044B\u0445
     \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432, \u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435
-    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438
-    \u0438 \u043E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u043F\u0440\u0430\u0432\u0430
-    \u043D\u0430 \u043E\u0448\u0438\u0431\u043A\u0443."
+    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0444\u043E\u0440\u044B
+    \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!114 &254521723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3524,8 +3523,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Difficulty for those who like to get on their nerves: labyrinths of large
-    and colossal sizes, a minimum amount of time and no room for error.'
+  m_Text: 'Difficulty for those who like to pull their nerves: labyrinths of large
+    and colossal sizes, the minimum amount of handicap in time.'
 --- !u!222 &254521724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5159,15 +5158,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Yes, in ours, as in any other game, there is training. Well, what did
-    you think, solving labyrinths is not for you to solve integrals.
+  english: Yes, in ours, as in any other game, there is tutorial. Do we really need
+    tot tell what is this?
   russian: "\u0414\u0430, \u0432 \u043D\u0430\u0448\u0435\u0439, \u043A\u0430\u043A
     \u0438 \u0432 \u043B\u044E\u0431\u043E\u0439 \u0434\u0440\u0443\u0433\u043E\u0439
     \u0438\u0433\u0440\u0435, \u0435\u0441\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435.
-    \u041D\u0443 \u0430 \u0447\u0442\u043E \u0432\u044B \u0434\u0443\u043C\u0430\u043B\u0438,
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u0440\u0435\u0448\u0430\u0442\u044C
-    - \u044D\u0442\u043E \u0432\u0430\u043C \u043D\u0435 \u0438\u043D\u0442\u0435\u0433\u0440\u0430\u043B\u044B
-    \u0440\u0435\u0448\u0430\u0442\u044C."
+    \u041D\u0430\u043C \u0432\u0435\u0434\u044C \u043D\u0435 \u043D\u0430\u0434\u043E
+    \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u0442\u044C, \u0447\u0442\u043E \u044D\u0442\u043E
+    \u0442\u0430\u043A\u043E\u0435?"
 --- !u!114 &318257292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5201,9 +5199,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choose the maze and size that suits you! This is an ideal mode both for
-    lovers of simple, but no less difficult labyrinths, and for those who like the
-    most difficult obstacles and labyrinths of colossal size.
+  m_Text: Yes, in ours, as in any other game, there is tutorial. Do we really need
+    tot tell what is this?
 --- !u!222 &318257293
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9726,7 +9723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: Choose the maze and size that suits you! This is an ideal mode both for
     lovers of simple mazes to learn from, and for those who love the most difficult
-    obstacles and mazes of colossal dimensions.
+    chalanges and mazes of colossal dimensions.
   russian: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0438\u0439
     \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442
     \u0438 \u0440\u0430\u0437\u043C\u0435\u0440! \u042D\u0442\u043E \u0438\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439
@@ -9735,7 +9732,7 @@ MonoBehaviour:
     \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0436\u043D\u043E
     \u043F\u043E\u0443\u0447\u0438\u0442\u044C\u0441\u044F, \u0442\u0430\u043A \u0438
     \u0434\u043B\u044F \u0442\u0435\u0445, \u043A\u0442\u043E \u043B\u044E\u0431\u0438\u0442
-    \u0441\u043B\u043E\u0436\u043D\u0435\u0439\u0448\u0438\u0435 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F
+    \u0441\u043B\u043E\u0436\u043D\u0435\u0439\u0448\u0438\u0435 \u0432\u044B\u0437\u043E\u0432\u044B
     \u0438 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u043A\u043E\u043B\u043E\u0441\u0441\u0430\u043B\u044C\u043D\u044B\u0445
     \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432."
 --- !u!114 &607768487
@@ -9772,8 +9769,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Choose the maze and size that suits you! This is an ideal mode both for
-    lovers of simple, but no less difficult labyrinths, and for those who like the
-    most difficult obstacles and labyrinths of colossal size.
+    lovers of simple mazes to learn from, and for those who love the most difficult
+    chalanges and mazes of colossal dimensions.
 --- !u!222 &607768488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12431,8 +12428,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Difficulty for those who have previously played similar games: labyrinths
-    of medium and large sizes, a moderate amount of time.'
+  m_Text: 'Difficulty for those who already have a well-developed memory: medium
+    and large labyrinths, average size of noise over time.'
 --- !u!114 &758864885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12445,15 +12442,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty for those who have previously played similar games: labyrinths
-    of medium and large sizes, a moderate amount of time.'
+  english: 'Difficulty for those who already have a well-developed memory: medium
+    and large labyrinths, average size of noise over time.'
   russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
-    \u0442\u0435\u0445 \u043A\u0442\u043E \u0440\u0430\u043D\u0435\u0435 \u0438\u0433\u0440\u0430\u043B
-    \u0432 \u043F\u043E\u0434\u043E\u0431\u043D\u044B\u0435 \u0438\u0433\u0440\u044B:
+    \u0442\u0435\u0445, \u0443 \u043A\u043E\u0433\u043E \u0443\u0436\u0435 \u0445\u043E\u0440\u043E\u0448\u043E
+    \u0440\u0430\u0437\u0432\u0438\u0442\u0430 \u043F\u0430\u043C\u044F\u0442\u044C:
     \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u0441\u0440\u0435\u0434\u043D\u0438\u0445
     \u0438 \u0431\u043E\u043B\u044C\u0448\u0438\u0445 \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432,
-    \u0443\u043C\u0435\u0440\u0435\u043D\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
-    \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
+    \u0441\u0440\u0435\u0434\u043D\u0438\u0439 \u0440\u0430\u0437\u043C\u0435\u0440
+    \u043F\u043E\u043C\u0435\u0445 \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!222 &758864886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26558,7 +26555,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: The most unusual labyrinth in human imagination, which complicates its
     passage! Sigma consists of hexagonal cells and forms a hexagon itself, each cell
-    can have up to 5 connections with its neighbors, making it the most difficult
+    can have up to 6 connections with its neighbors, making it the most difficult
     maze.
 --- !u!222 &1564237263
 CanvasRenderer:
@@ -26582,7 +26579,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   english: The most unusual labyrinth in human imagination, which complicates its
     passage! Sigma consists of hexagonal cells and forms a hexagon itself, each cell
-    can have up to 5 connections with its neighbors, making it the most difficult
+    can have up to 6 connections with its neighbors, making it the most difficult
     maze.
   russian: "\u0421\u0430\u043C\u044B\u0439 \u043D\u0435\u043E\u0431\u044B\u0447\u043D\u044B\u0439
     \u0432 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0438
@@ -26594,7 +26591,7 @@ MonoBehaviour:
     \u044F\u0447\u0435\u0435\u043A \u0438 \u0441\u0430\u043C \u043E\u0431\u0440\u0430\u0437\u0443\u0435\u0442
     \u0448\u0435\u0441\u0442\u0438\u0443\u0433\u043E\u043B\u044C\u043D\u0438\u043A,
     \u043A\u0430\u0436\u0434\u0430\u044F \u044F\u0447\u0435\u0439\u043A\u0430 \u043C\u043E\u0436\u0435\u0442
-    \u0438\u043C\u0435\u0442\u044C \u0434\u043E 5 \u0441\u0432\u044F\u0437\u0435\u0439
+    \u0438\u043C\u0435\u0442\u044C \u0434\u043E 6 \u0441\u0432\u044F\u0437\u0435\u0439
     \u0441 \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u043C\u0438, \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F
     \u0447\u0435\u043C\u0443 \u043E\u043D \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F
     \u0441\u0430\u043C\u044B\u043C \u0441\u043B\u043E\u0436\u043D\u044B\u043C \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u043C."
