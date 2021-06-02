@@ -25,11 +25,12 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private UnityEvent classicWin;
     [SerializeField] private UnityEvent tutorialEnd;
 
+    private bool IsPauseAvailable => !camera2D.enabled && !storyPanel.activeInHierarchy && !mazeEnded;
 
     private int addTimerValue;
-    
     private LineRenderer lineRenderer;
     private readonly Vector3 delta = new Vector3(0, 0, 2);
+    private bool mazeEnded;
 
     private void Start()
     {
@@ -44,8 +45,7 @@ public class PlayerUI : MonoBehaviour
 
     public void SwitchPause()
     {
-        if(camera2D.enabled) return;
-        if(storyPanel.activeInHierarchy) return;
+        if(!IsPauseAvailable) return;
         Time.timeScale = 1 - Time.timeScale;
         Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
         if((int)Time.timeScale == 1)
@@ -82,6 +82,7 @@ public class PlayerUI : MonoBehaviour
 
     public void Win()
     {
+        mazeEnded = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if(MazeLoader.IsTutorial)
@@ -94,6 +95,7 @@ public class PlayerUI : MonoBehaviour
 
     public void Lose()
     {
+        mazeEnded = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)

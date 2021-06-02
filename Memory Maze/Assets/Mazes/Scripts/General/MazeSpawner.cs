@@ -6,19 +6,26 @@ using UnityEngine;
 public abstract class MazeSpawner : MonoBehaviour
 {
 #pragma warning disable 649
-    [Header("Finish")]
+    [Header("Finish")] 
     [SerializeField] protected GameObject Finish;
-    [Header("PlayerMovement")]
+
+    [Header("PlayerMovement")] 
     [SerializeField] private GameObject player2D;
+
     [SerializeField] private Vector3 player2DPositionDelta;
     [SerializeField] private Vector3 player2DScale;
-    [Header("Floor")]
+
+    [Header("Floor")] 
     [SerializeField] private GameObject floor;
+
     [SerializeField] private float floorDelta;
-    [Header("Cells")]
+
+    [Header("Cells")] 
     [SerializeField] private GameObject cell2DPrefab;
+
     [SerializeField] private GameObject cell3DPrefab;
-    [Header("StoryScroll")]
+
+    [Header("StoryScroll")] 
     [SerializeField] private GameObject scrollPrefab;
 
     public int Width { get; private set; }
@@ -90,10 +97,8 @@ public abstract class MazeSpawner : MonoBehaviour
             .SetWalls(cell.Walls);
         var cell3d = Instantiate(cell3DPrefab, cell.Cell3DPosition, Quaternion.identity);
         foreach (var wallTransform in cell3d.GetComponent<Cell>().GetWallsTransforms())
-        {
             if (spawnedWalls.Contains(wallTransform.position)) Destroy(wallTransform.gameObject);
             else spawnedWalls.Add(wallTransform.position);
-        }
         cell3d.GetComponent<Cell>().SetWalls(cell.Walls);
         if (cell == Maze.FinishCell)
         {
@@ -102,7 +107,7 @@ public abstract class MazeSpawner : MonoBehaviour
         }
 
         if (cell == Maze.StartCell || cell.Walls.Count(wall => !wall.Value) != 1 || !storyIsNeededToBePlaced ||
-            !(Random.value > 0.95f)) return;
+            Random.value < 0.95f) return;
         Instantiate(scrollPrefab, cell.Cell3DPosition, Quaternion.identity)
             .GetComponent<ScrollCollectable>().Length = cell.DistanceFromStart;
         storyIsNeededToBePlaced = false;
