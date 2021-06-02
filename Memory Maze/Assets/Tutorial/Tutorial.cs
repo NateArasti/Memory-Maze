@@ -1,57 +1,21 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private Sprite[] tutorialSlides;
-    [SerializeField] private GameObject[] descriptions;
-    [SerializeField] private GameObject nextButton;
-    [SerializeField] private GameObject previousButton;
-
-    private int index;
-    private Image image;
+    [SerializeField] private GameObject[] tutorialTexts;
+#pragma warning restore 649
+    private int currentIndex;
 
     private void Awake()
     {
-        image = GetComponent<Image>();
-        index = 0;
-        UpdateSlide();
-        CheckSlide();
+        gameObject.SetActive(MazeLoader.IsTutorial);
     }
 
-    private void UpdateSlide()
+    public void SwitchToNextText()
     {
-        image.sprite = tutorialSlides[index];
-        descriptions[index].SetActive(true);
-    }
-
-    private void CheckSlide()
-    {
-        previousButton.SetActive(index != 0);
-        nextButton.SetActive(index != tutorialSlides.Length - 1);
-    }
-
-    public void Next()
-    {
-        descriptions[index].SetActive(false);
-        index += 1;
-        UpdateSlide();
-        CheckSlide();
-    }
-
-    public void Previous()
-    {
-        descriptions[index].SetActive(false);
-        index -= 1;
-        UpdateSlide();
-        CheckSlide();
-    }
-
-    public void Exit()
-    {
-        index = 0;
-        UpdateSlide();
-        CheckSlide();
+        tutorialTexts[currentIndex].SetActive(false);
+        currentIndex += 1;
+        tutorialTexts[currentIndex].SetActive(true);
     }
 }

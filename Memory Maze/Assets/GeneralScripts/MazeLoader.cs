@@ -36,8 +36,8 @@ public class MazeLoader : MonoBehaviour
 
 	private static GameMode _mode;
 
-	public static bool IsTutorial { get; private set; }
-	private static Difficulty Difficulty => ArcadeProgression.CurrentDifficulty;
+	public static bool IsTutorial { get; set; }
+	//private static Difficulty Difficulty => ArcadeProgression.CurrentDifficulty;
 
 	public void Awake()
 	{
@@ -76,17 +76,25 @@ public class MazeLoader : MonoBehaviour
 		LoadMenuScene();
 	}
 
-	private void RestartArcadeMode(Difficulty difficulty)
+    public void RestartArcadeMode()
 	{
-		SetDifficulty((int) difficulty);
 		ArcadeProgression.Dispose();
 		ArcadeProgression.MoveToNextProgressionLevel();
 		LoadMazeScene();
 	}
 
-	public void LoadTutorialMaze()
-	{
-		SceneManager.LoadScene("Maze");
-		IsTutorial = true;
-	}
+    public void TurnOnTutorial() => IsTutorial = true;
+
+    public void TurnOffTutorial() => IsTutorial = false;
+
+    public void SetTutorialMazeCharacteristics()
+    {
+        MazeCharacteristics.SetMazeCharacteristics(new MazeData(MazeType.PerfectMaze, new[] {5, 5}));
+    }
+
+	//public void LoadTutorialMaze()
+	//{
+	//	SceneManager.LoadScene("Maze");
+	//	IsTutorial = true;
+	//}
 }

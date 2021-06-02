@@ -23,6 +23,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private UnityEvent arcadeWin;
     [SerializeField] private UnityEvent classicLose;
     [SerializeField] private UnityEvent classicWin;
+    [SerializeField] private UnityEvent tutorialEnd;
 
 
     private int addTimerValue;
@@ -83,7 +84,9 @@ public class PlayerUI : MonoBehaviour
     {
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
-        if (ArcadeProgression.ProgressionOn)
+        if(MazeLoader.IsTutorial)
+            tutorialEnd.Invoke();
+        else if(ArcadeProgression.ProgressionOn)
             arcadeWin.Invoke();
         else
             classicWin.Invoke();
