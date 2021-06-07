@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Tutorial : MonoBehaviour
@@ -17,5 +18,13 @@ public class Tutorial : MonoBehaviour
         tutorialTexts[currentIndex].SetActive(false);
         currentIndex += 1;
         tutorialTexts[currentIndex].SetActive(true);
+    }
+
+    public void TurnOffAfterDelay(GameObject panel) => StartCoroutine(TurnOffWithDelay(panel));
+
+    private IEnumerator TurnOffWithDelay(GameObject panel)
+    {
+        yield return new WaitForSeconds(5f);
+        panel.SetActive(false);
     }
 }
