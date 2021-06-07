@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FinishArcadeUI : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private Text mazeNumber;
+    [SerializeField] private TextMeshProUGUI mazeNumber;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject arcadeEndText;
 

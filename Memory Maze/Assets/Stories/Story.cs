@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class Story : MonoBehaviour
 {
     public void ShowStory(int storyIndex)
     {
-        var storyContainer = GetComponent<Text>();
+        var storyContainer = GetComponent<TextMeshProUGUI>();
         var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
         var currentLanguage = resultBool ? result : Language.English;
         var story = StoriesStorage.GetStoryByIndex(storyIndex, currentLanguage);

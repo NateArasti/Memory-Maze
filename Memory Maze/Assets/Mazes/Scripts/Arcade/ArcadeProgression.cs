@@ -5,7 +5,7 @@ public class ArcadeProgression
     public static bool ProgressionOn { get; private set; }
     public static Difficulty CurrentDifficulty { get; set; }
 
-    public static int ProgressLevelsCount => ProgressDatas[CurrentDifficulty].Count;//15?
+    public static int ProgressLevelsCount => ProgressDataSets[CurrentDifficulty].Count;//15?
 
     // Lengths ranges in MazeCharacteristics.cs
     private static readonly IReadOnlyList<MazeData> EasyProgressData = new[]
@@ -63,7 +63,7 @@ public class ArcadeProgression
         new MazeData(MazeType.SigmaMaze, new[] {15}),
     };
 
-    private static readonly IReadOnlyDictionary<Difficulty, IReadOnlyList<MazeData>> ProgressDatas =
+    private static readonly IReadOnlyDictionary<Difficulty, IReadOnlyList<MazeData>> ProgressDataSets =
         new Dictionary<Difficulty, IReadOnlyList<MazeData>>
         {
             [Difficulty.Easy] = EasyProgressData,
@@ -76,7 +76,7 @@ public static int CurrentIndex { get; private set; }
     public static void MoveToNextProgressionLevel()
     {
         ProgressionOn = true;
-        MazeCharacteristics.SetMazeCharacteristics(ProgressDatas[CurrentDifficulty][CurrentIndex]);
+        MazeCharacteristics.SetMazeCharacteristics(ProgressDataSets[CurrentDifficulty][CurrentIndex]);
         CurrentIndex += 1;
     }
 

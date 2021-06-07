@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class StoryButton : MonoBehaviour
         button.interactable = StoriesStorage.GetStoryByIndex(index, Language.English) != null;
     }
 
-    public void ShowStory(Text storyContainer)
+    public void ShowStory(TextMeshProUGUI storyContainer)
     {
         var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
         var currentLanguage = resultBool ? result : Language.English;

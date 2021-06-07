@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Translator : MonoBehaviour
@@ -7,11 +8,11 @@ public class Translator : MonoBehaviour
     [SerializeField] [TextArea] private string english;
     [SerializeField] [TextArea] private string russian;
 
-    private Text text;
+    private TextMeshProUGUI text;
 
     private void Awake()
     {
-        text = GetComponent<Text>();
+        text = GetComponent<TextMeshProUGUI>();
         if (!PlayerPrefs.HasKey("Language")) return;
         var language = PlayerPrefs.GetString("Language");
         text.text = language switch

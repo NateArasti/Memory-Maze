@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public enum Language
 public class LanguageSettings : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private Dropdown languageDropdown;
+    [SerializeField] private TMP_Dropdown languageDropdown;
 
     private void Start()
     {

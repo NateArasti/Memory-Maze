@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class MazeCharacteristicsHandler : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private MazeType mazeType;
-    [SerializeField] private InputField[] characteristics;
+    [SerializeField] private TMP_InputField[] characteristics;
     private int valueDelta = 1;
 
     public void Start()

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private Text time;
+    [SerializeField] private TextMeshProUGUI time;
     [SerializeField] private UnityEvent timerEnds;
 
     [Header("MazeModifiers")]

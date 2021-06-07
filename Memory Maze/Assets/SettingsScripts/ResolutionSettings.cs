@@ -1,10 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResolutionSettings : MonoBehaviour
 {
     #pragma warning disable 649
-    [SerializeField] private Dropdown resolutionDropdown;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
     [SerializeField] private Toggle fullScreenToggle;
 
     private void Start()
