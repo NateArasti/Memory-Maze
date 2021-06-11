@@ -37,7 +37,6 @@ public class MazeLoader : MonoBehaviour
 	private static GameMode _mode;
 
 	public static bool IsTutorial { get; set; }
-	//private static Difficulty Difficulty => ArcadeProgression.CurrentDifficulty;
 
 	public void Awake()
 	{
@@ -91,10 +90,4 @@ public class MazeLoader : MonoBehaviour
     {
         MazeCharacteristics.SetMazeCharacteristics(new MazeData(MazeType.PerfectMaze, new[] {5, 5}));
     }
-
-	//public void LoadTutorialMaze()
-	//{
-	//	SceneManager.LoadScene("Maze");
-	//	IsTutorial = true;
-	//}
 }
