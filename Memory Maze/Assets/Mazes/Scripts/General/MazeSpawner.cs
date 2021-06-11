@@ -39,7 +39,7 @@ public abstract class MazeSpawner : MonoBehaviour
 
     private void Awake()
     {
-        storyIsNeededToBePlaced = !StoriesStorage.AllStoriesCollected;
+        storyIsNeededToBePlaced = !StoriesStorage.AllStoriesCollected && Random.value > 0.6f;
         Width = Generator.Width;
         Height = Generator.Height;
         SetCamera();
@@ -54,7 +54,7 @@ public abstract class MazeSpawner : MonoBehaviour
             Quaternion.identity);
         var maxLength = Mathf.Max(Width, Height);
         floorCopy.transform.localScale = new Vector3(50 * maxLength, 0.1f, 50 * maxLength);
-        floorCopy.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2(10 * maxLength, 10 * maxLength);
+        floorCopy.GetComponent<MeshRenderer>().material.mainTextureScale = new Vector2(15 * maxLength, 15 * maxLength);
 
         Instantiate(player2D, Maze.StartCell.Cell2DPosition + player2DPositionDelta, Quaternion.identity)
             .transform.localScale = player2DScale;
