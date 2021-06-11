@@ -17485,7 +17485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mazeType: 2
   characteristics:
-  - {fileID: 0}
+  - {fileID: 547061132}
 --- !u!1 &816739131
 GameObject:
   m_ObjectHideFlags: 0
@@ -26630,7 +26630,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560602362}
+      - m_Target: {fileID: 806978282}
         m_TargetAssemblyTypeName: MazeCharacteristicsHandler, Assembly-CSharp
         m_MethodName: SetValueDelta
         m_Mode: 3
@@ -26654,7 +26654,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560602362}
+      - m_Target: {fileID: 806978282}
         m_TargetAssemblyTypeName: MazeCharacteristicsHandler, Assembly-CSharp
         m_MethodName: ChangeValue
         m_Mode: 3
@@ -44345,7 +44345,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 560602362}
+      - m_Target: {fileID: 806978282}
         m_TargetAssemblyTypeName: MazeCharacteristicsHandler, Assembly-CSharp
         m_MethodName: SetValueDelta
         m_Mode: 3
@@ -44369,7 +44369,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 560602362}
+      - m_Target: {fileID: 806978282}
         m_TargetAssemblyTypeName: MazeCharacteristicsHandler, Assembly-CSharp
         m_MethodName: ChangeValue
         m_Mode: 3

@@ -2,7 +2,6 @@ using System.Globalization;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MazeCharacteristicsHandler : MonoBehaviour
 {
