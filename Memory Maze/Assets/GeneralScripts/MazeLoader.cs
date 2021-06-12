@@ -72,6 +72,7 @@ public class MazeLoader : MonoBehaviour
 	public void ExitMaze()
 	{
 		if (ArcadeProgression.ProgressionOn) ArcadeProgression.Dispose();
+		if(IsTutorial) TurnOffTutorial();
 		LoadMenuScene();
 	}
 
