@@ -25,16 +25,16 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private UnityEvent classicWin;
     [SerializeField] private UnityEvent tutorialEnd;
 
-    private bool IsPauseAvailable => !camera2D.enabled && !storyPanel.activeInHierarchy && !mazeEnded;
+    private bool IsPauseAvailable => !camera2D.enabled && !storyPanel.activeInHierarchy && !_mazeEnded;
 
-    private int addTimerValue;
-    private LineRenderer lineRenderer;
-    private readonly Vector3 delta = new Vector3(0, 0, 2);
-    private bool mazeEnded;
+    private int _addTimerValue;
+    private LineRenderer _lineRenderer;
+    private readonly Vector3 _delta = new Vector3(0, 0, 2);
+    private bool _mazeEnded;
 
     private void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -55,9 +55,9 @@ public class PlayerUI : MonoBehaviour
 
     private void Draw()
     {
-        lineRenderer.positionCount += 1;
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1,
-            camera2D.ScreenToWorldPoint(Input.mousePosition) + delta);
+        _lineRenderer.positionCount += 1;
+        _lineRenderer.SetPosition(_lineRenderer.positionCount - 1,
+            camera2D.ScreenToWorldPoint(Input.mousePosition) + _delta);
     }
 
     public void SwapCams()
@@ -75,14 +75,14 @@ public class PlayerUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         storyPanel.SetActive(true);
         story.ShowStory(storyIndex);
-        addTimerValue = distance;
+        _addTimerValue = distance;
     }
 
-    public void AddToTimer() => StartCoroutine(timer.AddTime(addTimerValue));
+    public void AddToTimer() => StartCoroutine(timer.AddTime(_addTimerValue));
 
     public void Win()
     {
-        mazeEnded = true;
+        _mazeEnded = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if(MazeLoader.IsTutorial)
@@ -95,7 +95,7 @@ public class PlayerUI : MonoBehaviour
 
     public void Lose()
     {
-        mazeEnded = true;
+        _mazeEnded = true;
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
         if (ArcadeProgression.ProgressionOn)

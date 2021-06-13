@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class FinishArcadeUI : MonoBehaviour
 {
-#pragma warning disable 649
     [SerializeField] private TextMeshProUGUI mazeNumber;
     [SerializeField] private GameObject continueButton;
     [SerializeField] private GameObject arcadeEndText;
@@ -16,6 +15,6 @@ public class FinishArcadeUI : MonoBehaviour
             continueButton.SetActive(false);
             arcadeEndText.SetActive(true);
         }
-        mazeNumber.text = $"{ArcadeProgression.CurrentIndex} {mazeNumber.text.Split(' ')[1]}";
+        mazeNumber.text = $"{ArcadeProgression.CurrentIndex}";
     }
 }

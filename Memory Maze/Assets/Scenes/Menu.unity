@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 6276445}
   - component: {fileID: 6276448}
   - component: {fileID: 6276446}
+  - component: {fileID: 6276447}
   m_Layer: 5
   m_Name: Memory
   m_TagString: Untagged
@@ -180,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Memory
+  m_text: t_Logo0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
   m_sharedMaterial: {fileID: 8682816941345533817, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
@@ -249,6 +250,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6276447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6276444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &6276448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -357,8 +370,8 @@ GameObject:
   m_Component:
   - component: {fileID: 15167574}
   - component: {fileID: 15167576}
-  - component: {fileID: 15167577}
   - component: {fileID: 15167575}
+  - component: {fileID: 15167577}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -405,7 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Height
+  m_text: t_Height
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -491,11 +504,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 15167573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Height
-  russian: "\u0412\u044B\u0441\u043E\u0442\u0430"
 --- !u!1 &20181712
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +517,8 @@ GameObject:
   m_Component:
   - component: {fileID: 20181716}
   - component: {fileID: 20181715}
-  - component: {fileID: 20181714}
   - component: {fileID: 20181713}
+  - component: {fileID: 20181714}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -535,7 +546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Normal
+  m_text: c_NormalHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -613,11 +624,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 20181712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Normal
-  russian: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
 --- !u!222 &20181715
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -655,8 +664,8 @@ GameObject:
   m_Component:
   - component: {fileID: 26414687}
   - component: {fileID: 26414690}
-  - component: {fileID: 26414688}
   - component: {fileID: 26414689}
+  - component: {fileID: 26414688}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -692,11 +701,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 26414686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Tutorial
-  russian: "\u041E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"
 --- !u!114 &26414689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,7 +724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tutorial
+  m_text: c_TutorialHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -878,7 +885,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 640101271}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.21652423
+  m_Size: 0.21652421
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1177,7 +1184,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.33519554, y: 1}
+  m_AnchorMax: {x: 0.4, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1229,8 +1236,8 @@ GameObject:
   m_Component:
   - component: {fileID: 43544461}
   - component: {fileID: 43544464}
-  - component: {fileID: 43544462}
   - component: {fileID: 43544463}
+  - component: {fileID: 43544462}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -1266,11 +1273,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 43544460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Select mode
-  russian: "\u0412\u044B\u0431\u043E\u0440 \u0440\u0435\u0436\u0438\u043C\u0430"
 --- !u!114 &43544463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,7 +1296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select mode
+  m_text: t_SelectModeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -1378,8 +1383,8 @@ GameObject:
   m_Component:
   - component: {fileID: 50814230}
   - component: {fileID: 50814233}
-  - component: {fileID: 50814231}
   - component: {fileID: 50814232}
+  - component: {fileID: 50814231}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -1415,11 +1420,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 50814229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Sound
-  russian: "\u0417\u0432\u0443\u043A\u0438"
 --- !u!114 &50814232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1443,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sounds
+  m_text: t_SoundsSliderHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -1617,8 +1620,8 @@ GameObject:
   m_Component:
   - component: {fileID: 63473256}
   - component: {fileID: 63473259}
-  - component: {fileID: 63473257}
   - component: {fileID: 63473258}
+  - component: {fileID: 63473257}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1654,11 +1657,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 63473255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Generate
-  russian: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C"
 --- !u!114 &63473258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,7 +1680,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Generate
+  m_text: b_Generate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -1943,8 +1944,8 @@ GameObject:
   m_Component:
   - component: {fileID: 111191532}
   - component: {fileID: 111191531}
-  - component: {fileID: 111191530}
   - component: {fileID: 111191529}
+  - component: {fileID: 111191530}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -1972,8 +1973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Difficulty for beginners in the game: light labyrinths of small sizes,
-    a large amount of handicap in time.'
+  m_text: c_EasyDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -2051,17 +2051,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 111191528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty for beginners in the game: light labyrinths of small sizes,
-    a large amount of handicap in time.'
-  russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
-    \u043D\u043E\u0432\u0438\u0447\u043A\u043E\u0432 \u0432 \u0438\u0433\u0440\u0435:
-    \u043B\u0435\u0433\u043A\u0438\u0435 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B
-    \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0445 \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432,
-    \u0431\u043E\u043B\u044C\u0448\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
-    \u0444\u043E\u0440\u044B \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!222 &111191531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2099,8 +2091,8 @@ GameObject:
   m_Component:
   - component: {fileID: 112430890}
   - component: {fileID: 112430893}
-  - component: {fileID: 112430891}
   - component: {fileID: 112430892}
+  - component: {fileID: 112430891}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -2136,11 +2128,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 112430889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Andrew "ncrmncr" Stremousov
-  russian: "\u0410\u043D\u0434\u0440\u0435\u0439 \"ncrmncr\" \u0421\u0442\u0440\u0435\u043C\u043E\u0443\u0441\u043E\u0432"
 --- !u!114 &112430892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2161,7 +2151,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Andrew "ncrmncr" Stremousov
+  m_text: t_ncrmncr0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -3725,8 +3715,8 @@ GameObject:
   m_Component:
   - component: {fileID: 223103727}
   - component: {fileID: 223103730}
-  - component: {fileID: 223103728}
   - component: {fileID: 223103729}
+  - component: {fileID: 223103728}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -3762,24 +3752,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 223103726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: At this moment there are 3 types of maze. If you would like to know more
-    about them, you can do it after completing the training. But for now let's dwell
-    on the Perfect maze, the simpler one.
-  russian: "\u041D\u0430 \u0434\u0430\u043D\u043D\u044B\u0439 \u043C\u043E\u043C\u0435\u043D\u0442
-    \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442 3 \u0442\u0438\u043F\u0430
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u0432. \u0415\u0441\u043B\u0438
-    \u0432\u044B \u0445\u043E\u0442\u0438\u0442\u0435 \u0443\u0437\u043D\u0430\u0442\u044C
-    \u043E \u043D\u0438\u0445 \u0431\u043E\u043B\u044C\u0448\u0435, \u0432\u044B
-    \u043C\u043E\u0436\u0435\u0442\u0435 \u0441\u0434\u0435\u043B\u0430\u0442\u044C
-    \u044D\u0442\u043E \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0438\u044F
-    \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u044F. \u0410 \u043F\u043E\u043A\u0430
-    \u0447\u0442\u043E \u043E\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u043C\u0441\u044F
-    \u043D\u0430 \u0418\u0434\u0435\u0430\u043B\u044C\u043D\u043E\u043C \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u0435,
-    \u0441\u0430\u043C\u043E\u043C \u043F\u0440\u043E\u0441\u0442\u043E\u043C \u0438\u0437
-    \u043D\u0438\u0445."
 --- !u!114 &223103729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3800,9 +3775,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: At this moment there are 3 types of maze. If you would like to know more
-    about them, you can do it after completing the training. But for now let's dwell
-    on the Perfect maze, the simpler one.
+  m_text: t_Tutorial3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -4321,8 +4294,8 @@ GameObject:
   m_Component:
   - component: {fileID: 254521721}
   - component: {fileID: 254521724}
-  - component: {fileID: 254521722}
   - component: {fileID: 254521723}
+  - component: {fileID: 254521722}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -4358,18 +4331,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 254521720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty for those who like to pull their nerves: labyrinths of large
-    and colossal sizes, the minimum amount of handicap in time.'
-  russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
-    \u043B\u044E\u0431\u0438\u0442\u0435\u043B\u0435\u0439 \u043F\u043E\u0442\u0440\u0435\u043F\u0430\u0442\u044C
-    \u0441\u0435\u0431\u0435 \u043D\u0435\u0440\u0432\u044B: \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B
-    \u0431\u043E\u043B\u044C\u0448\u0438\u0445 \u0438 \u043A\u043E\u043B\u043E\u0441\u0441\u0430\u043B\u044C\u043D\u044B\u0445
-    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432, \u043C\u0438\u043D\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0435
-    \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0444\u043E\u0440\u044B
-    \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!114 &254521723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4390,8 +4354,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Difficulty for those who like to pull their nerves: labyrinths of large
-    and colossal sizes, the minimum amount of handicap in time.'
+  m_text: c_HardDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -4808,9 +4771,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274272564}
-  - component: {fileID: 274272567}
   - component: {fileID: 274272566}
   - component: {fileID: 274272565}
+  - component: {fileID: 274272567}
   m_Layer: 5
   m_Name: Audio Text
   m_TagString: Untagged
@@ -4834,7 +4797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -240}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &274272565
@@ -4857,7 +4820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Audio
+  m_text: t_AudioSubheader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -4943,11 +4906,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 274272563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Audio
-  russian: "\u0410\u0443\u0434\u0438\u043E"
 --- !u!1 &279046030
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,6 +5224,7 @@ GameObject:
   - component: {fileID: 287528424}
   - component: {fileID: 287528426}
   - component: {fileID: 287528425}
+  - component: {fileID: 287528427}
   m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
@@ -5284,8 +5246,8 @@ RectTransform:
   m_Father: {fileID: 1664736679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5355449}
-  m_AnchorMax: {x: 1, y: 0.99999994}
+  m_AnchorMin: {x: 0, y: 0.48372927}
+  m_AnchorMax: {x: 1, y: 0.9999999}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5301,7 +5263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 3790e986b0c16654ea3eb97f47c63e98, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -5309,7 +5271,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b5e224263fb07142a8aad538e3a4b11, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5327,6 +5289,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287528423}
   m_CullTransparentMesh: 1
+--- !u!114 &287528427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287528423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb30198aa32dd140b5750692dd48104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 3790e986b0c16654ea3eb97f47c63e98, type: 2}
+  radius: 10
 --- !u!1 &290705924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6031,6 +6007,7 @@ GameObject:
   - component: {fileID: 303922902}
   - component: {fileID: 303922905}
   - component: {fileID: 303922903}
+  - component: {fileID: 303922904}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -6077,7 +6054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Technical writer\r"
+  m_text: t_AveGus1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -6146,6 +6123,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &303922904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303922901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &303922905
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6451,8 +6440,8 @@ GameObject:
   m_Component:
   - component: {fileID: 318257290}
   - component: {fileID: 318257293}
-  - component: {fileID: 318257291}
   - component: {fileID: 318257292}
+  - component: {fileID: 318257291}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -6488,17 +6477,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 318257289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Yes, in ours, as in any other game, there is tutorial. Do we really need
-    tot tell what is this?
-  russian: "\u0414\u0430, \u0432 \u043D\u0430\u0448\u0435\u0439, \u043A\u0430\u043A
-    \u0438 \u0432 \u043B\u044E\u0431\u043E\u0439 \u0434\u0440\u0443\u0433\u043E\u0439
-    \u0438\u0433\u0440\u0435, \u0435\u0441\u0442\u044C \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435.
-    \u041D\u0430\u043C \u0432\u0435\u0434\u044C \u043D\u0435 \u043D\u0430\u0434\u043E
-    \u043E\u0431\u044A\u044F\u0441\u043D\u044F\u0442\u044C, \u0447\u0442\u043E \u044D\u0442\u043E
-    \u0442\u0430\u043A\u043E\u0435?"
 --- !u!114 &318257292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,8 +6500,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes, in ours, as in any other game, there is tutorial. Do we really need
-    to tell what is this?
+  m_text: c_TutorialDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -6700,8 +6680,8 @@ RectTransform:
   - {fileID: 734378458}
   - {fileID: 794689918}
   - {fileID: 1460359878}
-  - {fileID: 566875459}
   - {fileID: 2089007416}
+  - {fileID: 566875459}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7470,7 +7450,7 @@ MonoBehaviour:
     m_Options:
     - m_Text: English
       m_Image: {fileID: 0}
-    - m_Text: Russian
+    - m_Text: "\u0420\u0443\u0441\u0441\u043A\u0438\u0439"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8459,8 +8439,8 @@ GameObject:
   m_Component:
   - component: {fileID: 431287265}
   - component: {fileID: 431287268}
-  - component: {fileID: 431287266}
   - component: {fileID: 431287267}
+  - component: {fileID: 431287266}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -8496,23 +8476,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 431287264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Choose the maze and size that suits you! This is an ideal mode both for
-    lovers of simple mazes to learn from, and for those who love the most difficult
-    obstacles and mazes of colossal dimensions.
-  russian: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0438\u0439
-    \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442
-    \u0438 \u0440\u0430\u0437\u043C\u0435\u0440! \u042D\u0442\u043E \u0438\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0435\u0436\u0438\u043C \u043A\u0430\u043A \u0434\u043B\u044F \u043B\u044E\u0431\u0438\u0442\u0435\u043B\u0435\u0439
-    \u043F\u0440\u043E\u0441\u0442\u044B\u0445 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u0432,
-    \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0436\u043D\u043E
-    \u043F\u043E\u0443\u0447\u0438\u0442\u044C\u0441\u044F, \u0442\u0430\u043A \u0438
-    \u0434\u043B\u044F \u0442\u0435\u0445, \u043A\u0442\u043E \u043B\u044E\u0431\u0438\u0442
-    \u0441\u043B\u043E\u0436\u043D\u0435\u0439\u0448\u0438\u0435 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F
-    \u0438 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u043A\u043E\u043B\u043E\u0441\u0441\u0430\u043B\u044C\u043D\u044B\u0445
-    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432."
 --- !u!114 &431287267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8533,8 +8499,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yes, in ours, as in any other game, there is tutorial. Do we really need
-    to tell what is this?
+  m_text: c_ClassicDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -8621,8 +8586,8 @@ GameObject:
   m_Component:
   - component: {fileID: 433862166}
   - component: {fileID: 433862169}
-  - component: {fileID: 433862167}
   - component: {fileID: 433862168}
+  - component: {fileID: 433862167}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -8658,11 +8623,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 433862165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic / Sigma maze
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 / \u0421\u0438\u0433\u043C\u0430"
 --- !u!114 &433862168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8683,7 +8646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic / Sigma maze
+  m_text: t_ClassicSigmaMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -9134,8 +9097,8 @@ GameObject:
   m_Component:
   - component: {fileID: 470708631}
   - component: {fileID: 470708634}
-  - component: {fileID: 470708632}
   - component: {fileID: 470708633}
+  - component: {fileID: 470708632}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -9171,11 +9134,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 470708630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Perfect maze
-  russian: "\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!114 &470708633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9196,7 +9157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect maze
+  m_text: c_PerfectMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -9538,8 +9499,8 @@ GameObject:
   m_Component:
   - component: {fileID: 503723135}
   - component: {fileID: 503723138}
-  - component: {fileID: 503723137}
   - component: {fileID: 503723136}
+  - component: {fileID: 503723137}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -9586,7 +9547,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Width
+  m_text: t_Width
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -9664,11 +9625,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 503723134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Width
-  russian: "\u0428\u0438\u0440\u0438\u043D\u0430"
 --- !u!222 &503723138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10038,8 +9997,8 @@ GameObject:
   m_Component:
   - component: {fileID: 536238968}
   - component: {fileID: 536238971}
-  - component: {fileID: 536238969}
   - component: {fileID: 536238970}
+  - component: {fileID: 536238969}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -10075,11 +10034,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 536238967}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Hard
-  russian: "\u0421\u043B\u043E\u0436\u043D\u044B\u0439"
 --- !u!114 &536238970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10100,7 +10057,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hard
+  m_text: c_HardHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -10392,8 +10349,8 @@ GameObject:
   m_Component:
   - component: {fileID: 549976411}
   - component: {fileID: 549976414}
-  - component: {fileID: 549976412}
   - component: {fileID: 549976413}
+  - component: {fileID: 549976412}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -10429,11 +10386,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 549976410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Generate
-  russian: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C"
 --- !u!114 &549976413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10454,7 +10409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Generate
+  m_text: b_Generate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -10541,8 +10496,8 @@ GameObject:
   m_Component:
   - component: {fileID: 553688934}
   - component: {fileID: 553688937}
-  - component: {fileID: 553688936}
   - component: {fileID: 553688935}
+  - component: {fileID: 553688936}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -10589,7 +10544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: t_TextureQualityDropdownHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -10667,11 +10622,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 553688933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Resolution
-  russian: "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435"
 --- !u!222 &553688937
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10744,8 +10697,8 @@ GameObject:
   m_Component:
   - component: {fileID: 562792956}
   - component: {fileID: 562792959}
-  - component: {fileID: 562792957}
   - component: {fileID: 562792958}
+  - component: {fileID: 562792957}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -10781,11 +10734,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 562792955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Settings
-  russian: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
 --- !u!114 &562792958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10806,7 +10757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: b_Settings
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -11050,7 +11001,7 @@ RectTransform:
   - {fileID: 2137433360}
   - {fileID: 236503788}
   m_Father: {fileID: 326406534}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -11367,8 +11318,8 @@ GameObject:
   m_Component:
   - component: {fileID: 573501447}
   - component: {fileID: 573501450}
-  - component: {fileID: 573501448}
   - component: {fileID: 573501449}
+  - component: {fileID: 573501448}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -11404,21 +11355,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 573501446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Perfect is the most common maze in human understanding. It has a square
-    shape, its difference is the connection of one cell with another in one single
-    path.
-  russian: "\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439 - \u0441\u0430\u043C\u044B\u0439
-    \u043E\u0431\u044B\u0447\u043D\u044B\u0439 \u0432 \u043F\u043E\u043D\u0438\u043C\u0430\u043D\u0438\u0438
-    \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442.
-    \u0418\u043C\u0435\u0435\u0442 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043D\u0443\u044E
-    \u0444\u043E\u0440\u043C\u0443, \u0435\u0433\u043E \u043E\u0442\u043B\u0438\u0447\u0438\u0435\u043C
-    \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441\u0432\u044F\u0437\u044C
-    \u043E\u0434\u043D\u043E\u0439 \u043A\u043B\u0435\u0442\u043A\u0438 \u0441 \u0434\u0440\u0443\u0433\u043E\u0439
-    \u043E\u0434\u043D\u0438\u043C \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C
-    \u043F\u0443\u0442\u0435\u043C."
 --- !u!114 &573501449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11439,9 +11378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect is the most common maze in human understanding. It has a square
-    shape, its difference is the connection of one cell with another in one single
-    path.
+  m_text: c_PerfectMazeDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -11737,8 +11674,8 @@ GameObject:
   m_Component:
   - component: {fileID: 576420745}
   - component: {fileID: 576420748}
-  - component: {fileID: 576420746}
   - component: {fileID: 576420747}
+  - component: {fileID: 576420746}
   m_Layer: 5
   m_Name: CreditsText
   m_TagString: Untagged
@@ -11774,11 +11711,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 576420744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Credits:'
-  russian: "\u0410\u0432\u0442\u043E\u0440\u044B:"
 --- !u!114 &576420747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11799,7 +11734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Credits:'
+  m_text: t_Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -11886,8 +11821,8 @@ GameObject:
   m_Component:
   - component: {fileID: 578945834}
   - component: {fileID: 578945837}
-  - component: {fileID: 578945836}
   - component: {fileID: 578945835}
+  - component: {fileID: 578945836}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -11934,7 +11869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Field of view
+  m_text: t_FOVSliderHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -12012,11 +11947,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 578945833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Field of view
-  russian: "\u041F\u043E\u043B\u0435 \u0437\u0440\u0435\u043D\u0438\u044F"
 --- !u!222 &578945837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12125,8 +12058,8 @@ GameObject:
   m_Component:
   - component: {fileID: 597807497}
   - component: {fileID: 597807500}
-  - component: {fileID: 597807498}
   - component: {fileID: 597807499}
+  - component: {fileID: 597807498}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -12162,11 +12095,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 597807496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Side size
-  russian: "\u0414\u043B\u0438\u043D\u0430 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
 --- !u!114 &597807499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12187,7 +12118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Side size
+  m_text: t_SideSize
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -12392,6 +12323,7 @@ GameObject:
   - component: {fileID: 604773213}
   - component: {fileID: 604773215}
   - component: {fileID: 604773214}
+  - component: {fileID: 604773216}
   m_Layer: 5
   m_Name: Maze
   m_TagString: Untagged
@@ -12438,7 +12370,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Maze
+  m_text: t_Logo1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
   m_sharedMaterial: {fileID: 8682816941345533817, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
@@ -12515,6 +12447,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604773212}
   m_CullTransparentMesh: 0
+--- !u!114 &604773216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604773212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607127621
 GameObject:
   m_ObjectHideFlags: 0
@@ -12525,8 +12469,8 @@ GameObject:
   m_Component:
   - component: {fileID: 607127622}
   - component: {fileID: 607127625}
-  - component: {fileID: 607127623}
   - component: {fileID: 607127624}
+  - component: {fileID: 607127623}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -12562,11 +12506,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 607127621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Leyla "leyuwiuz" A.
-  russian: "\u041B\u0435\u0439\u043B\u0430 \"leyuwiuz\" \u0410."
 --- !u!114 &607127624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12587,7 +12529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leyla "leyuwiuz" A.
+  m_text: t_leyuwiuz0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -12674,8 +12616,8 @@ GameObject:
   m_Component:
   - component: {fileID: 607768485}
   - component: {fileID: 607768488}
-  - component: {fileID: 607768486}
   - component: {fileID: 607768487}
+  - component: {fileID: 607768486}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -12711,23 +12653,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 607768484}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Choose the maze and size that suits you! This is an ideal mode both for
-    lovers of simple mazes to learn from, and for those who love the most difficult
-    chalanges and mazes of colossal dimensions.
-  russian: "\u0412\u044B\u0431\u0435\u0440\u0438 \u043F\u043E\u0434\u0445\u043E\u0434\u044F\u0449\u0438\u0439
-    \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442
-    \u0438 \u0440\u0430\u0437\u043C\u0435\u0440! \u042D\u0442\u043E \u0438\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439
-    \u0440\u0435\u0436\u0438\u043C \u043A\u0430\u043A \u0434\u043B\u044F \u043B\u044E\u0431\u0438\u0442\u0435\u043B\u0435\u0439
-    \u043F\u0440\u043E\u0441\u0442\u044B\u0445 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u0432,
-    \u043D\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043C\u043E\u0436\u043D\u043E
-    \u043F\u043E\u0443\u0447\u0438\u0442\u044C\u0441\u044F, \u0442\u0430\u043A \u0438
-    \u0434\u043B\u044F \u0442\u0435\u0445, \u043A\u0442\u043E \u043B\u044E\u0431\u0438\u0442
-    \u0441\u043B\u043E\u0436\u043D\u0435\u0439\u0448\u0438\u0435 \u0432\u044B\u0437\u043E\u0432\u044B
-    \u0438 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u043A\u043E\u043B\u043E\u0441\u0441\u0430\u043B\u044C\u043D\u044B\u0445
-    \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432."
 --- !u!114 &607768487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12748,9 +12676,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Choose the maze and size that suits you! This is an ideal mode both for
-    lovers of simple mazes to learn from, and for those who love the most difficult
-    chalanges and mazes of colossal dimensions.
+  m_text: c_ClassicDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -12837,8 +12763,8 @@ GameObject:
   m_Component:
   - component: {fileID: 608026313}
   - component: {fileID: 608026316}
-  - component: {fileID: 608026314}
   - component: {fileID: 608026315}
+  - component: {fileID: 608026314}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -12874,11 +12800,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 608026312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic / Delta maze
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 / \u0422\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u044B\u0439"
 --- !u!114 &608026315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12899,7 +12823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic / Delta maze
+  m_text: t_ClassicDeltaMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -14060,8 +13984,8 @@ GameObject:
   m_Component:
   - component: {fileID: 703717537}
   - component: {fileID: 703717540}
-  - component: {fileID: 703717538}
   - component: {fileID: 703717539}
+  - component: {fileID: 703717538}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -14097,31 +14021,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 703717536}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'The game has 2 game modes: Classic and Arcade. First mode is simple,
-    you choose type of maze and his size. Second is more difficult; there you must
-    complete some amount of mazes in a row.
-
-    Let''s start with Classic mode!
-    Click on "Classic" mode card.'
-  russian: "\u0412 \u0438\u0433\u0440\u0435 \u0435\u0441\u0442\u044C 2 \u0440\u0435\u0436\u0438\u043C\u0430
-    \u0438\u0433\u0440\u044B: \u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 \u0438
-    \u0410\u0440\u043A\u0430\u0434\u0430. \u041F\u0435\u0440\u0432\u044B\u0439 \u0440\u0435\u0436\u0438\u043C
-    \u0434\u043E\u0432\u043E\u043B\u044C\u043D\u043E \u043F\u0440\u043E\u0441\u0442\u043E\u0439:
-    \u0432\u044B \u0432\u044B\u0431\u0438\u0440\u0430\u0435\u0442\u0435 \u0442\u0438\u043F
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u0430 \u0438 \u0435\u0433\u043E
-    \u0440\u0430\u0437\u043C\u0435\u0440. \u0412\u0442\u043E\u0440\u043E\u0439 \u0436\u0435,
-    \u043D\u0430\u043E\u0431\u043E\u0440\u043E\u0442, \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F
-    \u0431\u043E\u043B\u0435\u0435 \u0441\u043B\u043E\u0436\u043D\u044B\u043C; \u0432
-    \u043D\u0435\u043C \u0432\u044B \u0434\u043E\u043B\u0436\u043D\u044B \u043F\u0440\u043E\u0439\u0442\u0438
-    \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u0432 \u043F\u043E\u0434\u0440\u044F\u0434.\r\n\u041D\u0430\u0447\u043D\u0435\u043C
-    \u0441 \u043A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
-    \u0440\u0435\u0436\u0438\u043C\u0430! \u0429\u0435\u043B\u043A\u043D\u0438\u0442\u0435
-    \u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0443 \xAB\u041A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0438\u0439\xBB
-    \u0440\u0435\u0436\u0438\u043C."
 --- !u!114 &703717539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14142,12 +14044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The game has 2 game modes: Classic and Arcade. First mode is simple, you
-    choose type of maze and his size. Second is more difficult; there you must complete
-    some amount of mazes in a row.
-
-    Let''s start with Classic mode! Click on
-    "Classic" mode card.'
+  m_text: t_Tutorial2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -14234,8 +14131,8 @@ GameObject:
   m_Component:
   - component: {fileID: 720136197}
   - component: {fileID: 720136200}
-  - component: {fileID: 720136198}
   - component: {fileID: 720136199}
+  - component: {fileID: 720136198}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -14271,11 +14168,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 720136196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Artyom "Arasti" Arakelov
-  russian: "\u0410\u0440\u0442\u0451\u043C \"Arasti\" \u0410\u0440\u0430\u043A\u0435\u043B\u043E\u0432"
 --- !u!114 &720136199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14296,7 +14191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Artyom "Arasti" Arakelov
+  m_text: t_Arasti0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -15062,7 +14957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -510}
+  m_AnchoredPosition: {x: 0, y: -570}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &732923754
@@ -15449,8 +15344,8 @@ GameObject:
   m_Component:
   - component: {fileID: 746040390}
   - component: {fileID: 746040393}
-  - component: {fileID: 746040391}
   - component: {fileID: 746040392}
+  - component: {fileID: 746040391}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -15486,11 +15381,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 746040389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Exit
-  russian: "\u0412\u044B\u0445\u043E\u0434"
 --- !u!114 &746040392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15511,7 +15404,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: b_Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -15598,8 +15491,8 @@ GameObject:
   m_Component:
   - component: {fileID: 748404998}
   - component: {fileID: 748405001}
-  - component: {fileID: 748404999}
   - component: {fileID: 748405000}
+  - component: {fileID: 748404999}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -15635,11 +15528,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 748404997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Fullscreen
-  russian: "\u041F\u043E\u043B\u043D\u044B\u0439 \u044D\u043A\u0440\u0430\u043D"
 --- !u!114 &748405000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15660,7 +15551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fullscreen
+  m_text: t_FullscreenToggleHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -16030,8 +15921,8 @@ GameObject:
   m_Component:
   - component: {fileID: 756159154}
   - component: {fileID: 756159158}
-  - component: {fileID: 756159155}
   - component: {fileID: 756159156}
+  - component: {fileID: 756159155}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -16067,11 +15958,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 756159153}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Music
-  russian: "\u041C\u0443\u0437\u044B\u043A\u0430"
 --- !u!114 &756159156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16092,7 +15981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Music
+  m_text: t_MusicSliderHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -16179,8 +16068,8 @@ GameObject:
   m_Component:
   - component: {fileID: 758864887}
   - component: {fileID: 758864886}
-  - component: {fileID: 758864885}
   - component: {fileID: 758864884}
+  - component: {fileID: 758864885}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -16208,8 +16097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Difficulty for those who already have a well-developed memory: medium
-    and large labyrinths, average size of noise over time.'
+  m_text: c_NormalDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -16287,18 +16175,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 758864883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Difficulty for those who already have a well-developed memory: medium
-    and large labyrinths, average size of noise over time.'
-  russian: "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043B\u044F
-    \u0442\u0435\u0445, \u0443 \u043A\u043E\u0433\u043E \u0443\u0436\u0435 \u0445\u043E\u0440\u043E\u0448\u043E
-    \u0440\u0430\u0437\u0432\u0438\u0442\u0430 \u043F\u0430\u043C\u044F\u0442\u044C:
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u0441\u0440\u0435\u0434\u043D\u0438\u0445
-    \u0438 \u0431\u043E\u043B\u044C\u0448\u0438\u0445 \u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432,
-    \u0441\u0440\u0435\u0434\u043D\u0438\u0439 \u0440\u0430\u0437\u043C\u0435\u0440
-    \u043F\u043E\u043C\u0435\u0445 \u043F\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0438."
 --- !u!222 &758864886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16876,8 +16755,8 @@ GameObject:
   m_Component:
   - component: {fileID: 779491611}
   - component: {fileID: 779491613}
-  - component: {fileID: 779491614}
   - component: {fileID: 779491612}
+  - component: {fileID: 779491614}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -16924,9 +16803,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect is the most common maze in human understanding. It has a square
-    shape, its difference is the connection of one cell with another in one single
-    path.
+  m_text: c_PerfectMazeDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -17012,21 +16889,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 779491610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Perfect is the most common maze in human understanding. It has a square
-    shape, its difference is the connection of one cell with another in one single
-    path.
-  russian: "\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439 - \u0441\u0430\u043C\u044B\u0439
-    \u043E\u0431\u044B\u0447\u043D\u044B\u0439 \u0432 \u043F\u043E\u043D\u0438\u043C\u0430\u043D\u0438\u0438
-    \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442.
-    \u0418\u043C\u0435\u0435\u0442 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043D\u0443\u044E
-    \u0444\u043E\u0440\u043C\u0443, \u0435\u0433\u043E \u043E\u0442\u043B\u0438\u0447\u0438\u0435\u043C
-    \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0441\u0432\u044F\u0437\u044C
-    \u043E\u0434\u043D\u043E\u0439 \u043A\u043B\u0435\u0442\u043A\u0438 \u0441 \u0434\u0440\u0443\u0433\u043E\u0439
-    \u043E\u0434\u043D\u0438\u043C \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u043C
-    \u043F\u0443\u0442\u0435\u043C."
 --- !u!1 &789198105
 GameObject:
   m_ObjectHideFlags: 0
@@ -17293,8 +17158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 804974423}
   - component: {fileID: 804974426}
-  - component: {fileID: 804974424}
   - component: {fileID: 804974425}
+  - component: {fileID: 804974424}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -17330,11 +17195,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 804974422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Delta maze
-  russian: "\u0422\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u044B\u0439"
 --- !u!114 &804974425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17355,7 +17218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Delta maze
+  m_text: c_DeltaMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -17653,7 +17516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -350}
+  m_AnchoredPosition: {x: 0, y: -350.00034}
   m_SizeDelta: {x: 0, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &821370883
@@ -17868,8 +17731,8 @@ GameObject:
   m_Component:
   - component: {fileID: 855773039}
   - component: {fileID: 855773042}
-  - component: {fileID: 855773040}
   - component: {fileID: 855773041}
+  - component: {fileID: 855773040}
   m_Layer: 0
   m_Name: Label
   m_TagString: Untagged
@@ -17905,11 +17768,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 855773038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Sensitivity
-  russian: "\u0427\u0443\u0432\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C"
 --- !u!114 &855773041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17930,7 +17791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sensitivity
+  m_text: t_SensitivitySliderHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -18172,8 +18033,8 @@ GameObject:
   m_Component:
   - component: {fileID: 882215680}
   - component: {fileID: 882215683}
-  - component: {fileID: 882215681}
   - component: {fileID: 882215682}
+  - component: {fileID: 882215681}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -18209,11 +18070,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 882215679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Stories
-  russian: "\u0418\u0441\u0442\u043E\u0440\u0438\u0438"
 --- !u!114 &882215682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18234,7 +18093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stories
+  m_text: b_Stories
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -20430,8 +20289,8 @@ GameObject:
   m_Component:
   - component: {fileID: 991841083}
   - component: {fileID: 991841086}
-  - component: {fileID: 991841085}
   - component: {fileID: 991841084}
+  - component: {fileID: 991841085}
   m_Layer: 5
   m_Name: ResolutionLabel
   m_TagString: Untagged
@@ -20478,7 +20337,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resolution
+  m_text: t_ResolutionDropdownHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -20556,11 +20415,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 991841082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Resolution
-  russian: "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435"
 --- !u!222 &991841086
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20579,8 +20436,8 @@ GameObject:
   m_Component:
   - component: {fileID: 998704014}
   - component: {fileID: 998704017}
-  - component: {fileID: 998704016}
   - component: {fileID: 998704015}
+  - component: {fileID: 998704016}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -20627,7 +20484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Height
+  m_text: t_Height
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -20705,11 +20562,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 998704013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Height
-  russian: "\u0412\u044B\u0441\u043E\u0442\u0430"
 --- !u!222 &998704017
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20729,6 +20584,7 @@ GameObject:
   - component: {fileID: 1001448489}
   - component: {fileID: 1001448492}
   - component: {fileID: 1001448490}
+  - component: {fileID: 1001448491}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -20775,7 +20631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team Lead / Programmer
+  m_text: t_Arasti1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -20844,6 +20700,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1001448491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001448488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1001448492
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21740,6 +21608,7 @@ GameObject:
   - component: {fileID: 1028345146}
   - component: {fileID: 1028345149}
   - component: {fileID: 1028345147}
+  - component: {fileID: 1028345148}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -21786,7 +21655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3D designer
+  m_text: t_leyuwiuz1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -21855,6 +21724,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1028345148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028345145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1028345149
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22256,7 +22137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Very Low
+  m_text: d_LowQuality
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -22367,7 +22248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -630}
+  m_AnchoredPosition: {x: 0, y: -180}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1050792777
@@ -23525,8 +23406,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1109905348}
   - component: {fileID: 1109905351}
-  - component: {fileID: 1109905350}
   - component: {fileID: 1109905349}
+  - component: {fileID: 1109905350}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -23573,7 +23454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Width
+  m_text: t_Width
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -23651,11 +23532,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1109905347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Width
-  russian: "\u0428\u0438\u0440\u0438\u043D\u0430"
 --- !u!222 &1109905351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23699,7 +23578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -180}
+  m_AnchoredPosition: {x: 0, y: -240}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1110080964
@@ -23813,6 +23692,7 @@ GameObject:
   - component: {fileID: 1125317026}
   - component: {fileID: 1125317025}
   - component: {fileID: 1125317024}
+  - component: {fileID: 1125317027}
   m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
@@ -23883,8 +23763,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 287528425}
   m_HandleRect: {fileID: 287528424}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.46445516
+  m_Value: 0.9999998
+  m_Size: 0.51627064
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -23901,7 +23781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d0aeb8ded57161e46b5f9409df644c1d, type: 2}
   m_Color: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.6392157}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -23909,7 +23789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b5e224263fb07142a8aad538e3a4b11, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23927,6 +23807,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125317022}
   m_CullTransparentMesh: 1
+--- !u!114 &1125317027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125317022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb30198aa32dd140b5750692dd48104, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: d0aeb8ded57161e46b5f9409df644c1d, type: 2}
+  radius: 10
 --- !u!1 &1127559168
 GameObject:
   m_ObjectHideFlags: 0
@@ -24124,6 +24018,7 @@ GameObject:
   - component: {fileID: 1129638185}
   - component: {fileID: 1129638188}
   - component: {fileID: 1129638186}
+  - component: {fileID: 1129638187}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -24170,7 +24065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: UI / UX designer
+  m_text: t_ncrmncr1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -24239,6 +24134,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1129638187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129638184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1129638188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24295,8 +24202,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1147470871}
   - component: {fileID: 1147470873}
-  - component: {fileID: 1147470874}
   - component: {fileID: 1147470872}
+  - component: {fileID: 1147470874}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -24343,7 +24250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic / Perfect maze
+  m_text: t_ClassicPerfectMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -24429,11 +24336,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1147470870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic / Perfect maze
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 / \u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!1 &1153993327
 GameObject:
   m_ObjectHideFlags: 0
@@ -24444,8 +24349,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1153993328}
   - component: {fileID: 1153993331}
-  - component: {fileID: 1153993329}
   - component: {fileID: 1153993330}
+  - component: {fileID: 1153993329}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -24481,11 +24386,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1153993327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic / Perfect maze
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430 / \u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!114 &1153993330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24506,7 +24409,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic / Perfect maze
+  m_text: t_ClassicPerfectMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -24593,8 +24496,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1181215335}
   - component: {fileID: 1181215338}
-  - component: {fileID: 1181215336}
   - component: {fileID: 1181215337}
+  - component: {fileID: 1181215336}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -24630,11 +24533,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181215334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Select difficulty
-  russian: "\u0412\u044B\u0431\u043E\u0440 \u0441\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u0438"
 --- !u!114 &1181215337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24655,7 +24556,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select difficulty
+  m_text: t_SelectDifficultyHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -24742,8 +24643,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1183288988}
   - component: {fileID: 1183288991}
-  - component: {fileID: 1183288989}
   - component: {fileID: 1183288990}
+  - component: {fileID: 1183288989}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -24779,11 +24680,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1183288987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Sigma maze
-  russian: "\u0421\u0438\u0433\u043C\u0430"
 --- !u!114 &1183288990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24804,7 +24703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sigma maze
+  m_text: c_SigmaMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -25564,8 +25463,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1222802115}
   - component: {fileID: 1222802117}
-  - component: {fileID: 1222802118}
   - component: {fileID: 1222802116}
+  - component: {fileID: 1222802118}
   m_Layer: 5
   m_Name: TeamLabel
   m_TagString: Untagged
@@ -25612,7 +25511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: by More Or Less Serious Goslings team
+  m_text: t_Team
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
   m_sharedMaterial: {fileID: 8682816941345533817, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
@@ -25698,12 +25597,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1222802114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: "by \rMore Or Less Serious Goslings team"
-  russian: "\u043E\u0442 \"\u0411\u043E\u043B\u0435\u0435-\u043C\u0435\u043D\u0435\u0435
-    \u0441\u0435\u0440\u044C\u0451\u0437\u043D\u044B\u0445 \u0433\u0443\u0441\u044F\u0442\""
 --- !u!1 &1226518995
 GameObject:
   m_ObjectHideFlags: 0
@@ -25812,7 +25708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -330}
+  m_AnchoredPosition: {x: 0, y: -390}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1236953362
@@ -26049,8 +25945,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1240215947}
   - component: {fileID: 1240215949}
-  - component: {fileID: 1240215950}
   - component: {fileID: 1240215948}
+  - component: {fileID: 1240215950}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -26097,8 +25993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This maze has a triangular shape, like its cells. Three paths are possible
-    from one cell, just like the "Perfect Maze" has one single path.
+  m_text: c_DeltaMazeDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -26184,21 +26079,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240215946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: This maze has a triangular shape, like its cells. Three paths are possible
-    from one cell, just like the "Perfect Maze" has one single path.
-  russian: "\u041B\u0430\u0431\u0438\u0440\u0438\u043D\u0442 \u0438\u043C\u0435\u0435\u0442
-    \u0442\u0440\u0435\u0443\u0433\u043E\u043B\u044C\u043D\u0443\u044E \u0444\u043E\u0440\u043C\u0443,
-    \u043A\u0430\u043A \u0438 \u0435\u0433\u043E \u044F\u0447\u0435\u0439\u043A\u0438.
-    \u0418\u0437 \u043E\u0434\u043D\u043E\u0439 \u044F\u0447\u0435\u0439\u043A\u0438
-    \u0432\u043E\u0437\u043C\u043E\u0436\u0435\u043D \u0432\u044B\u0445\u043E\u0434
-    \u0442\u0440\u0435\u0445 \u043F\u0443\u0442\u0435\u0439, \u0442\u0430\u043A\u0436\u0435
-    \u043A\u0430\u043A \u0438 \xAB\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\xBB \u0438\u043C\u0435\u0435\u0442
-    \u043E\u0434\u0438\u043D \u0435\u0434\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439
-    \u043F\u0443\u0442\u044C."
 --- !u!1 &1240568345
 GameObject:
   m_ObjectHideFlags: 0
@@ -26209,8 +26092,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1240568346}
   - component: {fileID: 1240568349}
-  - component: {fileID: 1240568347}
   - component: {fileID: 1240568348}
+  - component: {fileID: 1240568347}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -26246,11 +26129,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1240568345}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Generate
-  russian: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C"
 --- !u!114 &1240568348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26271,7 +26152,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Generate
+  m_text: b_Generate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -26515,7 +26396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -390}
+  m_AnchoredPosition: {x: 0, y: -450}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1267352575
@@ -26752,8 +26633,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1281198576}
   - component: {fileID: 1281198579}
-  - component: {fileID: 1281198577}
   - component: {fileID: 1281198578}
+  - component: {fileID: 1281198577}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -26789,11 +26670,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1281198575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Kozlov "kozlov174" Danila
-  russian: "\u041A\u043E\u0437\u043B\u043E\u0432 \"kozlov174\" \u0414\u0430\u043D\u0438\u043B\u0430"
 --- !u!114 &1281198578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26814,7 +26693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kozlov "kozlov174" Danila
+  m_text: t_kozlov1740
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -27313,8 +27192,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1300752631}
   - component: {fileID: 1300752633}
-  - component: {fileID: 1300752632}
   - component: {fileID: 1300752634}
+  - component: {fileID: 1300752632}
   m_Layer: 0
   m_Name: Description
   m_TagString: Untagged
@@ -27350,21 +27229,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300752630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Are you ready to challenge yourself and go through the most difficult
-    mazes from memory? You only have one life and one try! This is an arcade mode,
-    prove that your memory is unshakable!
-  russian: "\u0413\u043E\u0442\u043E\u0432 \u043B\u0438 \u0442\u044B \u0431\u0440\u043E\u0441\u0438\u0442\u044C
-    \u0441\u0430\u043C\u043E\u043C\u0443 \u0441\u0435\u0431\u0435 \u0432\u044B\u0437\u043E\u0432
-    \u0438 \u043F\u0440\u043E\u0439\u0442\u0438 \u0441\u043B\u043E\u0436\u043D\u0435\u0439\u0448\u0438\u0435
-    \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u044B \u043F\u043E \u043F\u0430\u043C\u044F\u0442\u0438?
-    \u0423 \u0442\u0435\u0431\u044F \u0432\u0441\u0435\u0433\u043E \u043E\u0434\u043D\u0430
-    \u0436\u0438\u0437\u043D\u044C \u0438 \u043E\u0434\u043D\u0430 \u043F\u043E\u043F\u044B\u0442\u043A\u0430!
-    \u042D\u0442\u043E \u0430\u0440\u043A\u0430\u0434\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C,
-    \u0434\u043E\u043A\u0430\u0436\u0438, \u0447\u0442\u043E \u0442\u0432\u043E\u044F
-    \u043F\u0430\u043C\u044F\u0442\u044C \u043D\u0435\u043F\u043E\u043A\u043E\u043B\u0435\u0431\u0438\u043C\u0430!"
 --- !u!222 &1300752633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27393,9 +27260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you ready to challenge yourself and go through the most difficult mazes
-    from memory? You only have one life and one try! This is an arcade mode, prove
-    that your memory is unshakable!
+  m_text: "\u0441_ArcadeDescription"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -27590,7 +27455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -570}
+  m_AnchoredPosition: {x: 0, y: -630}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1313656679
@@ -27602,9 +27467,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1313656680}
-  - component: {fileID: 1313656683}
   - component: {fileID: 1313656682}
   - component: {fileID: 1313656681}
+  - component: {fileID: 1313656683}
   m_Layer: 5
   m_Name: Game Text
   m_TagString: Untagged
@@ -27628,7 +27493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -450}
+  m_AnchoredPosition: {x: 0, y: -510}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1313656681
@@ -27651,7 +27516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game
+  m_text: t_GameSubheader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -27737,11 +27602,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313656679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Game
-  russian: "\u0418\u0433\u0440\u0430"
 --- !u!1 &1323821215
 GameObject:
   m_ObjectHideFlags: 0
@@ -28461,8 +28324,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1351666408}
   - component: {fileID: 1351666411}
-  - component: {fileID: 1351666409}
   - component: {fileID: 1351666410}
+  - component: {fileID: 1351666409}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -28498,11 +28361,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1351666407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Arcade
-  russian: "\u0410\u0440\u043A\u0430\u0434\u0430"
 --- !u!114 &1351666410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28523,7 +28384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Arcade
+  m_text: c_ArcadeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -28610,8 +28471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1353341019}
   - component: {fileID: 1353341022}
-  - component: {fileID: 1353341020}
   - component: {fileID: 1353341021}
+  - component: {fileID: 1353341020}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -28647,11 +28508,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1353341018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Select type
-  russian: "\u0412\u044B\u0431\u043E\u0440 \u0442\u0438\u043F\u0430"
 --- !u!114 &1353341021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28672,7 +28531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select type
+  m_text: t_SelectTypeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -28796,8 +28655,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1357560370}
   - component: {fileID: 1357560373}
-  - component: {fileID: 1357560371}
   - component: {fileID: 1357560372}
+  - component: {fileID: 1357560371}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -28833,20 +28692,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357560369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'Welcome to Memory Maze! In that little tutorial we will introduce you
-    how to play in this game.
-
-    Click the button on the right to continue.'
-  russian: "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C
-    \u0432 Memory Maze! \u0412 \u044D\u0442\u043E\u043C \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u043C
-    \u0440\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u0435 \u043C\u044B
-    \u0440\u0430\u0441\u0441\u043A\u0430\u0436\u0435\u043C \u0432\u0430\u043C \u043A\u0430\u043A
-    \u0438\u0433\u0440\u0430\u0442\u044C \u0432 \u044D\u0442\u0443 \u0438\u0433\u0440\u0443.
-    \u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443
-    \u0441\u043F\u0440\u0430\u0432\u0430, \u0447\u0442\u043E\u0431\u044B \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C."
 --- !u!114 &1357560372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28867,10 +28715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to Memory Maze! In that little tutorial we will introduce you
-    how to play in this game.
-
-    Click the button on the right to continue.'
+  m_text: t_Tutorial1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -29252,8 +29097,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1371718070}
   - component: {fileID: 1371718073}
-  - component: {fileID: 1371718071}
   - component: {fileID: 1371718072}
+  - component: {fileID: 1371718071}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -29289,11 +29134,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371718069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430"
 --- !u!114 &1371718072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29314,7 +29157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic
+  m_text: c_ClassicHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -29739,6 +29582,7 @@ GameObject:
   - component: {fileID: 1392303011}
   - component: {fileID: 1392303010}
   - component: {fileID: 1392303009}
+  - component: {fileID: 1392303013}
   m_Layer: 5
   m_Name: Quality
   m_TagString: Untagged
@@ -29832,11 +29676,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Low
+    - m_Text: d_LowQuality
       m_Image: {fileID: 0}
-    - m_Text: Medium
+    - m_Text: d_MediumQuality
       m_Image: {fileID: 0}
-    - m_Text: High
+    - m_Text: d_HighQuality
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -29880,6 +29724,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392303007}
   m_CullTransparentMesh: 1
+--- !u!114 &1392303013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392303007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 841714b3888b5244788396c5871f281d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392388598
 GameObject:
   m_ObjectHideFlags: 0
@@ -31230,8 +31086,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1488239162}
   - component: {fileID: 1488239165}
-  - component: {fileID: 1488239163}
   - component: {fileID: 1488239164}
+  - component: {fileID: 1488239163}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -31267,11 +31123,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1488239161}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Credits
-  russian: "\u0410\u0432\u0442\u043E\u0440\u044B"
 --- !u!114 &1488239164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31292,7 +31146,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: b_Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -31890,8 +31744,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1502388931}
   - component: {fileID: 1502388934}
-  - component: {fileID: 1502388932}
   - component: {fileID: 1502388933}
+  - component: {fileID: 1502388932}
   m_Layer: 5
   m_Name: Interface Text
   m_TagString: Untagged
@@ -31927,11 +31781,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1502388930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Interface
-  russian: "\u0418\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441"
 --- !u!114 &1502388933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31952,7 +31804,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Interface
+  m_text: t_InterfaceSubheader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -33750,8 +33602,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1564237261}
   - component: {fileID: 1564237263}
-  - component: {fileID: 1564237264}
   - component: {fileID: 1564237262}
+  - component: {fileID: 1564237264}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -33798,10 +33650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The most unusual labyrinth in human imagination, which complicates its
-    passage! Sigma consists of hexagonal cells and forms a hexagon itself, each cell
-    can have up to 6 connections with its neighbors, making it the most difficult
-    maze.
+  m_text: c_SigmaMazeDescription
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -33887,27 +33736,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1564237260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: The most unusual labyrinth in human imagination, which complicates its
-    passage! Sigma consists of hexagonal cells and forms a hexagon itself, each cell
-    can have up to 6 connections with its neighbors, making it the most difficult
-    maze.
-  russian: "\u0421\u0430\u043C\u044B\u0439 \u043D\u0435\u043E\u0431\u044B\u0447\u043D\u044B\u0439
-    \u0432 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0438
-    \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442,
-    \u0447\u0442\u043E \u0438 \u0443\u0441\u043B\u043E\u0436\u043D\u044F\u0435\u0442
-    \u0435\u0433\u043E \u043F\u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435!
-    \u0421\u0438\u0433\u043C\u0430-\u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442
-    \u0441\u043E\u0441\u0442\u043E\u0438\u0442 \u0438\u0437 \u0448\u0435\u0441\u0442\u0438\u0443\u0433\u043E\u043B\u044C\u043D\u044B\u0445
-    \u044F\u0447\u0435\u0435\u043A \u0438 \u0441\u0430\u043C \u043E\u0431\u0440\u0430\u0437\u0443\u0435\u0442
-    \u0448\u0435\u0441\u0442\u0438\u0443\u0433\u043E\u043B\u044C\u043D\u0438\u043A,
-    \u043A\u0430\u0436\u0434\u0430\u044F \u044F\u0447\u0435\u0439\u043A\u0430 \u043C\u043E\u0436\u0435\u0442
-    \u0438\u043C\u0435\u0442\u044C \u0434\u043E 6 \u0441\u0432\u044F\u0437\u0435\u0439
-    \u0441 \u0441\u043E\u0441\u0435\u0434\u043D\u0438\u043C\u0438, \u0431\u043B\u0430\u0433\u043E\u0434\u0430\u0440\u044F
-    \u0447\u0435\u043C\u0443 \u043E\u043D \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F
-    \u0441\u0430\u043C\u044B\u043C \u0441\u043B\u043E\u0436\u043D\u044B\u043C \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u043E\u043C."
 --- !u!1 &1571061994
 GameObject:
   m_ObjectHideFlags: 0
@@ -34099,6 +33930,7 @@ GameObject:
   - component: {fileID: 1584791485}
   - component: {fileID: 1584791488}
   - component: {fileID: 1584791486}
+  - component: {fileID: 1584791487}
   m_Layer: 5
   m_Name: Maze
   m_TagString: Untagged
@@ -34145,7 +33977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Maze
+  m_text: t_Logo1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
   m_sharedMaterial: {fileID: 8682816941345533817, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
@@ -34214,6 +34046,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1584791487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584791484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1584791488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34412,8 +34256,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1607076633}
   - component: {fileID: 1607076636}
-  - component: {fileID: 1607076634}
   - component: {fileID: 1607076635}
+  - component: {fileID: 1607076634}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -34449,11 +34293,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1607076632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Perfect maze
-  russian: "\u0418\u0434\u0435\u0430\u043B\u044C\u043D\u044B\u0439"
 --- !u!114 &1607076635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34474,7 +34316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Perfect maze
+  m_text: c_PerfectMazeHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -34813,8 +34655,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1621565499}
   - component: {fileID: 1621565502}
-  - component: {fileID: 1621565500}
   - component: {fileID: 1621565501}
+  - component: {fileID: 1621565500}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -34850,11 +34692,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621565498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Classic
-  russian: "\u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430"
 --- !u!114 &1621565501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34875,7 +34715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Classic
+  m_text: c_ClassicHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -35118,6 +34958,7 @@ GameObject:
   - component: {fileID: 1641059554}
   - component: {fileID: 1641059556}
   - component: {fileID: 1641059555}
+  - component: {fileID: 1641059557}
   m_Layer: 5
   m_Name: Memory
   m_TagString: Untagged
@@ -35164,7 +35005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Memory
+  m_text: t_Logo0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
   m_sharedMaterial: {fileID: 8682816941345533817, guid: 07dc9fa74ea9f0940a48bb54a25631ba, type: 2}
@@ -35241,6 +35082,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641059553}
   m_CullTransparentMesh: 0
+--- !u!114 &1641059557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641059553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645292265
 GameObject:
   m_ObjectHideFlags: 0
@@ -35891,6 +35744,7 @@ GameObject:
   - component: {fileID: 1672477940}
   - component: {fileID: 1672477943}
   - component: {fileID: 1672477941}
+  - component: {fileID: 1672477942}
   m_Layer: 5
   m_Name: Role
   m_TagString: Untagged
@@ -35937,7 +35791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound designer
+  m_text: t_kozlov1741
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -36006,6 +35860,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1672477942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672477939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!222 &1672477943
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36200,9 +36066,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1681774081}
-  - component: {fileID: 1681774083}
   - component: {fileID: 1681774082}
   - component: {fileID: 1681774084}
+  - component: {fileID: 1681774085}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -36237,20 +36103,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681774080}
   m_CullTransparentMesh: 1
---- !u!114 &1681774083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681774080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  english: Start
-  russian: "\u0418\u0433\u0440\u0430\u0442\u044C"
 --- !u!114 &1681774084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36271,7 +36123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: b_Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -36340,6 +36192,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1681774085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681774080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683818920
 GameObject:
   m_ObjectHideFlags: 0
@@ -37337,8 +37201,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1714099884}
   - component: {fileID: 1714099887}
-  - component: {fileID: 1714099886}
   - component: {fileID: 1714099885}
+  - component: {fileID: 1714099886}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -37385,7 +37249,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Side size
+  m_text: t_SideSize
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -37463,11 +37327,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714099883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Side size
-  russian: "\u0414\u043B\u0438\u043D\u0430 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
 --- !u!222 &1714099887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38288,8 +38150,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1762536675}
   - component: {fileID: 1762536677}
-  - component: {fileID: 1762536678}
   - component: {fileID: 1762536676}
+  - component: {fileID: 1762536678}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -38336,7 +38198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Generate
+  m_text: b_Generate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -38422,11 +38284,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762536674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Generate
-  russian: "\u0421\u043E\u0437\u0434\u0430\u0442\u044C"
 --- !u!1 &1764267969
 GameObject:
   m_ObjectHideFlags: 0
@@ -40971,8 +40831,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1900268777}
   - component: {fileID: 1900268780}
-  - component: {fileID: 1900268778}
   - component: {fileID: 1900268779}
+  - component: {fileID: 1900268778}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -41008,22 +40868,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1900268776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: 'On this screen you can select size of maze.
-
-    Since we are here for
-    the first time, we will choose the smallest size.
-
-    Click to Generate button.'
-  russian: "\u041D\u0430 \u044D\u0442\u043E\u043C \u044D\u043A\u0440\u0430\u043D\u0435
-    \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u044B\u0431\u0440\u0430\u0442\u044C
-    \u0440\u0430\u0437\u043C\u0435\u0440 \u043B\u0430\u0431\u0438\u0440\u0438\u043D\u0442\u0430.\n\u0422\u0430\u043A
-    \u043A\u0430\u043A \u043C\u044B \u0442\u0443\u0442 \u0432\u043F\u0435\u0440\u0432\u044B\u0435,
-    \u0432\u044B\u0431\u0435\u0440\u0435\u043C \u0441\u0430\u043C\u044B\u0439 \u043C\u0430\u043B\u0435\u043D\u044C\u043A\u0438\u0439
-    \u0440\u0430\u0437\u043C\u0435\u0440.\r\n\u041D\u0430\u0436\u043C\u0438\u0442\u0435
-    \u043A\u043D\u043E\u043F\u043A\u0443 \"\u0421\u043E\u0437\u0434\u0430\u0442\u044C\"."
 --- !u!114 &1900268779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41044,12 +40891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'On this screen you can select size of maze.
-
-    Since we are here for
-    the first time, we will choose the smallest size.
-
-    Click to Generate button.'
+  m_text: t_Tutorial4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -41136,8 +40978,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1905544287}
   - component: {fileID: 1905544290}
-  - component: {fileID: 1905544288}
   - component: {fileID: 1905544289}
+  - component: {fileID: 1905544288}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -41173,11 +41015,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1905544286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Eldar "AveGus" Garipov
-  russian: "\u042D\u043B\u044C\u0434\u0430\u0440 \"AveGus\" \u0413\u0430\u0440\u0438\u043F\u043E\u0432"
 --- !u!114 &1905544289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41198,7 +41038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eldar "AveGus" Garipov
+  m_text: t_AveGus0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -41882,8 +41722,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1956401873}
   - component: {fileID: 1956401872}
-  - component: {fileID: 1956401871}
   - component: {fileID: 1956401870}
+  - component: {fileID: 1956401871}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -41911,7 +41751,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Easy
+  m_text: c_EasyHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -41989,11 +41829,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1956401869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Easy
-  russian: "\u041B\u0435\u0433\u043A\u0438\u0439"
 --- !u!222 &1956401872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42031,8 +41869,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1958653897}
   - component: {fileID: 1958653900}
-  - component: {fileID: 1958653898}
   - component: {fileID: 1958653899}
+  - component: {fileID: 1958653898}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -42068,11 +41906,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958653896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Stories
-  russian: "\u0418\u0441\u0442\u043E\u0440\u0438\u0438"
 --- !u!114 &1958653899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42093,7 +41929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stories
+  m_text: t_StoriesHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -43342,8 +43178,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2071589201}
   - component: {fileID: 2071589204}
-  - component: {fileID: 2071589202}
   - component: {fileID: 2071589203}
+  - component: {fileID: 2071589202}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -43379,11 +43215,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2071589200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Settings
-  russian: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
 --- !u!114 &2071589203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43404,7 +43238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Settings
+  m_text: t_SettingsHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -43760,7 +43594,7 @@ RectTransform:
   - {fileID: 421730979}
   - {fileID: 1120948284}
   m_Father: {fileID: 326406534}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -44094,8 +43928,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2114827466}
   - component: {fileID: 2114827469}
-  - component: {fileID: 2114827468}
   - component: {fileID: 2114827467}
+  - component: {fileID: 2114827468}
   m_Layer: 5
   m_Name: LanguageLabel
   m_TagString: Untagged
@@ -44142,7 +43976,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: t_LanguageDropdownHeader
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
   m_sharedMaterial: {fileID: -7171519695165573283, guid: baadeb43beba046418e9f842b65d5d1e, type: 2}
@@ -44220,11 +44054,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2114827465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Language
-  russian: "\u042F\u0437\u044B\u043A"
 --- !u!222 &2114827469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -45422,8 +45254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2137433360}
   - component: {fileID: 2137433362}
-  - component: {fileID: 2137433363}
   - component: {fileID: 2137433361}
+  - component: {fileID: 2137433363}
   m_Layer: 5
   m_Name: Loading Text
   m_TagString: Untagged
@@ -45470,7 +45302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Loading...
+  m_text: t_Loading
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
   m_sharedMaterial: {fileID: -623500919979612438, guid: 16ff8775debb4584783e0c6a3d3192db, type: 2}
@@ -45556,11 +45388,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2137433359}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4d415530fd9f924c876b3af809a48ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e17c0885b8e70943abf99766e7b5b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  english: Loading...
-  russian: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
 --- !u!1 &2139508174
 GameObject:
   m_ObjectHideFlags: 0

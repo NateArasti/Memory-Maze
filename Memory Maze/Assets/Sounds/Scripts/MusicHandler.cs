@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class MusicHandler : MonoBehaviour
 {
-#pragma warning disable 649
     [SerializeField] private AudioClip[] audioClips;
 
-    private AudioSource audioSource;
+    private AudioSource _audioSource;
     public static MusicHandler Instance { get; private set; }
 
     private void Awake()
@@ -14,12 +13,12 @@ public class MusicHandler : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-        audioSource = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        if (!audioSource.isPlaying) audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
+        if (!_audioSource.isPlaying) _audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)]);
     }
 }
