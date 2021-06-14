@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae386a0067e91a43b1858186f7a894c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Finish: {fileID: 7805320437399589355, guid: 1848383abd0f25442908dda5ada5fdf4, type: 3}
+  finish: {fileID: 7805320437399589355, guid: 1848383abd0f25442908dda5ada5fdf4, type: 3}
   player2D: {fileID: 427890468691771699, guid: 4f4c8d86f67b7ff4991b338fab9bb7b6, type: 3}
   player2DPositionDelta: {x: 0.7, y: 0.4, z: 1}
   player2DScale: {x: 0.25, y: 0.25, z: 1}

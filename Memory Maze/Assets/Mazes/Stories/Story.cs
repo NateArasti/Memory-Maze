@@ -1,23 +1,22 @@
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Story : MonoBehaviour
 {
-    public void ShowStory(int storyIndex)
-    {
-        var storyContainer = GetComponent<TextMeshProUGUI>();
-        var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
-        var currentLanguage = resultBool ? result : Language.English;
-        var story = StoriesStorage.GetStoryByIndex(storyIndex, currentLanguage);
-        if (story == null) return;
-        storyContainer.text = story;
-    }
+	public void ShowStory(int storyIndex)
+	{
+		var storyContainer = GetComponent<TextMeshProUGUI>();
+		var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
+		var currentLanguage = resultBool ? result : Language.English;
+		var story = StoriesStorage.GetStoryByIndex(storyIndex, currentLanguage);
+		if (story == null) return;
+		storyContainer.text = story;
+	}
 
-    public void ExitStory(RectTransform scrollRectContent)
-    {
-        //Не знаю как тут нормально возвращать в начальное положение так что пусть будет так
-        scrollRectContent.localPosition = new Vector3(0, -160, 0);
-    }
+	public void ExitStory(RectTransform scrollRectContent)
+	{
+		//РќРµ Р·РЅР°СЋ РєР°Рє С‚СѓС‚ РЅРѕСЂРјР°Р»СЊРЅРѕ РІРѕР·РІСЂР°С‰Р°С‚СЊ РІ РЅР°С‡Р°Р»СЊРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ С‚Р°Рє С‡С‚Рѕ РїСѓСЃС‚СЊ Р±СѓРґРµС‚ С‚Р°Рє
+		scrollRectContent.localPosition = new Vector3(0, -160, 0);
+	}
 }

@@ -6,27 +6,27 @@ using UnityEngine.UI;
 public class StoryButton : MonoBehaviour
 {
 #pragma warning disable 649
-    [SerializeField] private int index;
+	[SerializeField] private int index;
 
-    private void Awake()
-    {
-        var button = GetComponent<Button>();
-        if (button == null) return;
-        button.interactable = StoriesStorage.GetStoryByIndex(index, Language.English) != null;
-    }
+	private void Awake()
+	{
+		var button = GetComponent<Button>();
+		if (button == null) return;
+		button.interactable = StoriesStorage.GetStoryByIndex(index, Language.English) != null;
+	}
 
-    public void ShowStory(TextMeshProUGUI storyContainer)
-    {
-        var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
-        var currentLanguage = resultBool ? result : Language.English;
-        var story = StoriesStorage.GetStoryByIndex(index, currentLanguage);
-        if (story == null) return;
-        storyContainer.text = story;
-    }
+	public void ShowStory(TextMeshProUGUI storyContainer)
+	{
+		var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
+		var currentLanguage = resultBool ? result : Language.English;
+		var story = StoriesStorage.GetStoryByIndex(index, currentLanguage);
+		if (story == null) return;
+		storyContainer.text = story;
+	}
 
-    public void ExitStory(RectTransform scrollRectContent)
-    {
-        //Не знаю как тут нормально возвращать в начальное положение так что пусть будет так
-        scrollRectContent.localPosition = new Vector3(0, -160, 0);
-    }
+	public void ExitStory(RectTransform scrollRectContent)
+	{
+		//РќРµ Р·РЅР°СЋ РєР°Рє С‚СѓС‚ РЅРѕСЂРјР°Р»СЊРЅРѕ РІРѕР·РІСЂР°С‰Р°С‚СЊ РІ РЅР°С‡Р°Р»СЊРЅРѕРµ РїРѕР»РѕР¶РµРЅРёРµ С‚Р°Рє С‡С‚Рѕ РїСѓСЃС‚СЊ Р±СѓРґРµС‚ С‚Р°Рє
+		scrollRectContent.localPosition = new Vector3(0, -160, 0);
+	}
 }

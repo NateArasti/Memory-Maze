@@ -10,9 +10,9 @@ public class LocalizationsFileParser : MonoBehaviour
 		new Dictionary<string, Dictionary<string, string>>();
 
 	private static List<string> _languages = new List<string>();
-	
+
 	private static TextAsset _locales;
-	
+
 	public static void CreateDictionary()
 	{
 		Localizations = new Dictionary<string, Dictionary<string, string>>();
@@ -25,7 +25,7 @@ public class LocalizationsFileParser : MonoBehaviour
 			_languages.Add(language);
 			Localizations.Add(language, new Dictionary<string, string>());
 		}
-		
+
 		foreach (var keyValues in _locales.text.Split('\n').Skip(1))
 		{
 			var str = keyValues.Split(new[] {';', '\r'}, StringSplitOptions.RemoveEmptyEntries);

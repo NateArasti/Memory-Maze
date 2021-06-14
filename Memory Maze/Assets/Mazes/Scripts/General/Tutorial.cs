@@ -3,28 +3,30 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
-#pragma warning disable 649
-    [SerializeField] private GameObject[] tutorialTexts;
-#pragma warning restore 649
-    private int currentIndex;
+	[SerializeField] private GameObject[] tutorialTexts;
+	
+	private int _currentIndex;
 
-    private void Awake()
-    {
-        gameObject.SetActive(MazeLoader.IsTutorial);
-    }
+	private void Awake()
+	{
+		gameObject.SetActive(MazeLoader.IsTutorial);
+	}
 
-    public void SwitchToNextText()
-    {
-        tutorialTexts[currentIndex].SetActive(false);
-        currentIndex += 1;
-        tutorialTexts[currentIndex].SetActive(true);
-    }
+	public void SwitchToNextText()
+	{
+		tutorialTexts[_currentIndex].SetActive(false);
+		_currentIndex += 1;
+		tutorialTexts[_currentIndex].SetActive(true);
+	}
 
-    public void TurnOffAfterDelay(GameObject panel) => StartCoroutine(TurnOffWithDelay(panel));
+	public void TurnOffAfterDelay(GameObject panel)
+	{
+		StartCoroutine(TurnOffWithDelay(panel));
+	}
 
-    private IEnumerator TurnOffWithDelay(GameObject panel)
-    {
-        yield return new WaitForSeconds(5f);
-        panel.SetActive(false);
-    }
+	private IEnumerator TurnOffWithDelay(GameObject panel)
+	{
+		yield return new WaitForSeconds(5f);
+		panel.SetActive(false);
+	}
 }

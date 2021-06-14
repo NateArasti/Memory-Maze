@@ -17,7 +17,15 @@ public enum Difficulty
 
 public class MazeLoader : MonoBehaviour
 {
+	private static GameMode _mode;
 	[SerializeField] private GameObject loadingScreen;
+
+	public static bool IsTutorial { get; set; }
+
+	public void Awake()
+	{
+		Time.timeScale = 1;
+	}
 
 	private void LoadMazeScene()
 	{
@@ -32,15 +40,6 @@ public class MazeLoader : MonoBehaviour
 	{
 		//SceneManager.LoadScene("Menu");
 		ChangeScene.SwitchToScene("Menu", "no Menu lol");
-	}
-
-	private static GameMode _mode;
-
-	public static bool IsTutorial { get; set; }
-
-	public void Awake()
-	{
-		Time.timeScale = 1;
 	}
 
 	public void SetGameMode(int newMode)
@@ -72,23 +71,29 @@ public class MazeLoader : MonoBehaviour
 	public void ExitMaze()
 	{
 		if (ArcadeProgression.ProgressionOn) ArcadeProgression.Dispose();
-		if(IsTutorial) TurnOffTutorial();
+		if (IsTutorial) TurnOffTutorial();
 		LoadMenuScene();
 	}
 
-    public void RestartArcadeMode()
+	public void RestartArcadeMode()
 	{
 		ArcadeProgression.Dispose();
 		ArcadeProgression.MoveToNextProgressionLevel();
 		LoadMazeScene();
 	}
 
-    public void TurnOnTutorial() => IsTutorial = true;
+	public void TurnOnTutorial()
+	{
+		IsTutorial = true;
+	}
 
-    public void TurnOffTutorial() => IsTutorial = false;
+	public void TurnOffTutorial()
+	{
+		IsTutorial = false;
+	}
 
-    public void SetTutorialMazeCharacteristics()
-    {
-        MazeCharacteristics.SetMazeCharacteristics(new MazeData(MazeType.PerfectMaze, new[] {5, 5}));
-    }
+	public void SetTutorialMazeCharacteristics()
+	{
+		MazeCharacteristics.SetMazeCharacteristics(new MazeData(MazeType.PerfectMaze, new[] {5, 5}));
+	}
 }
