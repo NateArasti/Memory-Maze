@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-#pragma warning disable 649
     [Header("Cameras")]
     [SerializeField] private Camera camera3D;
     [SerializeField] private Camera camera2D;

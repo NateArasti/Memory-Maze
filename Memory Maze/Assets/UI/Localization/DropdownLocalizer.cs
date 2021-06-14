@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,5 +12,9 @@ public class DropdownLocalizer : MonoBehaviour
         {
             option.text = LocalizationsFileParser.Localizations[language][option.text];
         }
+
+        var text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        if (LocalizationsFileParser.Localizations[language].ContainsKey(text.text))
+            text.text = LocalizationsFileParser.Localizations[language][text.text];
     }
 }
