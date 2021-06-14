@@ -17,21 +17,21 @@ public enum Difficulty
 
 public class MazeLoader : MonoBehaviour
 {
-#pragma warning disable 649
 	[SerializeField] private GameObject loadingScreen;
-#pragma warning restore 649
 
 	private void LoadMazeScene()
 	{
+		loadingScreen.SetActive(true);
 		if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Menu"))
-			ChangeScene.SwitchToScene("Maze");
+			ChangeScene.SwitchToScene("Maze", "Menu");
 		else
 			SceneManager.LoadScene("Maze");
 	}
 
 	private void LoadMenuScene()
 	{
-		SceneManager.LoadScene("Menu");
+		//SceneManager.LoadScene("Menu");
+		ChangeScene.SwitchToScene("Menu", "no Menu lol");
 	}
 
 	private static GameMode _mode;

@@ -7,50 +7,49 @@ public class ChangeScene : MonoBehaviour
     public Image loadingProgressBar;
     
     private static ChangeScene _instance;
-    private static bool _shouldPlayOpeningAnimation; 
+    private static bool _shouldPlayEndAnimation; 
     
     private Animator animator;
     private AsyncOperation loadingSceneOperation;
 
-    public static void SwitchToScene(string sceneName)
-    {
-        _instance.gameObject.SetActive(true);
-        _instance.animator.SetTrigger("SceneClosing");
-        _instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
-        _instance.loadingSceneOperation.allowSceneActivation = false;
-        //_instance.loadingProgressBar. = 0;
-    }
-    
-    private void Awake()
+    private void Start()
     {
         _instance = this;
-        
         animator = GetComponent<Animator>();
 
-        if (!_shouldPlayOpeningAnimation)
+        if (!_shouldPlayEndAnimation)
         {
-            OffScreen();
+            gameObject.SetActive(false);
             return;
         }
-        animator.SetTrigger("SceneOpening");
-        //_instance.loadingProgressBar.fillAmount = 1;
-        _shouldPlayOpeningAnimation = false;
+        animator.SetTrigger("LoadingEnds");
+        _instance.loadingProgressBar.fillAmount = 1;
+        _shouldPlayEndAnimation = false;
     }
-
+    
+    public static void SwitchToScene(string sceneName, string oldScene)
+    {
+        _instance.gameObject.SetActive(true);
+        _instance.animator.SetTrigger(oldScene == "Menu" ? "LoadingStartsFromMenu" : "LoadingStarts");
+        _instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneName);
+        _instance.loadingSceneOperation.allowSceneActivation = false;
+        _instance.loadingProgressBar.fillAmount = 0;
+    }
+    
     private void Update()
     {
         if (loadingSceneOperation == null) return;
-        //loadingProgressBar.fillAmount = Mathf.Lerp(loadingProgressBar.fillAmount, loadingSceneOperation.progress,
-        //    Time.deltaTime * 5);
+        loadingProgressBar.fillAmount = Mathf.Lerp(loadingProgressBar.fillAmount, loadingSceneOperation.progress,
+            Time.deltaTime * 5);
     }
 
     public void OnAnimationOver()
     {
-        _shouldPlayOpeningAnimation = true;
+        _shouldPlayEndAnimation = true;
         loadingSceneOperation.allowSceneActivation = true;
     }
-    
-    public void OffScreen()
+
+    public void EndAnimation()
     {
         gameObject.SetActive(false);
     }

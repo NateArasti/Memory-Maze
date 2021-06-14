@@ -25,7 +25,7 @@ public class PlayerUI : MonoBehaviour
     [SerializeField] private UnityEvent classicWin;
     [SerializeField] private UnityEvent tutorialEnd;
 
-    private bool IsPauseAvailable => !camera2D.enabled && !storyPanel.activeInHierarchy && !_mazeEnded;
+    private bool IsPauseUnavailable => camera2D.enabled || storyPanel.activeInHierarchy || _mazeEnded;
 
     private int _addTimerValue;
     private LineRenderer _lineRenderer;
@@ -45,12 +45,19 @@ public class PlayerUI : MonoBehaviour
 
     public void SwitchPause()
     {
-        if(!IsPauseAvailable) return;
+        if(IsPauseUnavailable) return;
         Time.timeScale = 1 - Time.timeScale;
         Cursor.lockState = Cursor.lockState == CursorLockMode.Locked ? CursorLockMode.None : CursorLockMode.Locked;
         if((int)Time.timeScale == 1)
             settingsPanelExitButton.onClick.Invoke();
         pausePanel.SetActive(Time.timeScale == 0);
+    }
+    
+    public void OffPause()
+    {
+        Time.timeScale = 1 - Time.timeScale;
+        Cursor.lockState = CursorLockMode.None;
+        pausePanel.SetActive(false);
     }
 
     private void Draw()
