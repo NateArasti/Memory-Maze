@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class LocalizationsFileParser : MonoBehaviour
+public class LocalizationsFileParser
 {
 	// Localizations["language"]["key"]
-	public static Dictionary<string, Dictionary<string, string>> Localizations =
-		new Dictionary<string, Dictionary<string, string>>();
-
-	private static List<string> _languages = new List<string>();
-
+	private static Dictionary<string, Dictionary<string, string>> _localizations;
+	private static List<string> _languages;
 	private static TextAsset _locales;
 
-	public static void CreateDictionary()
+    public static string GetTranslatedWordByKey(string language, string key) =>
+        _localizations.ContainsKey(language) && _localizations[language].ContainsKey(key) ? 
+            _localizations[language][key] : key;
+
+    public static void CreateDictionary()
 	{
-		Localizations = new Dictionary<string, Dictionary<string, string>>();
+		_localizations = new Dictionary<string, Dictionary<string, string>>();
 		_languages = new List<string>();
 		_locales = Resources.Load<TextAsset>("Localizations");
 		var languages = string.Join("", _locales.text.TakeWhile(x => x != '\n'))
@@ -23,14 +24,14 @@ public class LocalizationsFileParser : MonoBehaviour
 		foreach (var language in languages.Skip(1))
 		{
 			_languages.Add(language);
-			Localizations.Add(language, new Dictionary<string, string>());
+			_localizations.Add(language, new Dictionary<string, string>());
 		}
 
 		foreach (var keyValues in _locales.text.Split('\n').Skip(1))
 		{
 			var str = keyValues.Split(new[] {';', '\r'}, StringSplitOptions.RemoveEmptyEntries);
 			for (var i = 1; i < str.Length; i++)
-				Localizations[_languages[i - 1]].Add(str[0], str[i]);
+				_localizations[_languages[i - 1]].Add(str[0], str[i]);
 		}
 	}
 }

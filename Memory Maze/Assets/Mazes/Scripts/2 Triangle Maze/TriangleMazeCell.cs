@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// ReSharper disable once CheckNamespace
 public class TriangleMazeCell : MazeCell
 {
 	public enum PossibleWalls
@@ -11,7 +10,7 @@ public class TriangleMazeCell : MazeCell
 		RightWall
 	}
 
-	public bool IsUpsideDown = false;
+	public bool IsUpsideDown;
 
 	public TriangleMazeCell()
 	{

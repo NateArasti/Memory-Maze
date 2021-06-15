@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// ReSharper disable once CheckNamespace
 public class MazeCell
 {
 	protected Vector3 Cell2DSize;
 	protected Vector3 Cell3DSize;
+
 	public Dictionary<int, bool> Walls { get; protected set; }
 	public Dictionary<int, MazeCell> Neighbors { get; protected set; }
 	public bool Visited { get; set; }
@@ -28,8 +28,6 @@ public class MazeCell
 		Cell3DPosition = new Vector3(x * Cell3DSize.x, y * Cell3DSize.y + DistanceBetweenMazes, y * Cell3DSize.z);
 	}
 
-	public static List<MazeCell> GetNeighborsList(MazeCell currentCell, bool check)
-	{
-		return currentCell.Neighbors.Values.Where(cell => cell != null && cell.Visited == check).ToList();
-	}
+	public static List<MazeCell> GetNeighborsList(MazeCell currentCell, bool check) => 
+        currentCell.Neighbors.Values.Where(cell => cell != null && cell.Visited == check).ToList();
 }

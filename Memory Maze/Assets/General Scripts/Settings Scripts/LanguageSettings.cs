@@ -11,12 +11,15 @@ public enum Language
 
 public class LanguageSettings : MonoBehaviour
 {
+    public static string CurrentLanguage { get; private set; }
+
 #pragma warning disable 649
 	[SerializeField] private TMP_Dropdown languageDropdown;
 
-	private void Start()
+	private void Awake()
 	{
-		var resultBool = Enum.TryParse(PlayerPrefs.GetString("Language"), out Language result);
+        CurrentLanguage = PlayerPrefs.GetString("Language", "English");
+		var resultBool = Enum.TryParse(CurrentLanguage, out Language result);
 		languageDropdown.value = resultBool ? (int) result : 0;
 		languageDropdown.onValueChanged.AddListener(_ => ChangeLanguage(languageDropdown.value));
 		LocalizationsFileParser.CreateDictionary();

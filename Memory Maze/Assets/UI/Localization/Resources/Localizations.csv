@@ -50,13 +50,13 @@ t_TextureQualityDropdownHeader;Texture quality;Качество текстур
 d_LowQuality;Low;Низкое
 d_MediumQuality;Medium;Среднее
 d_HighQuality;High;Высокое
-t_Team;by More Or Less Serious Goslings team;от "Более-менее серьёзных гусят"
+t_Team;by More Or Less Serious Goslings team;"от ""Более-менее серьёзных гусят"""
 t_Credits;Credits:;Авторы:
-t_Arasti0;Artyom "Arasti" Arakelov;Артём "Arasti" Аракелов
-t_ncrmncr0;Andrew "ncrmncr" Stremousov;Андрей "ncrmncr" Стремоусов
-t_leyuwiuz0;Leyla "leyuwiuz" A.;Лейла "leyuwiuz" А.
-t_kozlov1740;Danila "kozlov174" Kozlov;Данила "kozlov174" Козлов
-t_AveGus0;Eldar "AveGus" Garipov;Эльдар "AveGus" Гарипов
+t_Arasti0;"Artyom ""Arasti"" Arakelov";"Артём ""Arasti"" Аракелов"
+t_ncrmncr0;"Andrew ""ncrmncr"" Stremousov";"Андрей ""ncrmncr"" Стремоусов"
+t_leyuwiuz0;"Leyla ""leyuwiuz"" A.";"Лейла ""leyuwiuz"" А."
+t_kozlov1740;"Danila ""kozlov174"" Kozlov";"Данила ""kozlov174"" Козлов"
+t_AveGus0;"Eldar ""AveGus"" Garipov";"Эльдар ""AveGus"" Гарипов"
 t_Arasti1;Team Lead / Programmer;Тимлид / разработчик
 t_ncrmncr1;UI / UX designer;UI / UX дизайнер
 t_leyuwiuz1;3D designer;3D дизайнер
@@ -64,9 +64,9 @@ t_kozlov1741;Sound designer;Саунд дизайнер
 t_AveGus1;Technical writer;Технический писатель
 t_StoriesHeader;Stories;Истории
 t_Tutorial1;Welcome to Memory Maze! In that little tutorial we will introduce you how to play in this game. Click the button on the right to continue.;Добро пожаловать в Memory Maze! В этом небольшом руководстве мы расскажем вам как играть в эту игру. Нажмите кнопку справа, чтобы продолжить.
-t_Tutorial2;The game has 2 game modes: Classic and Arcade. First mode is simple, you choose type of maze and his size. Second is more difficult, there you must complete some amount of mazes in a row. Let's start with Classic mode! Click on "Classic" mode card.;В игре есть 2 режима игры: Классика и Аркада. Первый режим довольно простой: вы выбираете тип лабиринта и его размер. Второй же, наоборот, является более сложным, в нем вы должны пройти некоторое количество лабиринтов подряд. Начнем с классического режима! Щелкните карточку "Классический" режим.
+t_Tutorial2;"The game has 2 game modes: Classic and Arcade. First mode is simple, you choose type of maze and his size. Second is more difficult, there you must complete some amount of mazes in a row. Let's start with Classic mode! Click on ""Classic"" mode card.";"В игре есть 2 режима игры: Классика и Аркада. Первый режим довольно простой: вы выбираете тип лабиринта и его размер. Второй же, наоборот, является более сложным, в нем вы должны пройти некоторое количество лабиринтов подряд. Начнем с классического режима! Щелкните карточку ""Классический"" режим."
 t_Tutorial3;At this moment there are 3 types of maze. If you would like to know more about them, you can do it after completing the training. But for now let's dwell on the Perfect maze, the simpler one.;На данный момент существует 3 типа лабиринтов. Если вы хотите узнать о них больше, вы можете сделать это после завершения обучения. А пока что остановимся на Идеальном лабиринте, самом простом из них.
-t_Tutorial4;On this screen you can select size of maze. Since we are here for the first time, we will choose the smallest size. Click to Generate button.;На этом экране вы можете выбрать размер лабиринта. Так как мы тут впервые, выберем самый маленький размер. Нажмите кнопку "Создать".
+t_Tutorial4;On this screen you can select size of maze. Since we are here for the first time, we will choose the smallest size. Click to Generate button.;"На этом экране вы можете выбрать размер лабиринта. Так как мы тут впервые, выберем самый маленький размер. Нажмите кнопку ""Создать""."
 t_ElapsedTime;Elapsed time;Оставшееся время
 b_Clear;Clear;Очистить
 b_ExitFromMap;Exit;Выйти
