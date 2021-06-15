@@ -1,0 +1,89 @@
+﻿Key;English;Russian
+t_Logo0;Memory;Memory
+t_Logo1;Maze;Maze
+b_Start;Start;Играть
+b_Stories;Stories;Истории
+b_Settings;Settings;Настройки
+b_Credits;Credits;Авторы
+b_Exit;Exit;Выход
+t_Loading;Loading...;Загрузка...
+t_SelectModeHeader;Select mode;Выбор режима
+c_TutorialHeader;Tutorial;Обучение
+c_TutorialDescription;Yes, in ours, as in any other game, there is tutorial. Do we really need tot tell what is this?;Да, в нашей, как и в любой другой игре, есть обучение. Нам ведь не надо объяснять, что это такое?
+c_ClassicHeader;Classic;Классика
+c_ClassicDescription;Choose the maze and size that suits you! This is an ideal mode both for lovers of simple mazes to learn from, and for those who love the most difficult chalanges and mazes of colossal dimensions.;Выбери подходящий для тебя лабиринт и размер! Это идеальный режим как для любителей простых лабиринтов, на которых можно поучиться, так и для тех, кто любит сложнейшие вызовы и лабиринты колоссальных размеров.
+c_ArcadeHeader;Arcade;Аркада
+с_ArcadeDescription;Are you ready to challenge yourself and go through the most difficult mazes from memory? You only have one life and one try! This is an arcade mode, prove that your memory is unshakable!;Готов ли ты бросить самому себе вызов и пройти сложнейшие лабиринты по памяти? У тебя всего одна жизнь и одна попытка! Это аркадный режим, докажи, что твоя память непоколебима!
+t_SelectTypeHeader;Select type;Выбор типа
+c_PerfectMazeHeader;Perfect maze;Идеальный
+c_PerfectMazeDescription;Perfect is the most common maze in human understanding. It has a square shape, its difference is the connection of one cell with another in one single path.;Идеальный - самый обычный в понимании человека лабиринт. Имеет квадратную форму, его отличием является связь одной клетки с другой одним единственным путем.
+c_DeltaMazeHeader;Delta maze;Треугольный
+c_DeltaMazeDescription;"This maze has a triangular shape, like its cells. Three paths are possible from one cell, just like the ""Perfect Maze"" has one single path.";Лабиринт имеет треугольную форму, как и его ячейки. Из одной ячейки возможен выход трех путей, также как и «Идеальный лабиринт» имеет один единственный путь.
+c_SigmaMazeHeader;Sigma maze;Сигма
+c_SigmaMazeDescription;The most unusual labyrinth in human imagination, which complicates its passage! Sigma consists of hexagonal cells and forms a hexagon itself, each cell can have up to 6 connections with its neighbors, making it the most difficult maze.;Самый необычный в представлении человека лабиринт, что и усложняет его прохождение! Сигма-лабиринт состоит из шестиугольных ячеек и сам образует шестиугольник, каждая ячейка может иметь до 6 связей с соседними, благодаря чему он является самым сложным лабиринтом.
+t_ClassicPerfectMazeHeader;Classic / Perfect maze;Классика / Идеальный
+t_Width;Width;Ширина
+t_Height;Height;Высота
+b_Generate;Generate;Создать
+t_SideSize;Side size;Длина стороны
+t_ClassicDeltaMazeHeader;Classic / Delta maze;Классика / Треугольный
+t_ClassicSigmaMazeHeader;Classic / Sigma maze;Классика / Сигма
+t_SelectDifficultyHeader;Select difficulty;Выбор сложности
+c_EasyHeader;Easy;Легкий
+c_EasyDescription;Difficulty for beginners in the game: light labyrinths of small sizes, a large amount of handicap in time.;Сложность для новичков в игре: легкие лабиринты маленьких размеров, большое количество форы по времени.
+c_NormalHeader;Normal;Средний
+c_NormalDescription;Difficulty for those who already have a well-developed memory: medium and large labyrinths, average size of noise over time.;Сложность для тех, у кого уже хорошо развита память: лабиринты средних и больших размеров, средний размер помех по времени.
+c_HardHeader;Hard;Сложный
+c_HardDescription;Difficulty for those who like to pull their nerves: labyrinths of large and colossal sizes, the minimum amount of handicap in time.;Сложность для любителей потрепать себе нервы: лабиринты больших и колоссальных размеров, минимальное количество форы по времени.
+t_SettingsHeader;Settings;Настройки
+t_InterfaceSubheader;Interface;Интерфейс
+t_LanguageDropdownHeader;Language;Язык
+t_ResolutionDropdownHeader;Resolution;Разрешение
+t_FullscreenToggleHeader;Fullscreen;Полный экран
+t_AudioSubheader;Audio;Аудио
+t_MusicSliderHeader;Music;Музыка
+t_SoundsSliderHeader;Sounds;Звуки
+t_GameSubheader;Game;Игра
+t_SensitivitySliderHeader;Sensitivity;Чувствительность
+t_FOVSliderHeader;Field of view;Поле зрения
+t_TextureQualityDropdownHeader;Texture quality;Качество текстур
+d_LowQuality;Low;Низкое
+d_MediumQuality;Medium;Среднее
+d_HighQuality;High;Высокое
+t_Team;by More Or Less Serious Goslings team;"от ""Более-менее серьёзных гусят"""
+t_Credits;Credits:;Авторы:
+t_Arasti0;"Artyom ""Arasti"" Arakelov";"Артём ""Arasti"" Аракелов"
+t_ncrmncr0;"Andrew ""ncrmncr"" Stremousov";"Андрей ""ncrmncr"" Стремоусов"
+t_leyuwiuz0;"Leyla ""leyuwiuz"" A.";"Лейла ""leyuwiuz"" А."
+t_kozlov1740;"Danila ""kozlov174"" Kozlov";"Данила ""kozlov174"" Козлов"
+t_AveGus0;"Eldar ""AveGus"" Garipov";"Эльдар ""AveGus"" Гарипов"
+t_Arasti1;Team Lead / Programmer;Тимлид / разработчик
+t_ncrmncr1;UI / UX designer;UI / UX дизайнер
+t_leyuwiuz1;3D designer;3D дизайнер
+t_kozlov1741;Sound designer;Саунд дизайнер
+t_AveGus1;Technical writer;Технический писатель
+t_StoriesHeader;Stories;Истории
+t_Tutorial1;Welcome to Memory Maze! In that little tutorial we will introduce you how to play in this game. Click the button on the right to continue.;Добро пожаловать в Memory Maze! В этом небольшом руководстве мы расскажем вам как играть в эту игру. Нажмите кнопку справа, чтобы продолжить.
+t_Tutorial2;"The game has 2 game modes: Classic and Arcade. First mode is simple, you choose type of maze and his size. Second is more difficult, there you must complete some amount of mazes in a row. Let's start with Classic mode! Click on ""Classic"" mode card.";"В игре есть 2 режима игры: Классика и Аркада. Первый режим довольно простой: вы выбираете тип лабиринта и его размер. Второй же, наоборот, является более сложным, в нем вы должны пройти некоторое количество лабиринтов подряд. Начнем с классического режима! Щелкните карточку ""Классический"" режим."
+t_Tutorial3;At this moment there are 3 types of maze. If you would like to know more about them, you can do it after completing the training. But for now let's dwell on the Perfect maze, the simpler one.;На данный момент существует 3 типа лабиринтов. Если вы хотите узнать о них больше, вы можете сделать это после завершения обучения. А пока что остановимся на Идеальном лабиринте, самом простом из них.
+t_Tutorial4;On this screen you can select size of maze. Since we are here for the first time, we will choose the smallest size. Click to Generate button.;"На этом экране вы можете выбрать размер лабиринта. Так как мы тут впервые, выберем самый маленький размер. Нажмите кнопку ""Создать""."
+t_ElapsedTime;Elapsed time;Оставшееся время
+b_Clear;Clear;Очистить
+b_ExitFromMap;Exit;Выйти
+b_StartMaze;Start;Начать
+t_PauseHeader;Pause;Пауза
+b_Continue;Continue;Продолжить
+b_ExitToMenu;Exit to the menu;Выйти в меню
+t_WinHeader;You won!;Ты победил!
+t_LoseHeader;You lost...;Ты проиграл...
+b_Retry;Retry;Начать сначала
+b_Mazes;mazes;лабиринт.
+b_ContinueArcade;Next Maze;Следующий лабиринт
+t_ArcadeEnd;You beat this difficulty of arcade mode! But you still can continue playing and try to find all secrets in the game! :);Ты прошёл эту сложность аркадного режима! Но ты всё ещё можешь продолжать играть и найти все секреты игры!
+b_NewStoryHeader;New story;Новая история
+t_Tutorial5;Now you can see the map of maze. Try to remeber key points, because soon you will need to complete this maze without map. You can draw path on map to simpler memorization. When you're ready, press Start button.;Теперь вы можете увидеть карту лабиринта. Постарайтесь запомнить ключевые моменты, потому что скоро вам придется проходить этот лабиринт без карты. Вы можете нарисовать путь на карте, чтобы упростить запоминание. Когда будете готовы, нажмите кнопку «Старт».
+t_TutorialMoving;Move;Движение
+t_TutorialCamera;Camera;Камера
+t_Tutorial6;You're in the maze! Now try to find the purple portal, it's the exit.;Ты в лабиринте! Теперь попробуй найти фиолетовый портал, это и будет выход.
+t_Tutorial7;Congratulations! You've done this tutorial. Now you can choose any type of maze and game mode! Enjoy!;Поздравляем! Вы прошли обучение. Теперь вы можете выбрать любой тип лабиринта и игровой режим! Наслаждайтесь!
+b_TutorialEnd;Perfect!;Отлично!
