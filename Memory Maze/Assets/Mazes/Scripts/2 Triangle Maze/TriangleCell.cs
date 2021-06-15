@@ -13,8 +13,8 @@ public class TriangleCell : Cell
 		GameWalls = new Dictionary<int, GameObject>
 		{
 			{(int) TriangleMazeCell.PossibleWalls.BottomWall, bottomWall},
-			{(int) TriangleMazeCell.PossibleWalls.LeftWall, rightWall},
-			{(int) TriangleMazeCell.PossibleWalls.RightWall, leftWall}
+			{(int) TriangleMazeCell.PossibleWalls.LeftWall, leftWall},
+			{(int) TriangleMazeCell.PossibleWalls.RightWall, rightWall}
 		};
 	}
 }
